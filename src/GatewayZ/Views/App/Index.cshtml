@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GatewayZ - @ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="~/bootstrap/js/bootstrap.js"></script>  
+</head>
+
+<body>
+    <header id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/Zcar3.jpg" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/370znismo.jpg" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/Zcar4.jpg" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the forth background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/2014_nissan_370z_nismo_2-wide.jpg" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the fifth background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/bluez2.jpg" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the sixth background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/yellowz.jpg" /></div>
+            </div>
+        </div>
+    </header>
+    
+     <div class="Navbox">
+        <ul>
+            <li><a href="~/App/Index">Home</a></li>
+            <li><a href="~/App/About">About</a></li>
+            <li><a href="~/App/Events">Events</a></li>
+            <li><a href="~/App/Members">Members</a></li>
+            <li><a href="~/App/Gallery">Gallery</a></li>
+        </ul> 
+    </div>
+
+    <div class="Logo">
+        <a href="~/App/Index"><img src="~/Images/Logo.jpg" style="height:100px; width:300px" /></a>
+    </div>
+
+    <div class="loginBackGround">
+        <div class="login">
+            <label>Username:</label>
+            <input type="email" required />
+            <label>Password:</label>
+            <input type="password" required />
+            <input type="submit" value="Login" />
+            <a href="~/App/Register">Register</a>
+        </div>
+    </div>
+    
+    <div id="footer">
+        &copy; 2016 Gateway Z Club
+    </div>
+
+    <script>
+    $('.carousel').carousel({
+        interval: 4000 //changes the speed
+    })
+    </script>
+</body>
+</html>

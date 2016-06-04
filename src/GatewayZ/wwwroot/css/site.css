@@ -1,0 +1,236 @@
+﻿div.Logo{
+    position: absolute; 
+    top:0; 
+    left:auto;
+}
+
+div.loginBackGround{
+    position: absolute;
+    width:auto;
+    height: 6.5%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 10px; 
+    background-color: #808080;
+    border: 2px solid black;
+    opacity: 10;
+    top:20px;
+    right:50px;
+    z-index:1;
+}
+
+div.login{
+    position: relative;
+    color:black;
+    z-index:2;
+}
+
+#footer{
+    background-color: #222;
+    color: #eee;
+    padding: 8px 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+div.Navbox {
+    position: absolute;
+    top: 100px;    
+    z-index: 1;
+}
+
+.Navbox ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    height: 600px;
+    /*background-color: #808080;*/
+    stroke-width: 2px;
+    stroke:rgb(0,0,0);
+    z-index: 2;
+}
+
+.Navbox li{
+    background-color: #808080;
+    opacity: 0.8;
+    z-index: 3;
+}
+
+.Navbox li a{
+    display: block;
+    color: black;
+    padding: 8px 0 8px 16px;
+    text-decoration: none;
+}
+
+.Navbox li:hover{
+    opacity: 1.0;
+    z-index: 4;
+}
+
+/* Change the link color on hover */
+.Navbox li a:hover {
+    background-color: black;
+    color: white;
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+    z-index: 4;
+}
+
+.topNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.topNav li {
+    float: right;
+}
+
+.topNav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.topNav li a:hover {
+    background-color: #111;
+}
+
+.centerCalender {
+    margin: auto;
+    width: 60%;
+    padding: 10px;
+}
+
+.centerForm {
+    margin: auto;
+    width: 80%;
+    padding: 10px;
+}
+
+html,
+body {
+    height: 100%;
+    font-family:sans-serif;
+    font-size: 12px;
+}
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+/* Background images are set within the HTML using inline CSS, not here */
+
+.fill {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+/*/////////////////////////          ABOUT PAGE CSS          /////////////////////////*/
+.aboutpage {
+    background-image: url('../images/aboutpagebg.jpg');
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.contacts {
+    position: absolute;
+    top: 100px;    
+    z-index: 6;
+}
+
+.contacts ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 250px;
+    height: 400px;
+    background-color: #333;
+    stroke-width: 2px;
+    stroke:rgb(0,0,0);
+    z-index: 6;
+    border: 5px outset red;
+}
+
+
+.contacts li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+.contacts li a:hover {
+    background-color: #111;
+}
+
+.clubinfo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -350px;
+    margin-left: -500px;
+    width: 1000px;
+    height: 700px;
+    border: 5px outset red;
+    background-color: #333;
+    color: white;
+    z-index: 2;
+
+   
+}
+
+
+.infopic{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    max-width: 100px;
+    max-height: 300px;
+    
+}
+
+.infopic2{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    max-width: 100px;
+    max-height: 300px;
+    
+}
+.popboarder{
+    width: 990px;
+    height: 100px;
+    color: white;
+    background-color: black;
+    text-align:center;
+    text-decoration: underline;
+    font-size: 70px;
+
+}
+
