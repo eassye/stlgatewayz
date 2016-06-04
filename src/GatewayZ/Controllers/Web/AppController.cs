@@ -66,5 +66,10 @@ namespace GatewayZ.Controllers.Web
         {
             return View();
         }
+
+        public IActionResult History()
+        {
+            return View();
+        }
     }
 }

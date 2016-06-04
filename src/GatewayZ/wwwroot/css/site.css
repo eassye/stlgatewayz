@@ -85,6 +85,8 @@ div.Navbox {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    z-index:1;
+    position:relative;
 }
 
 .topNav li {
@@ -201,8 +203,6 @@ footer {
     background-color: #333;
     color: white;
     z-index: 2;
-
-   
 }
 
 
@@ -212,7 +212,6 @@ footer {
     left: 0px;
     max-width: 100px;
     max-height: 300px;
-    
 }
 
 .infopic2{
@@ -231,6 +230,29 @@ footer {
     text-align:center;
     text-decoration: underline;
     font-size: 70px;
-
 }
+
+div#background
+{
+   /*position: fixed;*/
+   top: 0px;
+   left: 0px;
+   z-index:0;
+ }
+
+ div#background img
+ {
+   position:fixed;
+   width: 100%;
+   height: 100%;
+   z-index:0;
+  }
+
+ .HistoryContent
+ {
+     position:absolute;
+     z-index:1;
+     text-align:center;
+     color:white;
+ }
 
