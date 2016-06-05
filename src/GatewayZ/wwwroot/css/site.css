@@ -36,7 +36,7 @@ div.login{
 
 div.Navbox {
     position: absolute;
-    top: 100px;    
+    top: 150px;    
     z-index: 1;
 }
 
@@ -120,9 +120,9 @@ div.Navbox {
 
 html,
 body {
-    height: 100%;
+    /*height: 100%;*/
     font-family:sans-serif;
-    font-size: 12px;
+    /*font-size: 12px;*/
 }
 
 .carousel,
@@ -145,7 +145,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    position:fixed;
+    position:relative;
 }
 
 footer {
@@ -161,7 +161,7 @@ footer {
 
 .contacts {
     position: absolute;
-    top: 100px;    
+    top: 58px;    
     z-index: 6;
 }
 
@@ -195,10 +195,10 @@ footer {
 .clubinfo {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 60%;
     margin-top: -350px;
     margin-left: -500px;
-    width: 1000px;
+    width: 900px;
     height: 700px;
     border: 5px outset red;
     background-color: #333;
@@ -208,7 +208,7 @@ footer {
 
 
 .infopic{
-    position: absolute;
+    position: fixed;
     top: 0px;
     left: 0px;
     max-width: 100px;
@@ -216,7 +216,7 @@ footer {
 }
 
 .infopic2{
-    position: absolute;
+    position: fixed;
     top: 0px;
     right: 0px;
     max-width: 100px;
@@ -224,7 +224,7 @@ footer {
     
 }
 .popboarder{
-    width: 990px;
+    width: 890px;
     height: 100px;
     color: white;
     background-color: black;
@@ -235,7 +235,6 @@ footer {
 
 div#background
 {
-   /*position: fixed;*/
    top: 0px;
    left: 0px;
    z-index:0;
