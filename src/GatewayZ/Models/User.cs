@@ -55,24 +55,5 @@ namespace GatewayZ.Models
         [Display(Name = "Security Answer 2:")]
         [Required(ErrorMessage = "Please Enter a Security Question Answer...")]
         public string answerTwo { get; set; }
-
-        //public User(User user)
-        //{
-        //    //Id = user.Id;
-        //    firstName = user.firstName;
-        //    lastName = user.lastName;
-        //    email = user.email;
-        //    displayName = user.displayName;
-        //    password = user.password;
-        //    securityQuestionOne = user.securityQuestionOne;
-        //    securityQuestionTwo = user.securityQuestionTwo;
-        //    answerOne = user.answerOne;
-        //    answerTwo = user.answerTwo;
-        //}
-
-        //public User()
-        //{
-
-        //}
     }
 }
