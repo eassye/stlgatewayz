@@ -19,7 +19,7 @@ namespace GatewayZ.Controllers.Web
         public AppController()
         {
             _client = new MongoClient();
-            _database = _client.GetDatabase(("GatewayZ"));
+            _database = _client.GetDatabase(("GatewayZ")); 
         }
 
         public IActionResult Index()
