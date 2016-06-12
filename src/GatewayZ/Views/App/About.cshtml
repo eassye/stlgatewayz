@@ -8,13 +8,13 @@
         <img src="~/Images/aboutpagebg.jpg" alt="bgimage" />
         <div class="contacts">
             <ul>
-                <li><a>President</a></li>
-                <li><a>Vice President</a></li>
-                <li><a>Secretary</a></li>
-                <li><a>Treasurer</a></li>
-                <li><a>Membership Director</a></li>
-                <li><a>Webmaster</a></li>
-                <li><a>Social media coordinator</a></li>
+                <li id="hide"><a>President</a></li>
+                <li><a href="">Vice President</a></li>
+                <li><a href="">Secretary</a></li>
+                <li><a href="">Treasurer</a></li>
+                <li><a href="">Membership Director</a></li>
+                <li><a href="">Webmaster</a></li>
+                <li><a href="">Social media coordinator</a></li>
             </ul>
         </div>
 
@@ -25,7 +25,18 @@
                 <img src="~/Images/z-arch.jpg" class="infopic2" />*@
             </div>
 
-            <p>This will be club info that will be static and not move or change layers. The nav bar on the side will bring an profile box the same size to the top layer so it takes the place of this box.</p>
+            <p id="test">This will be club info that will be static and not move or change layers. The nav bar on the side will bring an profile box the same size to the top layer so it takes the place of this box.</p>
         </div>
 </div>
 @*</body>*@
+
+@section scripts{
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        $("#hide").click(function () {
+            $("#test").toggle();
+        });
+    });
+</script>
+}

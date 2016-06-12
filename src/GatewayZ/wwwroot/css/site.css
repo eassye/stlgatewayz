@@ -36,7 +36,7 @@ div.login{
 
 div.Navbox {
     position: absolute;
-    top: 150px;    
+    top: 150px;   
     z-index: 1;
 }
 
@@ -46,7 +46,6 @@ div.Navbox {
     padding: 0;
     width: 250px;
     height: 600px;
-    /*background-color: #808080;*/
     stroke-width: 2px;
     stroke:rgb(0,0,0);
     z-index: 2;
@@ -54,6 +53,7 @@ div.Navbox {
 
 .Navbox li{
     background-color: #808080;
+    border: .5px solid black; 
     opacity: 0.8;
     z-index: 3;
 }
@@ -254,5 +254,11 @@ div#background
      z-index:1;
      text-align:center;
      color:white;
+ }
+
+ .historyGalleryByYear
+ {
+    position:absolute;
+     z-index:1;
  }
 
