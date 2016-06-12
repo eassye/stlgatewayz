@@ -10,7 +10,10 @@
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "Microsoft.AspNet.StaticFiles": "1.0.0-rc1-final",
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-rc1-final",
-    "MongoDB.Driver": "2.2.4"
+    "MongoDB.Driver": "2.2.4",
+    "jQuery.Fullcalendar": "2.4.0",
+    "jQuery.UI.Combined": "1.11.4",
+    "Moment.js": "2.13.0"
   },
 
   "commands": {

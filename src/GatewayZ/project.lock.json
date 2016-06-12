@@ -6,6 +6,19 @@
       "jQuery/2.2.1": {
         "type": "package"
       },
+      "jQuery.Fullcalendar/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.11.3",
+          "jQuery.UI.Combined": null
+        }
+      },
+      "jQuery.UI.Combined/1.11.4": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.6.4"
+        }
+      },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1300,6 +1313,9 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Moment.js/2.13.0": {
+        "type": "package"
+      },
       "MongoDB.Bson/2.2.4": {
         "type": "package",
         "compile": {
@@ -1558,6 +1574,19 @@
     "DNX,Version=v4.5.1/win7-x86": {
       "jQuery/2.2.1": {
         "type": "package"
+      },
+      "jQuery.Fullcalendar/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.11.3",
+          "jQuery.UI.Combined": null
+        }
+      },
+      "jQuery.UI.Combined/1.11.4": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.6.4"
+        }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
@@ -2856,6 +2885,9 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Moment.js/2.13.0": {
+        "type": "package"
+      },
       "MongoDB.Bson/2.2.4": {
         "type": "package",
         "compile": {
@@ -3114,6 +3146,19 @@
     "DNX,Version=v4.5.1/win7-x64": {
       "jQuery/2.2.1": {
         "type": "package"
+      },
+      "jQuery.Fullcalendar/2.4.0": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.11.3",
+          "jQuery.UI.Combined": null
+        }
+      },
+      "jQuery.UI.Combined/1.11.4": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.6.4"
+        }
       },
       "Microsoft.AspNet.Antiforgery/1.0.0-rc1-final": {
         "type": "package",
@@ -4412,6 +4457,9 @@
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
         }
       },
+      "Moment.js/2.13.0": {
+        "type": "package"
+      },
       "MongoDB.Bson/2.2.4": {
         "type": "package",
         "compile": {
@@ -4683,6 +4731,118 @@
         "Tools/common.ps1",
         "Tools/install.ps1",
         "Tools/jquery-1.12.0.intellisense.js",
+        "Tools/uninstall.ps1"
+      ]
+    },
+    "jQuery.Fullcalendar/2.4.0": {
+      "type": "package",
+      "sha512": "3iUwVu5G8L+UiwxndYQrFCA/gpayn1aHbXjfusX7qvq2D9E1w2e6FC97l3YosVi2A5gPsYNXGk95unADjfCNQg==",
+      "files": [
+        "content/Content/fullcalendar.css",
+        "content/Content/fullcalendar.min.css",
+        "content/Content/fullcalendar.print.css",
+        "content/Scripts/fullcalendar.js",
+        "content/Scripts/fullcalendar.min.js",
+        "content/Scripts/gcal.js",
+        "content/Scripts/lang/ar.js",
+        "content/Scripts/lang/ar-ma.js",
+        "content/Scripts/lang/ar-sa.js",
+        "content/Scripts/lang/ar-tn.js",
+        "content/Scripts/lang/bg.js",
+        "content/Scripts/lang/ca.js",
+        "content/Scripts/lang/cs.js",
+        "content/Scripts/lang/da.js",
+        "content/Scripts/lang/de.js",
+        "content/Scripts/lang/de-at.js",
+        "content/Scripts/lang/el.js",
+        "content/Scripts/lang/en-au.js",
+        "content/Scripts/lang/en-ca.js",
+        "content/Scripts/lang/en-gb.js",
+        "content/Scripts/lang/es.js",
+        "content/Scripts/lang/fa.js",
+        "content/Scripts/lang/fi.js",
+        "content/Scripts/lang/fr.js",
+        "content/Scripts/lang/fr-ca.js",
+        "content/Scripts/lang/he.js",
+        "content/Scripts/lang/hi.js",
+        "content/Scripts/lang/hr.js",
+        "content/Scripts/lang/hu.js",
+        "content/Scripts/lang/id.js",
+        "content/Scripts/lang/is.js",
+        "content/Scripts/lang/it.js",
+        "content/Scripts/lang/ja.js",
+        "content/Scripts/lang/ko.js",
+        "content/Scripts/lang/lt.js",
+        "content/Scripts/lang/lv.js",
+        "content/Scripts/lang/nb.js",
+        "content/Scripts/lang/nl.js",
+        "content/Scripts/lang/pl.js",
+        "content/Scripts/lang/pt.js",
+        "content/Scripts/lang/pt-br.js",
+        "content/Scripts/lang/ro.js",
+        "content/Scripts/lang/ru.js",
+        "content/Scripts/lang/sk.js",
+        "content/Scripts/lang/sl.js",
+        "content/Scripts/lang/sr.js",
+        "content/Scripts/lang/sr-cyrl.js",
+        "content/Scripts/lang/sv.js",
+        "content/Scripts/lang/th.js",
+        "content/Scripts/lang/tr.js",
+        "content/Scripts/lang/uk.js",
+        "content/Scripts/lang/vi.js",
+        "content/Scripts/lang/zh-cn.js",
+        "content/Scripts/lang/zh-tw.js",
+        "content/Scripts/lang-all.js",
+        "jQuery.Fullcalendar.2.4.0.nupkg",
+        "jQuery.Fullcalendar.2.4.0.nupkg.sha512",
+        "jQuery.Fullcalendar.nuspec",
+        "Package.nuspec.bak"
+      ]
+    },
+    "jQuery.UI.Combined/1.11.4": {
+      "type": "package",
+      "sha512": "yH5feeb4V4vX9KQdMlNH64f90yXYbthxAXpkbRr99LwwJmTl7+0KBTE61gXFrc9VXg/VxzEyF4u/gOgi+5ZqGw==",
+      "files": [
+        "Content/Content/themes/base/accordion.css",
+        "Content/Content/themes/base/all.css",
+        "Content/Content/themes/base/autocomplete.css",
+        "Content/Content/themes/base/base.css",
+        "Content/Content/themes/base/button.css",
+        "Content/Content/themes/base/core.css",
+        "Content/Content/themes/base/datepicker.css",
+        "Content/Content/themes/base/dialog.css",
+        "Content/Content/themes/base/draggable.css",
+        "Content/Content/themes/base/images/ui-bg_flat_0_aaaaaa_40x100.png",
+        "Content/Content/themes/base/images/ui-bg_flat_75_ffffff_40x100.png",
+        "Content/Content/themes/base/images/ui-bg_glass_55_fbf9ee_1x400.png",
+        "Content/Content/themes/base/images/ui-bg_glass_65_ffffff_1x400.png",
+        "Content/Content/themes/base/images/ui-bg_glass_75_dadada_1x400.png",
+        "Content/Content/themes/base/images/ui-bg_glass_75_e6e6e6_1x400.png",
+        "Content/Content/themes/base/images/ui-bg_glass_95_fef1ec_1x400.png",
+        "Content/Content/themes/base/images/ui-bg_highlight-soft_75_cccccc_1x100.png",
+        "Content/Content/themes/base/images/ui-icons_222222_256x240.png",
+        "Content/Content/themes/base/images/ui-icons_2e83ff_256x240.png",
+        "Content/Content/themes/base/images/ui-icons_454545_256x240.png",
+        "Content/Content/themes/base/images/ui-icons_888888_256x240.png",
+        "Content/Content/themes/base/images/ui-icons_cd0a0a_256x240.png",
+        "Content/Content/themes/base/menu.css",
+        "Content/Content/themes/base/progressbar.css",
+        "Content/Content/themes/base/resizable.css",
+        "Content/Content/themes/base/selectable.css",
+        "Content/Content/themes/base/selectmenu.css",
+        "Content/Content/themes/base/slider.css",
+        "Content/Content/themes/base/sortable.css",
+        "Content/Content/themes/base/spinner.css",
+        "Content/Content/themes/base/tabs.css",
+        "Content/Content/themes/base/theme.css",
+        "Content/Content/themes/base/tooltip.css",
+        "Content/Scripts/jquery-ui-1.11.4.js",
+        "Content/Scripts/jquery-ui-1.11.4.min.js",
+        "jQuery.UI.Combined.1.11.4.nupkg",
+        "jQuery.UI.Combined.1.11.4.nupkg.sha512",
+        "jQuery.UI.Combined.nuspec",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
         "Tools/uninstall.ps1"
       ]
     },
@@ -5697,6 +5857,19 @@
         "Microsoft.Net.Http.Headers.nuspec"
       ]
     },
+    "Moment.js/2.13.0": {
+      "type": "package",
+      "sha512": "o7xvZt9Ieb6idSfDerTlW/SrMUD309tqRgVeXzA23gwiFqqtXaqoB391pTlIs5UJBstW6M2CYP8ihs2WbrIYEA==",
+      "files": [
+        "Content/Scripts/moment.js",
+        "Content/Scripts/moment.min.js",
+        "Content/Scripts/moment-with-locales.js",
+        "Content/Scripts/moment-with-locales.min.js",
+        "Moment.js.2.13.0.nupkg",
+        "Moment.js.2.13.0.nupkg.sha512",
+        "Moment.js.nuspec"
+      ]
+    },
     "MongoDB.Bson/2.2.4": {
       "type": "package",
       "sha512": "Q3TLxEVx5MsoXgqHqUFAh15kGJmgv1pvgXtm4/d9E22Ee8X9jVoPC8zIgIuQddO771Zbn9chJE+5QLfgxZl25Q==",
@@ -6538,7 +6711,10 @@
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-rc1-final",
       "Microsoft.AspNet.StaticFiles >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Mvc.TagHelpers >= 6.0.0-rc1-final",
-      "MongoDB.Driver >= 2.2.4"
+      "MongoDB.Driver >= 2.2.4",
+      "jQuery.Fullcalendar >= 2.4.0",
+      "jQuery.UI.Combined >= 1.11.4",
+      "Moment.js >= 2.13.0"
     ],
     "DNX,Version=v4.5.1": []
   }

@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-//using GatewayZ.Controllers.Web;
+using GatewayZ.Controllers.Web;
+using System.Web.Mvc;
 
 namespace GatewayZTest
 {
@@ -8,8 +9,10 @@ namespace GatewayZTest
     public class ControllerTests
     {
         [TestMethod]
+        [ExpectedException(typeof(NotImplementedException))]
         public void TestMethod1()
         {
+   
         }
     }
 }
