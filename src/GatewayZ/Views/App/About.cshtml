@@ -2,14 +2,12 @@
     ViewBag.Title = "About Page";
 }
 
-@*<body class="aboutpage">*@
-
     <div id="background">
         <img src="~/Images/aboutpagebg.jpg" alt="bgimage" />
         <div class="contacts">
             <ul>
-                <li id="hide"><a>President</a></li>
-                <li><a href="">Vice President</a></li>
+                <li id="togglePresidentInfo"><a>President</a></li>
+                <li id="test"><a href="#">Vice President</a></li>
                 <li><a href="">Secretary</a></li>
                 <li><a href="">Treasurer</a></li>
                 <li><a href="">Membership Director</a></li>
@@ -19,23 +17,34 @@
         </div>
 
         <div class="clubinfo">
-            <div class="popboarder">
+            @*<div class="popboarder">
                 <p>CLUB INFO</p>
-                @*<img src="~/Images/z-arch.jpg" class="infopic" />
-                <img src="~/Images/z-arch.jpg" class="infopic2" />*@
-            </div>
+                <img src="~/Images/z-arch.jpg" class="infopic" />
+                <img src="~/Images/z-arch.jpg" class="infopic2" />
+            </div>*@
+            <div class="content">
+                <div class="contentImage">
+                    <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic"/>
+                </div>
 
-            <p id="test">This will be club info that will be static and not move or change layers. The nav bar on the side will bring an profile box the same size to the top layer so it takes the place of this box.</p>
+                <div class="contentText">
+                    <p><strong>Name:</strong> John Doe</p>
+                    <p><strong>Role:</strong> President</p>
+                    <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
+                </div>
+            </div>
         </div>
-</div>
-@*</body>*@
+    </div>
+
 
 @section scripts{
 <script type="text/javascript">
 
     $(document).ready(function () {
-        $("#hide").click(function () {
-            $("#test").toggle();
+        $('.content').hide();
+        $("#togglePresidentInfo").click(function () {
+            
+            $(".content").toggle();
         });
     });
 </script>
