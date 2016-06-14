@@ -59,9 +59,12 @@ div.Navbox {
 }
 
 .Navbox li a{
+    font-weight: bold;
+    text-align:center;
     display: block;
     color: black;
-    padding: 8px 0 8px 16px;
+    padding: 8px 0 8px 0;
+    /*padding: 8px 0 8px 16px;*/
     text-decoration: none;
 }
 
@@ -201,8 +204,9 @@ footer {
     width: 900px;
     height: 700px;
     border: 5px outset red;
-    background-color: #333;
-    z-index: 2;
+    /*background-color: #333;*/
+    background-color:gainsboro;
+    z-index: 1;
 }
 
 

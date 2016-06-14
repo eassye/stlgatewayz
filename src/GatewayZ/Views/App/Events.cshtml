@@ -2,40 +2,40 @@
     ViewBag.Title = "Events Page";
 }
 
-@*<h1>Events Page</h1>
-<div class="centerCalender">
-    <iframe src="https://calendar.google.com/calendar/embed?src=eassye1%40yahoo.com&ctz=America/Chicago" style="border: 0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
-</div>*@
-
 @section scripts{
     <script type="text/javascript">
         $(document).ready(function () {
             $('#calendar').fullCalendar({
-                theme: true,
+                theme: false,
                 header: {
                     left: 'prev,next today',
                     center: 'title',
                     right: 'month,agendaWeel,agendaDay'
                 },
 
-                defaultView: 'agendaDay',
+                buttonIcons: {
+                    prev: 'left-single-arrow',
+                    next: 'right-single-arrow'
+                },
+
+                defaultView: 'month',
                 editable: true,
                 allDaySlot: false,
                 selecttable: true,
-                slotMinutes: 15,
-                events: "/home/getevents/"
+                slotMinutes: 15
             });
         });
     </script>
 }
 
-
-<div class="jumbotron">
+<div class="clubinfo">
+    @*<div class="jumbotron">
         <hi>Full Calendar Demo</hi>
-</div>
+    </div>*@
 
-<div class="row">
-        <div class="col-md-12">
+    <div class="row">
+        <div class="col-md-12" style="z-index:2">
             <div id="calendar"></div>
         </div>
+    </div>
 </div>
