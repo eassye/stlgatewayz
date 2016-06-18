@@ -178,7 +178,8 @@ footer {
     stroke-width: 2px;
     stroke:rgb(0,0,0);
     z-index: 6;
-    border: 5px outset red;
+    /*border: 5px outset red;*/
+    border: 5px outset black;
 }
 
 
@@ -203,7 +204,8 @@ footer {
     margin-left: -500px;
     width: 900px;
     height: 700px;
-    border: 5px outset red;
+    /*border: 5px outset red;*/
+    border: 5px outset black;
     /*background-color: #333;*/
     background-color:gainsboro;
     z-index: 1;

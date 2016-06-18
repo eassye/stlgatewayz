@@ -7,6 +7,8 @@ using MongoDB.Driver;
 using GatewayZ.Services;
 using GatewayZ.Models;
 using MongoDB.Bson;
+using System.Security.Claims;
+using Microsoft.AspNet.Http;
 
 namespace GatewayZ.Controllers.Web
 {
@@ -25,6 +27,30 @@ namespace GatewayZ.Controllers.Web
         public IActionResult Index()
         {
             return PartialView();
+        }
+
+        [HttpPost]
+        public IActionResult Index(User user)
+        {
+            try
+            {
+                var collection = _database.GetCollection<User>("User");
+                var filter = Builders<User>.Filter.Eq("email", user.email);
+                var document = collection.Find(filter).First();
+
+                if (document.email == user.email && document.password == user.password)
+                {
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    return PartialView();
+                }
+            }
+            catch
+            {
+                return PartialView();
+            }
         }
 
         public IActionResult About()
@@ -64,6 +90,8 @@ namespace GatewayZ.Controllers.Web
 
         public IActionResult Members()
         {
+            //var email = ClaimsPrincipal.Current.FindFirst("email").Value;
+
             return View();
         }
 

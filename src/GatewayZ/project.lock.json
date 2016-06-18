@@ -3,6 +3,36 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
+      "Auth0/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.11",
+          "RestSharp": "104.1.0"
+        },
+        "compile": {
+          "lib/Auth0.dll": {}
+        },
+        "runtime": {
+          "lib/Auth0.dll": {}
+        }
+      },
+      "Auth0-ASPNET/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Auth0": "1.4.0",
+          "WebActivatorEx": "2.0.1"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.IdentityModel.Services"
+        ],
+        "compile": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        }
+      },
       "jQuery/2.2.1": {
         "type": "package"
       },
@@ -767,6 +797,27 @@
           "lib/dnx451/Microsoft.AspNet.Server.Kestrel.dll": {}
         }
       },
+      "Microsoft.AspNet.Session/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Caching.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Session.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Session.dll": {}
+        }
+      },
       "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -1298,6 +1349,21 @@
           "lib/net451/Microsoft.Extensions.WebEncoders.Core.dll": {}
         }
       },
+      "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta8": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0-rc1-final": {
         "type": "package",
         "frameworkAssemblies": [
@@ -1311,6 +1377,15 @@
         },
         "runtime": {
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
         }
       },
       "Moment.js/2.13.0": {
@@ -1357,6 +1432,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/104.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net4/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net4/RestSharp.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -1569,9 +1653,51 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "WebActivatorEx/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivatorEx.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivatorEx.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
+      "Auth0/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.11",
+          "RestSharp": "104.1.0"
+        },
+        "compile": {
+          "lib/Auth0.dll": {}
+        },
+        "runtime": {
+          "lib/Auth0.dll": {}
+        }
+      },
+      "Auth0-ASPNET/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Auth0": "1.4.0",
+          "WebActivatorEx": "2.0.1"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.IdentityModel.Services"
+        ],
+        "compile": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        }
+      },
       "jQuery/2.2.1": {
         "type": "package"
       },
@@ -2339,6 +2465,27 @@
           "runtimes/win7-x86/native/libuv.dll": {}
         }
       },
+      "Microsoft.AspNet.Session/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Caching.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Session.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Session.dll": {}
+        }
+      },
       "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -2870,6 +3017,21 @@
           "lib/net451/Microsoft.Extensions.WebEncoders.Core.dll": {}
         }
       },
+      "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta8": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0-rc1-final": {
         "type": "package",
         "frameworkAssemblies": [
@@ -2883,6 +3045,15 @@
         },
         "runtime": {
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
         }
       },
       "Moment.js/2.13.0": {
@@ -2929,6 +3100,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/104.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net4/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net4/RestSharp.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -3141,9 +3321,51 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "WebActivatorEx/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivatorEx.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivatorEx.dll": {}
+        }
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
+      "Auth0/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "4.5.11",
+          "RestSharp": "104.1.0"
+        },
+        "compile": {
+          "lib/Auth0.dll": {}
+        },
+        "runtime": {
+          "lib/Auth0.dll": {}
+        }
+      },
+      "Auth0-ASPNET/1.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Auth0": "1.4.0",
+          "WebActivatorEx": "2.0.1"
+        },
+        "frameworkAssemblies": [
+          "System.IdentityModel",
+          "System.IdentityModel.Services"
+        ],
+        "compile": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Auth0.AspNet.dll": {}
+        }
+      },
       "jQuery/2.2.1": {
         "type": "package"
       },
@@ -3911,6 +4133,27 @@
           "runtimes/win7-x64/native/libuv.dll": {}
         }
       },
+      "Microsoft.AspNet.Session/1.0.0-rc1-final": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.Http.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Caching.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0-rc1-final",
+          "Microsoft.Extensions.OptionsModel": "1.0.0-rc1-final"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/net451/Microsoft.AspNet.Session.dll": {}
+        },
+        "runtime": {
+          "lib/net451/Microsoft.AspNet.Session.dll": {}
+        }
+      },
       "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
         "type": "package",
         "dependencies": {
@@ -4442,6 +4685,21 @@
           "lib/net451/Microsoft.Extensions.WebEncoders.Core.dll": {}
         }
       },
+      "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta8": {
+        "type": "package",
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll": {}
+        }
+      },
       "Microsoft.Net.Http.Headers/1.0.0-rc1-final": {
         "type": "package",
         "frameworkAssemblies": [
@@ -4455,6 +4713,15 @@
         },
         "runtime": {
           "lib/net451/Microsoft.Net.Http.Headers.dll": {}
+        }
+      },
+      "Microsoft.Web.Infrastructure/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
+        },
+        "runtime": {
+          "lib/net40/Microsoft.Web.Infrastructure.dll": {}
         }
       },
       "Moment.js/2.13.0": {
@@ -4501,6 +4768,15 @@
         },
         "runtime": {
           "lib/net45/Newtonsoft.Json.dll": {}
+        }
+      },
+      "RestSharp/104.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/net4/RestSharp.dll": {}
+        },
+        "runtime": {
+          "lib/net4/RestSharp.dll": {}
         }
       },
       "System.Collections/4.0.0": {
@@ -4713,10 +4989,51 @@
         "runtime": {
           "lib/net45/_._": {}
         }
+      },
+      "WebActivatorEx/2.0.1": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Web.Infrastructure": "1.0.0"
+        },
+        "compile": {
+          "lib/net40/WebActivatorEx.dll": {}
+        },
+        "runtime": {
+          "lib/net40/WebActivatorEx.dll": {}
+        }
       }
     }
   },
   "libraries": {
+    "Auth0/1.4.0": {
+      "type": "package",
+      "sha512": "bFzqg0iMgyyWKPWDjhYTRBQ1s+O6sCVr0yXt0JTkG/sh4gJJ35UYRBOK5XyWrvEhRKELt0pnC6E2T8LVcCtqXw==",
+      "files": [
+        "Auth0.1.4.0.nupkg",
+        "Auth0.1.4.0.nupkg.sha512",
+        "Auth0.nuspec",
+        "lib/Auth0.dll"
+      ]
+    },
+    "Auth0-ASPNET/1.4.0": {
+      "type": "package",
+      "sha512": "9FMSgi7NDImlJ0fv4fb6YV8YdhQiHlNQRQkPtLFKiPruqF/Y7S70vxGCs5ueNVp7NndB9iL8HVQAfybYyrp4qA==",
+      "files": [
+        "Auth0-ASPNET.1.4.0.nupkg",
+        "Auth0-ASPNET.1.4.0.nupkg.sha512",
+        "Auth0-ASPNET.nuspec",
+        "content/net/App_Start/SessionAuthenticationConfig.cs.pp",
+        "content/net/LoginCallback.ashx.cs.pp",
+        "content/net/LoginCallback.ashx.pp",
+        "content/net/web.config.install.xdt",
+        "content/net45/App_Start/SessionAuthenticationConfig.cs.pp",
+        "content/net45/LoginCallback.ashx.cs.pp",
+        "content/net45/LoginCallback.ashx.pp",
+        "content/net45/web.config.install.xdt",
+        "lib/net/Auth0.AspNet.dll",
+        "lib/net45/Auth0.AspNet.dll"
+      ]
+    },
     "jQuery/2.2.1": {
       "type": "package",
       "sha512": "TyHkfJe6kjZWbE6bFuMDBdPrqy/557zzYYy0xX1ubPF3TUWc9F9KlgAw17FLoyCD667l1wMqh/eWxS2INXWgVQ==",
@@ -5377,6 +5694,20 @@
         "thirdpartynotices.txt"
       ]
     },
+    "Microsoft.AspNet.Session/1.0.0-rc1-final": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "nMImkPMx/z4YL/bCBaTywQZD28sg6IvWMRckzY4hMZuhhRWr4z3HHYgORCaKbJQH3nJkfL6rb+TpmWobN9gKpw==",
+      "files": [
+        "lib/dotnet5.4/Microsoft.AspNet.Session.dll",
+        "lib/dotnet5.4/Microsoft.AspNet.Session.xml",
+        "lib/net451/Microsoft.AspNet.Session.dll",
+        "lib/net451/Microsoft.AspNet.Session.xml",
+        "Microsoft.AspNet.Session.1.0.0-rc1-final.nupkg",
+        "Microsoft.AspNet.Session.1.0.0-rc1-final.nupkg.sha512",
+        "Microsoft.AspNet.Session.nuspec"
+      ]
+    },
     "Microsoft.AspNet.StaticFiles/1.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -5843,6 +6174,24 @@
         "Microsoft.Extensions.WebEncoders.Core.nuspec"
       ]
     },
+    "Microsoft.Framework.DependencyInjection.Abstractions/1.0.0-beta8": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "7WL9hy+7bYDyBtIrrW5tw57dChBcizjSyuD0p5pVkay+gSseLqvAk72a4KldMmRgH//7t74d/YVrTvLhw83b7w==",
+      "files": [
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/dnx451/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "lib/dnxcore50/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/dnxcore50/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "lib/dotnet/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/dotnet/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Abstractions.dll",
+        "lib/net45/Microsoft.Framework.DependencyInjection.Abstractions.xml",
+        "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta8.nupkg",
+        "Microsoft.Framework.DependencyInjection.Abstractions.1.0.0-beta8.nupkg.sha512",
+        "Microsoft.Framework.DependencyInjection.Abstractions.nuspec"
+      ]
+    },
     "Microsoft.Net.Http.Headers/1.0.0-rc1-final": {
       "type": "package",
       "serviceable": true,
@@ -5855,6 +6204,16 @@
         "Microsoft.Net.Http.Headers.1.0.0-rc1-final.nupkg",
         "Microsoft.Net.Http.Headers.1.0.0-rc1-final.nupkg.sha512",
         "Microsoft.Net.Http.Headers.nuspec"
+      ]
+    },
+    "Microsoft.Web.Infrastructure/1.0.0": {
+      "type": "package",
+      "sha512": "FNmvLn5m2LTU/Rs2KWVo0SIIh9Ek+U0ojex7xeDaSHw/zgEP77A8vY5cVWgUtBGS8MJfDGNn8rpXJWEIQaPwTg==",
+      "files": [
+        "lib/net40/Microsoft.Web.Infrastructure.dll",
+        "Microsoft.Web.Infrastructure.1.0.0.nupkg",
+        "Microsoft.Web.Infrastructure.1.0.0.nupkg.sha512",
+        "Microsoft.Web.Infrastructure.nuspec"
       ]
     },
     "Moment.js/2.13.0": {
@@ -5927,6 +6286,28 @@
         "Newtonsoft.Json.6.0.6.nupkg.sha512",
         "Newtonsoft.Json.nuspec",
         "tools/install.ps1"
+      ]
+    },
+    "RestSharp/104.1.0": {
+      "type": "package",
+      "sha512": "dlimMbhHZ7T2saCYJDcuonz7XSpnUUAe7RxN1O5ETi7xPnfAwA20Uf5Iy9XYOm+tV4FLM0GIQiVFxkjR7NJI8A==",
+      "files": [
+        "lib/net35/RestSharp.dll",
+        "lib/net35/RestSharp.xml",
+        "lib/net35-client/RestSharp.dll",
+        "lib/net35-client/RestSharp.xml",
+        "lib/net4/RestSharp.dll",
+        "lib/net4/RestSharp.xml",
+        "lib/net4-client/RestSharp.dll",
+        "lib/net4-client/RestSharp.xml",
+        "lib/sl4/RestSharp.Silverlight.dll",
+        "lib/sl4/RestSharp.Silverlight.xml",
+        "lib/sl4-wp71/RestSharp.WindowsPhone.dll",
+        "lib/sl4-wp71/RestSharp.WindowsPhone.xml",
+        "readme.txt",
+        "RestSharp.104.1.0.nupkg",
+        "RestSharp.104.1.0.nupkg.sha512",
+        "RestSharp.nuspec"
       ]
     },
     "System.Collections/4.0.0": {
@@ -6702,6 +7083,16 @@
         "System.Threading.4.0.0.nupkg.sha512",
         "System.Threading.nuspec"
       ]
+    },
+    "WebActivatorEx/2.0.1": {
+      "type": "package",
+      "sha512": "JTLut1GxqnnyscJl4duPd8tBRYHRdcn7sk3slx7Iwu+XOktdZQK6XpohMomPf+aXv5LTXu4+p0RercZH9ldKFg==",
+      "files": [
+        "lib/net40/WebActivatorEx.dll",
+        "WebActivatorEx.2.0.1.nupkg",
+        "WebActivatorEx.2.0.1.nupkg.sha512",
+        "WebActivatorEx.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
@@ -6714,7 +7105,11 @@
       "MongoDB.Driver >= 2.2.4",
       "jQuery.Fullcalendar >= 2.4.0",
       "jQuery.UI.Combined >= 1.11.4",
-      "Moment.js >= 2.13.0"
+      "Moment.js >= 2.13.0",
+      "Microsoft.Framework.DependencyInjection.Abstractions >= 1.0.0-beta8",
+      "Auth0-ASPNET >= 1.4.0",
+      "Microsoft.AspNet.Session >= 1.0.0-rc1-final",
+      "Microsoft.Extensions.Caching.Memory >= 1.0.0-rc1-final"
     ],
     "DNX,Version=v4.5.1": []
   }
