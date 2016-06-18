@@ -6,10 +6,11 @@ using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
+
 
 namespace GatewayZ.Models
 {
-    
     public class User
     {
         [BsonRepresentation(BsonType.ObjectId)]
@@ -27,6 +28,10 @@ namespace GatewayZ.Models
         [Required(ErrorMessage = "Email Address is Required...")]
         [EmailAddress(ErrorMessage = "Invalid Email Address...")]
         public string email { get; set; }
+
+        [Display(Name = "Phone Number")]
+        [Required(ErrorMessage = "Phone Number is Required...")]
+        public string phoneNumber { get; set; }
 
         [Display(Name = "Display Name:")]
         [Required(ErrorMessage = "Please Provide a Display Name...")]
