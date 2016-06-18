@@ -26,6 +26,9 @@ namespace GatewayZ.Controllers.Web
 
         public IActionResult Index()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
+
             return PartialView();
         }
 
@@ -40,6 +43,8 @@ namespace GatewayZ.Controllers.Web
 
                 if (document.email == user.email && document.password == user.password)
                 {
+                    HttpContext.Session.SetString("Email", document.email);
+                    HttpContext.Session.SetString("Password", document.password);
                     return RedirectToAction("Index");
                 }
                 else
@@ -52,19 +57,31 @@ namespace GatewayZ.Controllers.Web
                 return PartialView();
             }
         }
+        
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Index");
+        }
 
         public IActionResult About()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
             return View();
         }
 
         public IActionResult Events()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
             return View();
         }
 
         public IActionResult BecomeAMember()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
             return View();
         }
 
@@ -85,23 +102,30 @@ namespace GatewayZ.Controllers.Web
 
         public IActionResult Gallery()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
             return View();
         }
 
         public IActionResult Members()
         {
-            //var email = ClaimsPrincipal.Current.FindFirst("email").Value;
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
 
             return View();
         }
 
         public IActionResult History()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
             return View();
         }
 
         public IActionResult Admin()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
             return View();
         }
     }
