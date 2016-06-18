@@ -173,15 +173,12 @@ footer {
     margin: 0;
     padding: 0;
     width: 250px;
-    height: 400px;
-    background-color: #333;
+    height: 393px;
     stroke-width: 2px;
     stroke:rgb(0,0,0);
     z-index: 6;
-    /*border: 5px outset red;*/
-    border: 5px outset black;
+    border: 5px outset red;
 }
-
 
 .contacts li a {
     display: block;
@@ -189,11 +186,15 @@ footer {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    background-color: #333;
+    opacity: 0.8;
+    
 }
 
 /* Change the link color to #111 (black) on hover */
 .contacts li a:hover {
     background-color: #111;
+    opacity: 1.0;
 }
 
 .clubinfo {
@@ -204,29 +205,32 @@ footer {
     margin-left: -500px;
     width: 900px;
     height: 700px;
-    /*border: 5px outset red;*/
-    border: 5px outset black;
-    /*background-color: #333;*/
+    border: 5px outset red;
     background-color:gainsboro;
     z-index: 1;
 }
 
 
+
 .infopic{
-    position: fixed;
+    position:absolute;
     top: 0px;
     left: 0px;
-    max-width: 100px;
-    max-height: 300px;
+  
 }
 
 .infopic2{
-    position: fixed;
+    position: absolute;
     top: 0px;
-    right: 0px;
+    right: 100px;
+   
+   }
+
+
+.infopics{  
     max-width: 100px;
-    max-height: 300px;
-    
+    max-height: 100px;
+
 }
 .popboarder{
     width: 890px;
@@ -253,19 +257,7 @@ div#background
    z-index:0;
   }
 
- .HistoryContent
- {
-     position:absolute;
-     z-index:1;
-     text-align:center;
-     color:white;
- }
 
- .historyGalleryByYear
- {
-    position:absolute;
-     z-index:1;
- }
 
  .contentPic{
     max-width: 250px;
@@ -279,6 +271,26 @@ div#background
     width: 500px;
     height: 600px;
     color:black;
+ }
+
+
+
+
+
+
+
+  .HistoryContent
+ {
+     position:absolute;
+     z-index:1;
+     text-align:center;
+     color:white;
+ }
+
+ .historyGalleryByYear
+ {
+    position:absolute;
+     z-index:1;
  }
 
 
