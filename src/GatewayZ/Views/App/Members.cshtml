@@ -2,20 +2,3 @@
     ViewBag.Title = "Members Page";
 }
 
-<script src="https://cdn.auth0.com/js/lock-9.1.min.js"></script>
-<script type="text/javascript">
-
-  var lock = new Auth0Lock('iFPpIN3eHQrwhXn7ibnw3Lr4tO5gVlJ4', 'gatewayz.auth0.com');
-
-
-  function signin() {
-    lock.show({
-        callbackURL: ''
-      , responseType: 'code'
-      , authParams: {
-        scope: 'openid email'  // Learn about scopes: https://auth0.com/docs/scopes
-      }
-    });
-  }
-</script>
-<button onclick="window.signin();">Login</button>
