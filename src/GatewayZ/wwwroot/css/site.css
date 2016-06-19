@@ -14,8 +14,8 @@ div.loginBackGround{
     background-color: #808080;
     border: 2px solid black;
     opacity: 10;
-    top:20px;
-    right:50px;
+	top: 0;
+	right: 0%;
     z-index:1;
 }
 
