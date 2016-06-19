@@ -18,37 +18,37 @@
 </head>
 
 <body style="overflow-y: hidden">
-    
+
     <header id="myCarousel" class="carousel slide">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <!-- Set the first background image using inline CSS below. -->
-                    <div class="fill"><img src="~/Images/PSZcarEdit.jpg" class="img-responsive"/></div>
-                </div>
-                <div class="item">
-                    <!-- Set the second background image using inline CSS below. -->
-                    <div class="fill"><img src="~/Images/370znismo.jpg" class="img-responsive"/></div>
-                </div>
-                <div class="item">
-                    <!-- Set the third background image using inline CSS below. -->
-                    <div class="fill"><img src="~/Images/Zcar4.jpg" class="img-responsive"/></div>
-                </div>
-                <div class="item">
-                    <!-- Set the forth background image using inline CSS below. -->
-                    <div class="fill"><img src="~/Images/2014_nissan_370z_nismo_2-wide.jpg" class="img-responsive"/></div>
-                </div>
-                <div class="item">
-                    <!-- Set the fifth background image using inline CSS below. -->
-                    <div class="fill"><img src="~/Images/bluez2.jpg" class="img-responsive"/></div>
-                </div>
-                <div class="item">
-                    <!-- Set the sixth background image using inline CSS below. -->
-                    <div class="fill"><img src="~/Images/yellowz.jpg" class="img-responsive"/></div>
-                </div>
+        <div class="carousel-inner">
+            <div class="item active">
+                <!-- Set the first background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/PSZcarEdit.jpg" class="img-responsive" /></div>
             </div>
+            <div class="item">
+                <!-- Set the second background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/370znismo.jpg" class="img-responsive" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the third background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/Zcar4.jpg" class="img-responsive" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the forth background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/2014_nissan_370z_nismo_2-wide.jpg" class="img-responsive" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the fifth background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/bluez2.jpg" class="img-responsive" /></div>
+            </div>
+            <div class="item">
+                <!-- Set the sixth background image using inline CSS below. -->
+                <div class="fill"><img src="~/Images/yellowz.jpg" class="img-responsive" /></div>
+            </div>
+        </div>
     </header>
-    
-     <div class="Navbox">
+
+    <div class="Navbox">
         <ul>
             <li><a href="~/App/Index">Home</a></li>
             <li><a href="~/App/About">About</a></li>
@@ -57,7 +57,7 @@
             <li><a href="~/App/Members">Members</a></li>
             <li><a href="~/App/Gallery">Gallery</a></li>
             <li><a href="~/App/Admin">Admin</a></li>
-        </ul> 
+        </ul>
     </div>
 
     <div class="Logo">
@@ -68,35 +68,41 @@
         @if (@ViewBag.Email != null && @ViewBag.Password != null)
         {
             <p>Welcome @ViewBag.Email</p>
-             @Html.ActionLink("Logout", "Logout");
+            @Html.ActionLink("Logout", "Logout");
         }
         else
         {
-        <div class="login" method="post">
-            <form role="form" method="post">
-                
-                    @Html.LabelFor(model => model.email)
-                    @Html.EditorFor(model => model.email, new { @class = "form-control" })
+            <div class="login">
+                <form class="form-inline" role="form" method="post">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.email)
+                        @Html.EditorFor(model => model.email, new { @class = "form-control", @id = "inputEmail", placeholder = "Email" })
+                    </div>
+                    
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.password)
+                        @Html.EditorFor(model => model.password, new { @class = "form-control", @id = "inputPassword", placeholder = "Password" })
+                    </div>
 
-                    @Html.LabelFor(model => model.password)
-                    @Html.EditorFor(model => model.password, new { @class = "form-control" })
-                    <input type="submit" value="Login" class="btn btn-default" />
-                    <a href="~/App/Register">Register</a>
-                       
-            </form>
-        </div>
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-log-in"></span> Log in
+                    </button>
+
+                    <a href="~/App/Register"><strong>Register</strong></a>
+                </form>
+            </div>
         }
     </div>
-    
+
     <div id="footer">
         &copy; @DateTime.Now.Year Gateway Z Club
         <p style="float:right">Like us on Facebook!<a href="https://www.facebook.com/gatewayzclub/"><img src="~/Images/facebooklogo.jpg" alt="facebook logo" class="img-rounded" width="25" height="25" /></a></p>
     </div>
 
     <script>
-    $('.carousel').carousel({
-        interval: 5000 //changes the speed
-    })
+        $('.carousel').carousel({
+            interval: 5000 //changes the speed
+        })
     </script>
 </body>
 </html>
