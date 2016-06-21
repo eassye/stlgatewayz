@@ -1,0 +1,14 @@
+C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZTest.dll
+C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZTest.pdb
+C:\github\GatewayZ\GatewayZTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\github\GatewayZ\GatewayZTest\obj\Debug\GatewayZTest.csprojResolveAssemblyReference.cache
+C:\github\GatewayZ\GatewayZTest\obj\Debug\GatewayZTest.dll
+C:\github\GatewayZ\GatewayZTest\obj\Debug\GatewayZTest.pdb
+C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZ.dll
+C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZ.pdb
+C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZ.xml
+C:\github\GatewayZ\GatewayZTest\bin\Debug\MongoDB.Bson.dll
+C:\github\GatewayZ\GatewayZTest\bin\Debug\MongoDB.Driver.Core.dll
+C:\github\GatewayZ\GatewayZTest\bin\Debug\MongoDB.Driver.dll
+C:\github\GatewayZ\GatewayZTest\bin\Debug\MongoDB.Bson.xml
+C:\github\GatewayZ\GatewayZTest\bin\Debug\MongoDB.Driver.xml
