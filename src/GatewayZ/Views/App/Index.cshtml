@@ -67,8 +67,7 @@
     <div class="loginBackGround">
         @if (@ViewBag.Email != null && @ViewBag.Password != null)
         {
-            <p>Welcome @ViewBag.Email</p>
-            @Html.ActionLink("Logout", "Logout");
+            <p><strong>Welcome @ViewBag.Email</strong> | @Html.ActionLink("Logout", "Logout")</p>
         }
         else
         {
@@ -78,7 +77,7 @@
                         @Html.LabelFor(model => model.email)
                         @Html.EditorFor(model => model.email, new { @class = "form-control", @id = "inputEmail", placeholder = "Email" })
                     </div>
-                    
+
                     <div class="form-group">
                         @Html.LabelFor(model => model.password)
                         @Html.EditorFor(model => model.password, new { @class = "form-control", @id = "inputPassword", placeholder = "Password" })
