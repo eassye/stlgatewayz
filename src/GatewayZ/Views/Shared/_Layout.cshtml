@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="~/css/fullcalendar.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div class="topNav">
@@ -23,11 +25,8 @@
             {
                 <li style="float:left"><a>Welcome @ViewBag.Email</a></li>
                 <li style="float:left">
-                    <a class="glyphicon glyphicon-log-out"@Html.ActionLink("Logout", "Logout")></a>
-                                         
-                 </li>
-     
-
+                    <a class="glyphicon glyphicon-log-out"@Html.ActionLink("Logout", "Logout")></a>                     
+                </li>
             }
             else
             {
