@@ -9,7 +9,7 @@ namespace GatewayZTest
     public class UserTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void TestingUserModelContainsAndReturnsCorrectData()
         {
             User user = new User();
             user.displayName = "erick";
