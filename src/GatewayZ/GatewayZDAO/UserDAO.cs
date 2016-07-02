@@ -17,18 +17,22 @@ namespace GatewayZ.GatewayZDAO
             _client = new MongoClient();
             _database = _client.GetDatabase(("GatewayZ"));
         }
-        public List<string> Users()
+        public List<string> UsersList(string club)
         {
-            User users = new User();
-            var collection = _database.GetCollection<User>("User");
-            var filter = Builders<User>.Filter.Eq("displayName", users.displayName);
-            var document = collection.Find(filter).ToString();
-
             var userList = new List<string>();
 
-            foreach (var disName in document)
+            User _user = new User();
+
+            var collection = _database.GetCollection<User>("User");
+
+            var query =
+                        from e in collection.AsQueryable<User>()
+                        where e.club == club
+                        select e.displayName;
+
+            foreach (var displayName in query)
             {
-                userList.Add(document);
+                userList.Add(displayName);
             }
 
             return userList;

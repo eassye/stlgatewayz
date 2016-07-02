@@ -2,3 +2,22 @@
     ViewBag.Title = "Members Page";
 }
 
+@using GatewayZ.GatewayZDAO;
+
+@{
+    var list = new UserDAO();
+
+    string club = "GatewayZ";
+
+    var names = list.UsersList(club);
+    <ul>
+        @foreach (var name in names)
+        {
+        <li>@name</li>
+        }
+
+    </ul>
+}
+
+ 
+    

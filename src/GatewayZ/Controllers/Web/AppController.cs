@@ -9,6 +9,7 @@ using GatewayZ.Models;
 using MongoDB.Bson;
 using System.Security.Claims;
 using Microsoft.AspNet.Http;
+using GatewayZ.GatewayZDAO;
 
 namespace GatewayZ.Controllers.Web
 {
