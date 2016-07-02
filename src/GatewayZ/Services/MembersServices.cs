@@ -12,7 +12,7 @@ namespace GatewayZ.Services
         {
             UserDAO data = new UserDAO();
 
-            string club = "GathewayZ";
+            string club = "GatewayZ";
 
             data.UsersList(club);
         }
