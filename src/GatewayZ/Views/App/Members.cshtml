@@ -10,14 +10,14 @@
     string club = "GatewayZ";
 
     var names = list.UsersList(club);
-    <ul>
-        @foreach (var name in names)
-        {
-        <li>@name</li>
-        }
-
-    </ul>
+    <div class="contacts">
+        <ul>
+            @foreach (var name in names)
+            {
+                <li id="toggleAboutClubInfo"><a>@name</a></li>
+            }
+        </ul>
+    </div>
 }
 
- 
-    
+
