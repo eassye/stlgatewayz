@@ -2,6 +2,9 @@
     ViewBag.Title = "Admin Page";
 }
 
+@model GatewayZ.Models.User
+@using GatewayZ.GatewayZDAO;
+
 <div id="background">
     <img src="~/Images/aboutpagebg.jpg" alt="bgimage" />
 </div>
@@ -34,8 +37,81 @@
 
             <div id="users" class="tab-pane fade">
                 <h3>Users</h3>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                @Html.ValidationSummary()
+                <form class="form-horizontal" role="form" method="post">
+                    <div class="form-group">
+                        @{
+                            var list = new UserDAO();
+
+                            var _users = list.RegisteredUserList();
+
+                            List<SelectListItem> UserList = new List<SelectListItem>();
+                            @foreach (var user in _users)
+                                {
+                                    UserList.Add(new SelectListItem
+                                    { 
+                                        Text = user,
+                                        Value = user
+                                    });
+                            }
+                        }
+
+                        @Html.LabelFor(model => model.displayName, new { @class = "control-label col-xs-2" })
+                        <div class="col-xs-10">
+                            @Html.DropDownListFor(model => model.displayName, UserList, "-- Select a User to Edit --")
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.firstName, new { @class = "control-label col-xs-2" })
+                        <div class="col-xs-10">
+                            @Html.EditorFor(model => model.firstName, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.firstName)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.lastName, new { @class = "control-label col-xs-2" })
+                        <div class="col-xs-10">
+                            @Html.EditorFor(model => model.lastName, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.email, new { @class = "control-label col-xs-2" })
+                        <div class="col-xs-10">
+                            @Html.EditorFor(model => model.email, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-xs-2" })
+                        <div class="col-xs-10">
+                            @Html.EditorFor(model => model.phoneNumber, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.displayName, new { @class = "control-label col-xs-2" })
+                        <div class="col-xs-10">
+                            @Html.EditorFor(model => model.displayName, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.password, new { @class = "control-label col-xs-2" })
+                        <div class="col-xs-10">
+                            @Html.EditorFor(model => model.password, new { @class = "form-control" })
+                        </div>
+                    </div>
+
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type="submit" value="Submit" class="btn btn-default" />
+                    </div>
+                </form>
+
             </div>
+
 
             <div id="events" class="tab-pane fade">
                 <h3>Events</h3>
