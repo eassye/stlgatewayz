@@ -37,5 +37,44 @@ namespace GatewayZ.GatewayZDAO
 
             return userList;
         }
+
+        public List<string> RegisteredUserList()
+        {
+            var userList = new List<string>();
+
+            User _user = new User();
+
+            var collection = _database.GetCollection<User>("User");
+
+            var query =
+                        from e in collection.AsQueryable<User>()
+                        select e.displayName;
+
+            foreach (var displayName in query)
+            {
+                userList.Add(displayName);
+            }
+
+            return userList;
+        }
+
+        public void SaveUser(User _user)
+        {
+            _client = new MongoClient();
+            _database = _client.GetDatabase(("GatewayZ"));
+
+            //User _user = new User();
+
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.displayName, _user.displayName);
+
+            var update = Builders<User>.Update.Set(s => s.isMember, _user.isMember)
+                .Set(s => s.lastName, _user.lastName);
+                                              
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
     }
 }

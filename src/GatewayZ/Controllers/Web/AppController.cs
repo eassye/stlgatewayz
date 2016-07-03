@@ -129,5 +129,18 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Password = HttpContext.Session.GetString("Password");
             return View();
         }
+
+        [HttpPost]
+        public IActionResult Admin(User user)
+        {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
+
+            UserDAO userUpdate = new UserDAO();
+
+            userUpdate.SaveUser(user);
+
+            return RedirectToAction("Admin");
+        }
     }
 }
