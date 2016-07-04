@@ -5,6 +5,7 @@
 @model GatewayZ.Models.User
 @using GatewayZ.GatewayZDAO;
 
+
 <div id="background">
     <img src="~/Images/aboutpagebg.jpg" alt="bgimage" />
 </div>
@@ -12,9 +13,13 @@
 <div class="Admininterface">
     <div class="container">
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-            <li><a data-toggle="tab" href="#users">Users</a></li>
-            <li><a data-toggle="tab" href="#events">Events</a></li>
+            <li class="active"><a data-toggle="tab" href="#home">Edit Home</a></li>
+            <li><a data-toggle="tab" href="#users">Edit Users</a></li>
+            <li><a data-toggle="tab" href="#events">Edit Events</a></li>
+            <li><a data-toggle="tab" href="#editClub">Edit Club</a></li>
+
+            @*Adding a club will be added within a future phase*@
+            @*<li><a data-toggle="tab" href="#addClub">Add Club</a></li>*@
         </ul>
 
         <div class="tab-content" style="position:absolute">
@@ -60,6 +65,27 @@
                         <div class="col-xs-10">
                             @Html.DropDownListFor(model => model.displayName, UserList, "-- Select a User to Edit --")
                         </div>
+                    </div>
+
+                    @{
+                        var clubList = new ClubDAO();
+
+                        var _clubs = clubList.ListOfClubs();
+
+                        List<SelectListItem> ClubList = new List<SelectListItem>();
+                        @foreach (var club in _clubs)
+                        {
+                            ClubList.Add(new SelectListItem
+                            {
+                                Text = club,
+                                Value = club
+                            });
+                        }
+                    }
+
+                    @Html.LabelFor(model => model.club, new { @class = "control-label col-xs-2" })
+                    <div class="col-xs-10">
+                        @Html.DropDownListFor(model => model.club, ClubList, "-- Select a Club --")
                     </div>
 
                     @{
