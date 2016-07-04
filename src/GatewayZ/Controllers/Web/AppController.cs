@@ -133,9 +133,6 @@ namespace GatewayZ.Controllers.Web
         [HttpPost]
         public IActionResult Admin(AdminPageModel _data)
         {
-            ViewBag.Email = HttpContext.Session.GetString("Email");
-            ViewBag.Password = HttpContext.Session.GetString("Password");
-
             if(_data.User != null)
             {
                 UserDAO userUpdate = new UserDAO();
