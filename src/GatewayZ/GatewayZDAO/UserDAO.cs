@@ -63,8 +63,6 @@ namespace GatewayZ.GatewayZDAO
             _client = new MongoClient();
             _database = _client.GetDatabase(("GatewayZ"));
 
-            //User _user = new User();
-
             var collection = _database.GetCollection<User>("User");
 
             var filter = Builders<User>.Filter.Eq(s => s.displayName, _user.displayName);
