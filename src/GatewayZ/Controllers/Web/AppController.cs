@@ -131,15 +131,25 @@ namespace GatewayZ.Controllers.Web
         }
 
         [HttpPost]
-        public IActionResult Admin(User user)
+        public IActionResult Admin(AdminPageModel _data)
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
-            UserDAO userUpdate = new UserDAO();
+            if(_data.User != null)
+            {
+                UserDAO userUpdate = new UserDAO();
 
-            userUpdate.SaveUser(user);
+                userUpdate.SaveUser(_data.User);
+            }
+            
+            if(_data.Club != null)
+            {
+                ClubDAO clubUpdate = new ClubDAO();
 
+                clubUpdate.SaveClub(_data.Club);
+            }
+            
             return RedirectToAction("Admin");
         }
     }

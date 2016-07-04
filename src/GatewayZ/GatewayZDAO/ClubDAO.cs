@@ -146,5 +146,29 @@ namespace GatewayZ.GatewayZDAO
 
             return query.ToString();
         }
+
+        public void SaveClub(Club _club)
+        {
+            _client = new MongoClient();
+            _database = _client.GetDatabase(("GatewayZ"));
+
+            var collection = _database.GetCollection<Club>("Club");
+
+            var filter = Builders<Club>.Filter.Eq(s => s.clubName, _club.clubName);
+
+            var update = Builders<Club>.Update.Set(s => s.clubCode, _club.clubCode)
+                .Set(s => s.clubHistory, _club.clubHistory)
+                .Set(s => s.president, _club.president)
+                .Set(s => s.vicePresident, _club.vicePresident)
+                .Set(s => s.treasurer, _club.treasurer)
+                .Set(s => s.secretary, _club.secretary)
+                .Set(s => s.membershipDirector, _club.membershipDirector)
+                .Set(s => s.socialMediaDirector, _club.socialMediaDirector)
+                .Set(s => s.webMaster, _club.webMaster);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
     }
 }
