@@ -23,8 +23,25 @@
                 allDaySlot: false,
                 selecttable: true,
                 slotMinutes: 15
-            });
+            })
         });
+
+        $('#calendar').fullCalendar({
+            dayClick: function (date, jsEvent, view) {
+                // change the day's background color just for fun
+                $(this).css('background-color', 'red');
+
+            }
+        })
+            $('#calendar').fullCalendar({   
+                eventMouseover: function (event, jsEvent, view) { $(this).css('background-color', 'red'); }
+            })
+            $('#calendar').fullCalendar({   
+                eventMouseout: function (event, jsEvent, view) {
+                    $(this).css('background-color', 'red');
+                }
+            })
+        
     </script>
 }
 
