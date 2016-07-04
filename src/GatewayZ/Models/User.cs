@@ -36,9 +36,17 @@ namespace GatewayZ.Models
         [Display(Name = "Display Name:")]
         [Required(ErrorMessage = "Please Provide a Display Name...")]
         public string displayName { get; set; }
+
+        [Display(Name = "Club:")]
         public string club { get; set; }
+
+        [Display(Name = "Member Status:")]
         public bool isMember { get; set; }
+
+        [Display(Name = "Club Roles:")]
         public string clubRole {get; set;}
+
+        [Display(Name = "User Type:")]
         public string userType { get; set; }
 
         [Display(Name = "Password:")]
