@@ -12,9 +12,9 @@ namespace GatewayZ.Services
 
         }
 
-        public int countFiles()
+        public int countFiles(string filePath)
         {
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images");
+            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(filePath);
             int count = dir.GetFiles().Length;
 
             return count;

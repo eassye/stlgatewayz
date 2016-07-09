@@ -60,8 +60,8 @@ namespace GatewayZ.GatewayZDAO
 
         public void SaveUser(User _user)
         {
-            _client = new MongoClient();
-            _database = _client.GetDatabase(("GatewayZ"));
+            //_client = new MongoClient();
+            //_database = _client.GetDatabase(("GatewayZ"));
 
             var collection = _database.GetCollection<User>("User");
 
@@ -73,6 +73,22 @@ namespace GatewayZ.GatewayZDAO
             var result = collection.UpdateOneAsync(filter, update);
 
             result.Wait();
+        }
+
+        public string RetrieveUserType(string userEmail)
+        {
+            User _user = new User();
+
+            var collection = _database.GetCollection<User>("User");
+
+            var query =
+                        from e in collection.AsQueryable<User>()
+                        where e.email == userEmail
+                        select e.userType;
+
+            string userRole = query.FirstOrDefault();
+
+            return userRole;
         }
     }
 }

@@ -17,12 +17,11 @@ namespace GatewayZ.Controllers.Web
     {
         protected static IMongoClient _client;
         protected static IMongoDatabase _database;
-        public readonly MongoDBContext Context = new MongoDBContext();
 
         public AppController()
         {
             _client = new MongoClient();
-            _database = _client.GetDatabase(("GatewayZ")); 
+            _database = _client.GetDatabase(("GatewayZ"));
         }
 
         public IActionResult Index()
@@ -127,7 +126,19 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
-            return View();
+
+            UserDAO _userDAO = new UserDAO();
+
+            string authUser = _userDAO.RetrieveUserType(ViewBag.Email);
+
+            if (authUser == "Admin")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Index");
+            }
         }
 
         [HttpPost]
