@@ -68,7 +68,8 @@ namespace GatewayZ.GatewayZDAO
             var filter = Builders<User>.Filter.Eq(s => s.displayName, _user.displayName);
 
             var update = Builders<User>.Update.Set(s => s.isMember, _user.isMember)
-                .Set(s => s.club, _user.club);
+                .Set(s => s.club, _user.club)
+                .Set(s => s.userType, _user.userType);
                                               
             var result = collection.UpdateOneAsync(filter, update);
 
