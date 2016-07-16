@@ -2,6 +2,28 @@
     ViewBag.Title = "History Page";
 }
 
+@using GatewayZ.Services;
+
+<script>
+    $(document).ready(function () {
+        //var accordian = document.getElementById("accordion");
+
+        $("#accordion > li > div").click(function () {
+
+            if (false == $(this).next().is(':visible')) {
+                $('#accordion ul').slideUp(300);
+            }
+            $(this).next().slideToggle(300);
+        });
+
+        $('#accordion ul:eq(0)').show();
+    });
+</script>
+@{
+    HistoryServices _services = new HistoryServices();
+    var fileCount2013Folder = _services.CountFiles(@"C:\Users\eassy\OneDrive\Pictures\GatewayZWeb\Cars");
+    var file2013ModifiedDate = _services.LastDateModified(@"C:\Users\eassy\OneDrive\Pictures\GatewayZWeb\Cars");
+}
 <div id="background">
     <img src="~/Images/370znismo.jpg" alt="bgimage" />
     <div class="HistoryContent">
@@ -10,66 +32,35 @@
         <p>When in the course of human events, it becomes necessary for one people to dissolve the political bands which have connected them with another, and to assume among the powers of the earth, the separate and equal station to which the laws of nature and of nature's God entitle them, a decent respect to the opinions of mankind requires that they should declare the causes which impel them to the separation.</p>
 
         <p>We hold these truths to be self-evident:That all men are created equal; that they are endowed by their Creator with certain unalienable rights; that among these are life, liberty, and the pursuit of happiness; that, to secure these rights, governments are instituted among men, deriving their just powers from the consent of the governed; that whenever any form of government becomes destructive of these ends, it is the right of the people to alter or to abolish it, and to institute new government, laying its foundation on such principles, and organizing its powers in such form, as to them shall seem most likely to affect their safety and happiness.</p>
-    </div>
 
-    <div class="historyGalleryByYear">
-        <div class="panel-group" id="accordion">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-                            Collapsible Group 1
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapse1" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
-                            Collapsible Group 2
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapse2" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
-                            Collapsible Group 3
-                        </a>
-                    </h4>
-                </div>
-                <div id="collapse3" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                        commodo consequat.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <ul id="accordion">
+            <li>
+                <div>2013</div>
+                <ul>
+                    <li><a href="#">May Meeting (Files:(@fileCount2013Folder) Last Modified:(@file2013ModifiedDate))</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>2014</div>
+                <ul>
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="#">Twitter</a></li>
+                </ul>
+            </li>
+            <li>
+                <div>2015</div>
+                <ul>
+                    <li><a href="#">Obama</a></li>
+                    <li><a href="#">Iran Election</a></li>
+                    <li><a href="#">Health Care</a></li>
+                </ul>
+            </li>
+        </ul>
     </div>
 </div>
 
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
      

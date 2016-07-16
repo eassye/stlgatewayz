@@ -12,12 +12,34 @@ namespace GatewayZ.Services
 
         }
 
-        public int countFiles()
+        public int CountFiles(string filePath)
         {
-            System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images");
-            int count = dir.GetFiles().Length;
+            try
+            {
+                System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(filePath);
+                int count = dir.GetFiles().Length;
+                return count;
+            }
+            catch (Exception e)
+            {
 
-            return count;
+                throw e;
+            }
+        }
+
+        public DateTime LastDateModified(string filePath)
+        {
+            try
+            {
+                System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(filePath);
+                DateTime date = dir.LastWriteTime;
+                return date;
+            }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
         }
     }
 }
