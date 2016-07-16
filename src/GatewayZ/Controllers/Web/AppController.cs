@@ -119,7 +119,10 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
-            return View();
+
+            var _service = new HistoryServices();
+
+            return View(_service);
         }
 
         public IActionResult Admin()
