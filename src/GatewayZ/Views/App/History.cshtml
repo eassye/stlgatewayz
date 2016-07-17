@@ -2,8 +2,6 @@
     ViewBag.Title = "History Page";
 }
 
-@using GatewayZ.Services;
-
 <script>
     $(document).ready(function () {
         //var accordian = document.getElementById("accordion");
@@ -19,26 +17,7 @@
         $('#accordion ul:eq(0)').show();
     });
 </script>
-@{
-    HistoryServices _services = new HistoryServices();
-    var fileCount2002Folder = _services.CountFiles(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2002");
-    var file2002ModifiedDate = _services.LastDateModified(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2002");
 
-    var fileCount2003Folder = _services.CountFiles(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2003");
-    var file2003ModifiedDate = _services.LastDateModified(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2003");
-
-    var fileCount2004Folder = _services.CountFiles(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2004");
-    var file2004ModifiedDate = _services.LastDateModified(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2004");
-
-    var fileCount2005Folder = _services.CountFiles(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2005");
-    var file2005ModifiedDate = _services.LastDateModified(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2005");
-
-    var fileCount2006Folder = _services.CountFiles(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2006");
-    var file2006ModifiedDate = _services.LastDateModified(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2006");
-
-    var fileCount2007Folder = _services.CountFiles(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2007");
-    var file2007ModifiedDate = _services.LastDateModified(@"C:\github\GatewayZ\src\GatewayZ\wwwroot\Images\Gallery\2007");
-}
 <div id="background">
     <img src="~/Images/370znismo.jpg" alt="bgimage" />
     <div class="HistoryContent">
@@ -52,13 +31,13 @@
             <li>
                 <div>2002</div>
                 <ul>
-                    <li><a href="#">The Best of 2002 | Files:(@fileCount2002Folder) Last Modified:(@file2002ModifiedDate)</a></li>
+                    <li><a href="#">The Best of 2002 | Files:(@ViewBag.fileCount2002Folder) Last Modified:(@ViewBag.file2002ModifiedDate)</a></li>
                 </ul>
             </li>
             <li>
                 <div>2003</div>
                 <ul>
-                    <li><a href="#">Car Show | Files:(@fileCount2003Folder) Last Modified:(@file2003ModifiedDate)</a></li>
+                    <li><a href="#">Car Show | Files:(@ViewBag.fileCount2003Folder) Last Modified:(@ViewBag.file2003ModifiedDate)</a></li>
                     <li><a href="#">Branson Z Fest</a></li>
                     <li><a href="#">Club Christmas Party</a></li>
                     <li><a href="#">Lone Elk Park Picnic</a></li>
@@ -68,7 +47,7 @@
             <li>
                 <div>2004</div>
                 <ul>
-                    <li><a href="#">Branson Z Fest | Files:(@fileCount2004Folder) Last Modified:(@file2004ModifiedDate)</a></li>
+                    <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2004Folder) Last Modified:(@ViewBag.file2004ModifiedDate)</a></li>
                     <li><a href="#">Christmas Party</a></li>
                     <li><a href="#">Drag Racing</a></li>
                     <li><a href="#">Hermannhof Winery Tour</a></li>
@@ -79,14 +58,14 @@
             <li>
                 <div>2005</div>
                 <ul>
-                    <li><a href="#">Branson Z Fest | Files:(@fileCount2005Folder) Last Modified:(@file2005ModifiedDate)</a></li>
+                    <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2005Folder) Last Modified:(@ViewBag.file2005ModifiedDate)</a></li>
                     <li><a href="#">Lone Elk Park Picnic</a></li>
                 </ul>
             </li>
             <li>
                 <div>2006</div>
                 <ul>
-                    <li><a href="#">Branson Z Fest | Files:(@fileCount2006Folder) Last Modified:(@file2006ModifiedDate)</a></li>
+                    <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2006Folder) Last Modified:(@ViewBag.file2006ModifiedDate)</a></li>
                     <li><a href="#">Fast Eddies</a></li>
                     <li><a href="#">Midwest Z Fest</a></li>
                     <li><a href="#">Mules BBQ</a></li>
@@ -95,7 +74,7 @@
             <li>
                 <div>2007</div>
                 <ul>
-                    <li><a href="#">River Road Cruize/Fast Eddies | Files:(@fileCount2007Folder) Last Modified:(@file2007ModifiedDate)</a></li>
+                    <li><a href="#">River Road Cruize/Fast Eddies | Files:(@ViewBag.fileCount2007Folder) Last Modified:(@ViewBag.file2007ModifiedDate)</a></li>
                     <li><a href="#">Stop And Smell The Roses</a></li>
                     <li><a href="#">Christmas Party</a></li>
                 </ul>
