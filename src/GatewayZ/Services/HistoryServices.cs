@@ -27,12 +27,12 @@ namespace GatewayZ.Services
             }
         }
 
-        public DateTime LastDateModified(string filePath)
+        public string LastDateModified(string filePath)
         {
             try
             {
                 System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(filePath);
-                DateTime date = dir.LastWriteTime;
+                string date = dir.LastWriteTime.ToShortDateString();
                 return date;
             }
             catch (Exception e)
