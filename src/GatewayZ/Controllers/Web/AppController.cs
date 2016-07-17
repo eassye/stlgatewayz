@@ -122,7 +122,25 @@ namespace GatewayZ.Controllers.Web
 
             var _service = new HistoryServices();
 
-            return View(_service);
+            ViewBag.fileCount2002Folder = _service.CountFiles(@"Images\Gallery\2002");
+            ViewBag.file2002ModifiedDate = _service.LastDateModified(@"Images\Gallery\2002");
+
+            ViewBag.fileCount2003Folder = _service.CountFiles(@"Images\Gallery\2003");
+            ViewBag.file2003ModifiedDate = _service.LastDateModified(@"Images\Gallery\2003");
+
+            ViewBag.fileCount2004Folder = _service.CountFiles(@"Images\Gallery\2004");
+            ViewBag.file2004ModifiedDate = _service.LastDateModified(@"Images\Gallery\2004");
+
+            ViewBag.fileCount2005Folder = _service.CountFiles(@"Images\Gallery\2005");
+            ViewBag.file2005ModifiedDate = _service.LastDateModified(@"Images\Gallery\2005");
+
+            ViewBag.fileCount2006Folder = _service.CountFiles(@"Images\Gallery\2006");
+            ViewBag.file2006ModifiedDate = _service.LastDateModified(@"Images\Gallery\2006");
+
+            ViewBag.fileCount2007Folder = _service.CountFiles(@"Images\Gallery\2007");
+            ViewBag.file2007ModifiedDate = _service.LastDateModified(@"Images\Gallery\2007");
+
+            return View();
         }
 
         public IActionResult Admin()
