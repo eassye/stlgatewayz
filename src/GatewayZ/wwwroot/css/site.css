@@ -288,7 +288,8 @@ div#background
      margin-top:100px;
      text-align:center;
      color:black;
-      position: absolute;   
+      position: absolute; 
+      top:50px;  
     width: 70%;
     height: -80%;
     border: 5px outset red;
@@ -304,16 +305,14 @@ div#background
       margin-left:-50px;
       width: 200px;
     height: 200px;
-    /*background-color:aquamarine;*/
     float:left
   }
 
 
- #Historytimeline{
+#Historytimeline{
 
     position:absolute;
-    bottom:10%;
-    left:10%;
+   top:50px;
     height: 7px;
     width:80%;
     background: red; 
