@@ -4,8 +4,6 @@
 
 <script>
     $(document).ready(function () {
-        //var accordian = document.getElementById("accordion");
-
         $("#accordion > li > div").click(function () {
 
             if (false == $(this).next().is(':visible')) {
@@ -29,7 +27,7 @@
                 <li>
                     <div>2002</div>
                     <ul>
-                        <li><a href="#">The Best of 2002 | Files:(@ViewBag.fileCount2002Folder) Last Modified:(@ViewBag.file2002ModifiedDate)</a></li>
+                        <li><a href="~/App/Gallery2002">The Best of 2002 | Files:(@ViewBag.fileCount2002Folder) Last Modified:(@ViewBag.file2002ModifiedDate)</a></li>
                     </ul>
                 </li>
                 <li>

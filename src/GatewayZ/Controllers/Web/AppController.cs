@@ -181,5 +181,10 @@ namespace GatewayZ.Controllers.Web
             
             return RedirectToAction("Admin");
         }
+
+        public IActionResult Gallery2002()
+        {
+            return View();
+        }
     }
 }

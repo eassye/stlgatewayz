@@ -614,3 +614,15 @@ div#background
 #accordion a:hover {
 	text-decoration: underline;
 }
+
+.controls{
+    width:50px;
+    display:block;
+    font-size:11px;
+    padding-top:8px;
+    font-weight:bold;
+}
+.next {
+    float:right;
+    text-align:right;
+}
