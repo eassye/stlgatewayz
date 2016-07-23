@@ -285,7 +285,7 @@ div#background
   .HistoryContent
  {
      
-     
+     margin-top:100px;
      text-align:center;
      color:black;
       position: absolute;   
@@ -296,6 +296,17 @@ div#background
     z-index: 1;
  }
 
+  .Timepicadd {
+      /*top:0px;
+      left:0px;*/
+      position:center;
+      margin-top:-50px;
+      margin-left:-50px;
+      width: 200px;
+    height: 200px;
+    /*background-color:aquamarine;*/
+    float:left
+  }
 
 
  #Historytimeline{
@@ -314,13 +325,18 @@ div#background
 
  }
 
+ .Tpic{
+ border:3px,groove,black;
+    width:75px;
+    height:75px;
+
+ }
+
  #Time1 {
      position:absolute;
      left:0px;
      top:-35px;
-    border:3px,groove,black;
-    width:75px;
-    height:75px;
+   
  }
 
 
@@ -328,37 +344,29 @@ div#background
   #Time2{
      position:absolute;
      top:-35px;
-     right:0px;
-    border:3px,groove,black;
-    width:75px;
-    height:75px;
+     right:75%;
+   
  }
 
    #Time3{
      position:absolute;
      top:-35px;
      right:50%;
-    border:3px,groove,black;
-    width:75px;
-    height:75px;
+   
  }
 
    #Time4{
      position:absolute;
      top:-35px;
      right:25%;
-    border:3px,groove,black;
-    width:75px;
-    height:75px;
+   
  }
 
    #Time5{
      position:absolute;
      top:-35px;
-     right:75%;
-    border:3px,groove,black;
-    width:75px;
-    height:75px;
+     right:0px;
+   
  }
 
    .TLP li :hover{
