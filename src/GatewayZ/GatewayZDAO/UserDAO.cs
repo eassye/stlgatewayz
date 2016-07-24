@@ -60,9 +60,6 @@ namespace GatewayZ.GatewayZDAO
 
         public void SaveUser(User _user)
         {
-            //_client = new MongoClient();
-            //_database = _client.GetDatabase(("GatewayZ"));
-
             var collection = _database.GetCollection<User>("User");
 
             var filter = Builders<User>.Filter.Eq(s => s.displayName, _user.displayName);

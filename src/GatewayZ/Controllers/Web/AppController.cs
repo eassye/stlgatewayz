@@ -71,10 +71,25 @@ namespace GatewayZ.Controllers.Web
             return View();
         }
 
-        public IActionResult Events()
+        public IActionResult Events(Event events)
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+
+            EventDAO getEvents = new EventDAO();
+
+            getEvents.GetAllEvents();
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult PopulateCalendar(Event events)
+        {
+            EventDAO addEvent = new EventDAO();
+
+            addEvent.SaveEvent(events);
+
             return View();
         }
 
@@ -184,6 +199,9 @@ namespace GatewayZ.Controllers.Web
 
         public IActionResult Gallery2002()
         {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
+
             return View();
         }
     }

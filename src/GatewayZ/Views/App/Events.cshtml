@@ -4,44 +4,80 @@
 
 @section scripts{
     <script type="text/javascript">
-        $(document).ready(function () {
-            $('#calendar').fullCalendar({
-                theme: false,
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'month,agendaWeel,agendaDay'
-                },
-
-                buttonIcons: {
-                    prev: 'left-single-arrow',
-                    next: 'right-single-arrow'
-                },
-
-                defaultView: 'month',
-                editable: true,
-                allDaySlot: false,
-                selecttable: true,
-                slotMinutes: 15
-            })
+        $('#btnInit').click(function(){
+            $.ajax({
+                type: 'POST',
+                url: "~/App/PopulateCalendar",
+                success: function (response){
+                    if (response == 'True'){
+                        $('calendar').fullCalendar('refetchEvents');
+                        alert('Database populated!');
+                    }
+                    else{
+                        alert('Error, could not populate database!');
+                    }
+                }
+            });
         });
 
-        $('#calendar').fullCalendar({
-            dayClick: function (date, jsEvent, view) {
-                // change the day's background color just for fun
-                $(this).css('background-color', 'red');
+        $(document).ready(function () {
 
-            }
-        })
-            $('#calendar').fullCalendar({   
-                eventMouseover: function (event, jsEvent, view) { $(this).css('background-color', 'red'); }
-            })
-            $('#calendar').fullCalendar({   
-                eventMouseout: function (event, jsEvent, view) {
-                    $(this).css('background-color', 'red');
-                }
-            })
-        
+            var date = new Date();
+            var d = date.getDate();
+            var m = date.getMonth();
+            var y = date.getFullYear();
+
+            var calendar = $('#calendar').fullCalendar(
+			{
+			    header:
+				{
+				    left: 'prev,next today',
+				    center: 'title',
+				    right: 'month,agendaWeek,agendaDay'
+				},
+
+			    defaultView: 'month',
+
+			    selectable: true,
+			    selectHelper: true,
+			    /*
+					when user select timeslot this option code will execute.
+					It has three arguments. Start,end and allDay.
+					Start means starting time of event.
+					End means ending time of event.
+					allDay means if events is for entire day or not.
+				*/
+			    select: function (start, end, allDay) {
+			        /*
+						after selection user will be promted for enter title for event.
+					*/
+			        var title = prompt('Event Title:');
+			        /*
+						if title is enterd calendar will add title and event into fullCalendar.
+					*/
+			        if (title) {
+			            calendar.fullCalendar('renderEvent',
+							{
+							    title: title,
+							    start: start,
+							    end: end,
+							    allDay: allDay
+							},
+							true // make the event "stick"
+						);
+			        }
+			        calendar.fullCalendar('unselect');
+			    },
+			    /*
+					editable: true allow user to edit events.
+				*/
+			    editable: true,
+			    /*
+					events is the main option for calendar.
+					for demo we have added predefined events in json object.
+				*/
+			});
+        });
     </script>
 }
 
@@ -56,3 +92,5 @@
         </div>
     </div>
 </div>
+
+<a href="#" id="btnInit" class="btn btn-secondary">Initialise database!</a>
