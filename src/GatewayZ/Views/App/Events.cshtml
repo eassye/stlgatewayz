@@ -4,21 +4,21 @@
 
 @section scripts{
     <script type="text/javascript">
-        $('#btnInit').click(function(){
-            $.ajax({
-                type: 'POST',
-                url: "~/App/PopulateCalendar",
-                success: function (response){
-                    if (response == 'True'){
-                        $('calendar').fullCalendar('refetchEvents');
-                        alert('Database populated!');
-                    }
-                    else{
-                        alert('Error, could not populate database!');
-                    }
-                }
-            });
-        });
+        //$('#btnInit').click(function(){
+        //    $.ajax({
+        //        type: 'POST',
+        //        url: "~/App/PopulateCalendar",
+        //        success: function (response){
+        //            if (response == 'True'){
+        //                $('calendar').fullCalendar('refetchEvents');
+        //                alert('Database populated!');
+        //            }
+        //            else{
+        //                alert('Error, could not populate database!');
+        //            }
+        //        }
+        //    });
+        //});
 
         $(document).ready(function () {
 
@@ -40,21 +40,11 @@
 
 			    selectable: true,
 			    selectHelper: true,
-			    /*
-					when user select timeslot this option code will execute.
-					It has three arguments. Start,end and allDay.
-					Start means starting time of event.
-					End means ending time of event.
-					allDay means if events is for entire day or not.
-				*/
+
 			    select: function (start, end, allDay) {
-			        /*
-						after selection user will be promted for enter title for event.
-					*/
+
 			        var title = prompt('Event Title:');
-			        /*
-						if title is enterd calendar will add title and event into fullCalendar.
-					*/
+
 			        if (title) {
 			            calendar.fullCalendar('renderEvent',
 							{
@@ -68,29 +58,19 @@
 			        }
 			        calendar.fullCalendar('unselect');
 			    },
-			    /*
-					editable: true allow user to edit events.
-				*/
+
 			    editable: true,
-			    /*
-					events is the main option for calendar.
-					for demo we have added predefined events in json object.
-				*/
+
+			    events: "/App/GetEvents/" 
 			});
         });
     </script>
 }
 
-<div class="clubinfo">
-    @*<div class="jumbotron">
-        <hi>Full Calendar Demo</hi>
-    </div>*@
-
-    <div class="row">
-        <div class="col-md-12" style="z-index:2">
-            <div id="calendar"></div>
+    <div class="clubinfo">
+        <div class="row">
+            <div class="col-md-12">
+                <div id="calendar"></div>
+            </div>
         </div>
     </div>
-</div>
-
-<a href="#" id="btnInit" class="btn btn-secondary">Initialise database!</a>

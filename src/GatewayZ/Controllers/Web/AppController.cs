@@ -76,15 +76,59 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
-            EventDAO getEvents = new EventDAO();
-
-            getEvents.GetAllEvents();
-
             return View();
         }
 
+        
+        public IActionResult GetEvents()
+        {
+            var collection = _database.GetCollection<Event>("Events");
+
+            var listEvents =  collection.Find(Builders<Event>.Filter.Empty).ToList();
+
+            var eventList = from e in listEvents
+                            select new
+                            {
+                                title = e.Title,
+                                start = e.StartDate.ToString(),
+                                end = e.EndDate.ToString(),
+                            };
+
+            return Json(eventList);
+        }
+
+        //public IActionResult GetEvents(double start, double end)
+        //{
+        //    EventDAO addEvent = new EventDAO();
+
+        //    var fromDate = ConvertFromUnixTimestamp(start);
+        //    var toDate = ConvertFromUnixTimestamp(end);
+
+        //    var events = addEvent.GetAllEvents();
+
+        //    var eventList = from e in events
+        //                    select new
+        //                    {
+
+        //                        id = e.Id,
+        //                        title = e.Title,
+        //                        start = e.FromDate.ToString("s"),
+        //                        end = e.ToDate.ToString("s"),
+        //                        allDay = false
+        //                    };
+
+        //    var rows = eventList.ToArray();
+        //    return Json(rows);
+        //}
+
+        private static DateTime ConvertFromUnixTimestamp(double timestamp)
+        {
+            var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return origin.AddSeconds(timestamp);
+        }
+
         [HttpPost]
-        public IActionResult PopulateCalendar(Event events)
+        public IActionResult SaveEvents(Event events)
         {
             EventDAO addEvent = new EventDAO();
 
