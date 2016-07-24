@@ -203,9 +203,12 @@ footer {
 
 .clubinfo {
     position: absolute;   
-    width: 80%;
-    height: 550px
-    ;
+    top: 50%;
+    left: 60%;
+    margin-top: -350px;
+    margin-left: -500px;
+    width: 900px;
+    height: 700px;
     border: 5px outset red;
     background-color:gainsboro;
     z-index: 1;
@@ -394,12 +397,11 @@ div#background
     
 }
 #accordion ul {
+    display: none;
 	list-style: none;
 	padding: 0 0 0 0;
 }
-#accordion ul{
-	display: none;
-}
+
 #accordion ul li {
 	font-weight: normal;
 	cursor: auto;
@@ -422,9 +424,9 @@ div#background
     font-weight:bold;
 }
 .next {
-    float:right;
-    text-align:right;
-
+    float: right;
+    text-align: right;
+}
 
  /*//////////////////////////////////////////       ADMIN PAGE            ///////////////////////////////////////*/
 
@@ -504,11 +506,13 @@ div#background
      display:none;
 }
  
-        .tab.active {
+.tab.active {
             display:block;
-        }
-       /*//////////////////////   Gallery Page     //////////////////////////////*/
-        div.GalleryYearNavBar {
+}
+
+/*//////////////////////   Gallery Page     //////////////////////////////*/
+
+div.GalleryYearNavBar {
     position: absolute;
     top: 150px;   
     z-index: 1;
@@ -631,8 +635,5 @@ div#background
     background-color: gainsboro;
     z-index: 2;
 }
-.tab.active {
-    display:block;
-}
 
-}
+
