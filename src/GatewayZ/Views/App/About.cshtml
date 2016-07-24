@@ -2,60 +2,69 @@
     ViewBag.Title = "About Page";
 }
 
-
-
-
     <div id="background">
-        <img src="~/Images/aboutpagebg.jpg" alt="bgimage" />
-        <div class="contacts">
-            <ul>
-                <li id="toggleAboutClubInfo"><a>About Club</a></li>
-                <li id="togglePresidentInfo"><a>President</a></li>
-                <li id="toggleVicePresidentInfo"><a>Vice President</a></li>
-                <li id="toggleSecretaryInfo"><a>Secretary</a></li>
-                <li id="toggleTreasurerInfo"><a>Treasurer</a></li>
-                <li id="toggleMembershipDirectorInfo" ><a>Membership Director</a></li>
-                <li id="toggleWebmasterInfo"><a>Webmaster</a></li>
-                <li id="toggleSocialMediaCoordinatorInfo" ><a>Social Media Coordinator</a></li>
-            </ul>
-        </div>
+    <img src="~/Images/aboutpagebg.jpg" alt="bgimage" />
 
-        <div class="clubinfo">
-            <div class="popboarder">
-                <div  class="infopic">
-                    <img src="~/Images/z-arch.jpg" class="infopics"/>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 col-sm-4 col-md-4">
+                <div class="contacts">
+                    <ul>
+                        <li id="toggleAboutClubInfo"><a>About Club</a></li>
+                        <li id="togglePresidentInfo"><a>President</a></li>
+                        <li id="toggleVicePresidentInfo"><a>Vice President</a></li>
+                        <li id="toggleSecretaryInfo"><a>Secretary</a></li>
+                        <li id="toggleTreasurerInfo"><a>Treasurer</a></li>
+                        <li id="toggleMembershipDirectorInfo"><a>Membership Director</a></li>
+                        <li id="toggleWebmasterInfo"><a>Webmaster</a></li>
+                        <li id="toggleSocialMediaCoordinatorInfo"><a>Social Media Coordinator</a></li>
+                    </ul>
                 </div>
-                <div class="infopic2">
-                    <img src="~/Images/z-arch.jpg" class="infopics" />
-                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container-fluid">
+        <div class="col-sm-offset-4  col-xs-8 col-sm-8 col-md-8">
+            <div class="clubinfo">
+                <div class="popboarder">
+                    <div class="infopic">
+                        <img src="~/Images/z-arch.jpg" class="infopics" />
+                    </div>
+                    <div class="infopic2">
+                        <img src="~/Images/z-arch.jpg" class="infopics" />
+                    </div>
                     <p>CLUB INFO</p>
                 </div>
-            
-            <div class="Aboutclub">
-                <p><strong>
-    Meetings are held on the third Wednesday of each month at 7:30 PM at a location determined by the club. Annual dues are $35.
-    In addition to club activities, members enjoy a monthly newsletter and discounts from club sponsors. You can download the membership form
-    here if you would like to print it and fill out in advance of a meeting or event. If you can’t see/print the form you may need to get Adobe
-    Acrobat for your system. You can also mail the completed form along with the $35 membership fees to the address on the form
-</strong></p>
-             </div>
 
-
-            <div class="Contactprofile" id="Presprofile">
-                <div class="contentImage">
-                    <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic"/>
+                <div class="Aboutclub">
+                    <p>
+                        <strong>
+                            Meetings are held on the third Wednesday of each month at 7:30 PM at a location determined by the club. Annual dues are $35.
+                            In addition to club activities, members enjoy a monthly newsletter and discounts from club sponsors. You can download the membership form
+                            here if you would like to print it and fill out in advance of a meeting or event. If you can’t see/print the form you may need to get Adobe
+                            Acrobat for your system. You can also mail the completed form along with the $35 membership fees to the address on the form
+                        </strong>
+                    </p>
                 </div>
+
+
+                <div class="Contactprofile" id="Presprofile">
+                    <div class="contentImage">
+                        <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
+                    </div>
 
                     <div class="contentText">
                         <p><strong>Name:</strong> John Doe</p>
                         <p><strong>Role:</strong> President</p>
                         <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
                     </div>
-              </div>
+                </div>
 
-               
-            
-             <div class="Contactprofile" id="Vicepresprofile">
+
+
+                <div class="Contactprofile" id="Vicepresprofile">
                     <div class="contentImage">
                         <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
                     </div>
@@ -65,127 +74,131 @@
                         <p><strong>Role:</strong> Vice President</p>
                         <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
                     </div>
-             </div>
-
-                   
-            
-             <div class="Contactprofile" id="Secprofile">
-                        <div class="contentImage">
-                            <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
-                        </div>
-
-                        <div class="contentText">
-                            <p><strong>Name:</strong> Jon Doe</p>
-                            <p><strong>Role:</strong>Secretary</p>
-                            <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
-                        </div>
-               </div>
-
-            <div class="Contactprofile" id="Treasurerprofile">
-                <div class="contentImage">
-                    <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
                 </div>
 
-                <div class="contentText">
-                    <p><strong>Name:</strong> Jon Doe</p>
-                    <p><strong>Role:</strong>Treasurer</p>
-                    <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
+
+
+                <div class="Contactprofile" id="Secprofile">
+                    <div class="contentImage">
+                        <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
+                    </div>
+
+                    <div class="contentText">
+                        <p><strong>Name:</strong> Jon Doe</p>
+                        <p><strong>Role:</strong>Secretary</p>
+                        <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
+                    </div>
+                </div>
+
+                <div class="Contactprofile" id="Treasurerprofile">
+                    <div class="contentImage">
+                        <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
+                    </div>
+
+                    <div class="contentText">
+                        <p><strong>Name:</strong> Jon Doe</p>
+                        <p><strong>Role:</strong>Treasurer</p>
+                        <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
+                    </div>
+                </div>
+
+                <div class="Contactprofile" id="Mdirectorprofile">
+                    <div class="contentImage">
+                        <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
+                    </div>
+
+                    <div class="contentText">
+                        <p><strong>Name:</strong> Jon Doe</p>
+                        <p><strong>Role:</strong>Membership Director</p>
+                        <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
+                    </div>
+                </div>
+
+                <div class="Contactprofile" id="Webmasterprofile">
+                    <div class="contentImage">
+                        <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
+                    </div>
+
+                    <div class="contentText">
+                        <p><strong>Name:</strong> Jon Doe</p>
+                        <p><strong>Role:</strong>Webmaster</p>
+                        <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
+                    </div>
+                </div>
+
+                <div class="Contactprofile" id="Smediacoordprofile">
+                    <div class="contentImage">
+                        <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
+                    </div>
+
+                    <div class="contentText">
+                        <p><strong>Name:</strong> Jon Doe</p>
+                        <p><strong>Role:</strong>Social Media Coordinator</p>
+                        <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
+                    </div>
                 </div>
             </div>
-
-            <div class="Contactprofile" id="Mdirectorprofile">
-                <div class="contentImage">
-                    <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
-                </div>
-
-                <div class="contentText">
-                    <p><strong>Name:</strong> Jon Doe</p>
-                    <p><strong>Role:</strong>Membership Director</p>
-                    <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
-                </div>
-            </div>
-
-            <div class="Contactprofile" id="Webmasterprofile">
-                <div class="contentImage">
-                    <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
-                </div>
-
-                <div class="contentText">
-                    <p><strong>Name:</strong> Jon Doe</p>
-                    <p><strong>Role:</strong>Webmaster</p>
-                    <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
-                </div>
-            </div>
-
-            <div class="Contactprofile" id="Smediacoordprofile">
-                <div class="contentImage">
-                    <img src="~/Images/clubLogoFromPDF.jpg" alt="logo" class="contentPic" />
-                </div>
-
-                <div class="contentText">
-                    <p><strong>Name:</strong> Jon Doe</p>
-                    <p><strong>Role:</strong>Social Media Coordinator</p>
-                    <p><strong>Club History:</strong> This section will contain a brief description about the member and their club history.</p>
-                </div>
-            </div>
-      </div>
+        </div>
+    </div>
 </div>
 
-@section scripts{
-    <script type="text/javascript">
 
-        $(document).ready(function () {
-        $('.Contactprofile').hide();
-    });
 
-        $("#toggleAboutClubInfo").click(function () {         
-            $(".Contactprofile").hide();
-            $(".Aboutclub").fadeIn(2000);
-        });
-            
+            @section scripts{
+                <script type="text/javascript">
 
-    $("#togglePresidentInfo").click(function () {
-        $(".Aboutclub").hide();
-        $(".Contactprofile").hide();
-        $("#Presprofile").fadeIn(2000);
-    });
-    
+                    $(document).ready(function () {
+                        $('.Contactprofile').hide();
+                    });
 
-    $("#toggleVicePresidentInfo").click(function () {
-        $(".Aboutclub").hide();
-        $(".Contactprofile").hide();
-        $("#Vicepresprofile").fadeIn(2000);
-    });
+                    $("#toggleAboutClubInfo").click(function () {
+                        $(".Contactprofile").hide();
+                        $(".Aboutclub").fadeIn(2000);
+                    });
 
-    $("#toggleSecretaryInfo").click(function () {
-        $(".Aboutclub").hide();
-        $(".Contactprofile").hide();
-        $("#Secprofile").fadeIn(2000);
-    });
 
-    $("#toggleTreasurerInfo").click(function () {
-        $(".Aboutclub").hide();
-        $(".Contactprofile").hide();
-        $("#Treasurerprofile").fadeIn(2000);
-    });
+                    $("#togglePresidentInfo").click(function () {
+                        $(".Aboutclub").hide();
+                        $(".Contactprofile").hide();
+                        $("#Presprofile").fadeIn(2000);
+                    });
 
-    $("#toggleMembershipDirectorInfo").click(function () {
-        $(".Aboutclub").hide();
-        $(".Contactprofile").hide();
-        $("#Mdirectorprofile").fadeIn(2000);
-    });
 
-    $("#toggleWebmasterInfo").click(function () {
-        $(".Aboutclub").hide();
-        $(".Contactprofile").hide();
-        $("#Webmasterprofile").fadeIn(2000);
-    });
+                    $("#toggleVicePresidentInfo").click(function () {
+                        $(".Aboutclub").hide();
+                        $(".Contactprofile").hide();
+                        $("#Vicepresprofile").fadeIn(2000);
+                    });
 
-    $("#toggleSocialMediaCoordinatorInfo").click(function () {
-        $(".Aboutclub").hide();
-        $(".Contactprofile").hide();
-        $("#Smediacoordprofile").fadeIn(2000);
-    });
+                    $("#toggleSecretaryInfo").click(function () {
+                        $(".Aboutclub").hide();
+                        $(".Contactprofile").hide();
+                        $("#Secprofile").fadeIn(2000);
+                    });
 
-    </script>
-    }
+                    $("#toggleTreasurerInfo").click(function () {
+                        $(".Aboutclub").hide();
+                        $(".Contactprofile").hide();
+                        $("#Treasurerprofile").fadeIn(2000);
+                    });
+
+                    $("#toggleMembershipDirectorInfo").click(function () {
+                        $(".Aboutclub").hide();
+                        $(".Contactprofile").hide();
+                        $("#Mdirectorprofile").fadeIn(2000);
+                    });
+
+                    $("#toggleWebmasterInfo").click(function () {
+                        $(".Aboutclub").hide();
+                        $(".Contactprofile").hide();
+                        $("#Webmasterprofile").fadeIn(2000);
+                    });
+
+                    $("#toggleSocialMediaCoordinatorInfo").click(function () {
+                        $(".Aboutclub").hide();
+                        $(".Contactprofile").hide();
+                        $("#Smediacoordprofile").fadeIn(2000);
+                    });
+
+                </script>
+            }
