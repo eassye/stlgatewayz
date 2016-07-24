@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
@@ -14,21 +11,21 @@ namespace GatewayZ.Models
         public ObjectId Id { get; set; }
 
         [Display(Name = "Title:")]
-        public string title { get; set; }
+        public string Title { get; set; }
 
         [Display(Name = "Start:")]
-        public DateTime startDate { get; set; }
+        public DateTime StartDate { get; set; }
 
         [Display(Name = "End:")]
-        public DateTime endDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         [Display(Name = "Location:")]
-        public string location { get; set; }
+        public string Location { get; set; }
 
         [Display(Name = "Description:")]
-        public string description { get; set; }
+        public string Description { get; set; }
 
         [Display(Name = "Created By:")]
-        public string eventCreator { get; set; }
+        public string EventCreator { get; set; }
     }
 }
