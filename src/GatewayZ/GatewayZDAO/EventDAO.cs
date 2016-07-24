@@ -26,48 +26,14 @@ namespace GatewayZ.GatewayZDAO
             var result = collection.InsertOneAsync(events);
         }
 
-        //public async void GetAllEvents(Event events)
-        //{
-        //    var collection = _database.GetCollection<Event>("Events");
-        //    var filter = new BsonDocument();
-        //    var count = 0;
-        //    using (var cursor = await collection.FindAsync(filter))
-        //    {
-        //        while (await cursor.MoveNextAsync())
-        //        {
-        //            var batch = cursor.Current;
-        //            foreach (var document in batch)
-        //            {
-        //                events.EventID = document.EventID;
-        //                events.Title = document.Title;
-        //                events.StartDate = document.StartDate;
-        //                events.EndDate = document.EndDate;
-        //                // process document
-        //                count++;
-        //            }
-
-        //            batch.AsQueryable();
-        //        }
-        //    }
-        //}
-
-        public async Task<List<Event>> GetEvents()
+        public List<Event> GetEvents()
         {
             var collection = _database.GetCollection<Event>("Events");
 
-            var eventList =  await collection.Find(Builders<Event>.Filter.Empty).ToListAsync();
+            var listEvents = collection.Find(Builders<Event>.Filter.Empty).ToList();
 
-            return eventList;
+            return listEvents;
         }
 
-        //public List<Event> allDocs()
-        //{
-        //    var collection = _database.GetCollection<Event>("Events");
-        //    var eventList = collection.AsQueryable();
-
-        //    eventList.ToList();
-
-        //    return eventList;
-        //}
     }
 }
