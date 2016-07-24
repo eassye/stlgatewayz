@@ -214,6 +214,14 @@ footer {
     z-index: 1;
 }
 
+.Contactinfobox{
+    position: absolute;
+    width: 900px;
+    height: 700px;
+    border: 5px outset red;
+    background-color:gainsboro;
+    z-index: 1;
+}
 
 
 .infopic{
@@ -224,7 +232,7 @@ footer {
 }
 
 .infopic2{
-    position: absolute;
+    position:absolute;
     top: 0px;
     right: 100px;
    
@@ -636,4 +644,15 @@ div.GalleryYearNavBar {
     z-index: 2;
 }
 
+/*/////////////////////////////History Gallery Pages//////////////////////*/
+.Lightboxfullpic{
+    min-width:900px;
+    height:auto;
+}
 
+
+.lightboxpicrow{
+    height:200px;
+    
+
+}
