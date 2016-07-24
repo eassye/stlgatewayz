@@ -82,9 +82,9 @@ namespace GatewayZ.Controllers.Web
         
         public IActionResult GetEvents()
         {
-            var collection = _database.GetCollection<Event>("Events");
+            EventDAO events = new EventDAO();
 
-            var listEvents =  collection.Find(Builders<Event>.Filter.Empty).ToList();
+            var listEvents = events.GetEvents();
 
             var eventList = from e in listEvents
                             select new
@@ -96,30 +96,6 @@ namespace GatewayZ.Controllers.Web
 
             return Json(eventList);
         }
-
-        //public IActionResult GetEvents(double start, double end)
-        //{
-        //    EventDAO addEvent = new EventDAO();
-
-        //    var fromDate = ConvertFromUnixTimestamp(start);
-        //    var toDate = ConvertFromUnixTimestamp(end);
-
-        //    var events = addEvent.GetAllEvents();
-
-        //    var eventList = from e in events
-        //                    select new
-        //                    {
-
-        //                        id = e.Id,
-        //                        title = e.Title,
-        //                        start = e.FromDate.ToString("s"),
-        //                        end = e.ToDate.ToString("s"),
-        //                        allDay = false
-        //                    };
-
-        //    var rows = eventList.ToArray();
-        //    return Json(rows);
-        //}
 
         private static DateTime ConvertFromUnixTimestamp(double timestamp)
         {
