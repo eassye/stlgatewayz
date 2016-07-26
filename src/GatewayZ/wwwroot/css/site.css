@@ -520,13 +520,13 @@ div#background
 
 /*//////////////////////   Gallery Page     //////////////////////////////*/
 
-div.GalleryYearNavBar {
+/*div.GalleryYearNavBar {
     position: absolute;
     top: 150px;   
     z-index: 1;
-}
+}*/
 
-.GalleryYearNavBar ul {
+/*.GalleryYearNavBar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -542,9 +542,9 @@ div.GalleryYearNavBar {
     border: .5px solid black; 
     opacity: 0.8;
     z-index: 3;
-}
+}*/
 
-.GalleryYearNavBar li a{
+/*.GalleryYearNavBar li a{
     font-weight: bold;
     text-align:center;
     display: block;
@@ -552,24 +552,24 @@ div.GalleryYearNavBar {
     padding: 8px 0 8px 0;
     /*padding: 8px 0 8px 16px;*/
     text-decoration: none;
-}
+}*/
 
-.GalleryYearNavBar li:hover{
+/*.GalleryYearNavBar li:hover{
     opacity: 1.0;
     z-index: 4;
 }
 
 /* Change the link color on hover */
-.GalleryYearNavBar li a:hover {
+/*.GalleryYearNavBar li a:hover {
     background-color: black;
     color: white;
     opacity: 1.0;
     filter: alpha(opacity=100);
     z-index: 4;
-}
+}*/
 
 
-.GalleryThumbShowArea {
+/*.GalleryThumbShowArea {
     position: absolute;
     top: 50%;
     left: 60%;
@@ -587,19 +587,19 @@ div.GalleryYearNavBar {
     height: 150px;
     padding:10px;
     background-color: gainsboro;
-}
+}*/
 
-.Galarrows div{
+/*.Galarrows div{
     opacity:0;
 }
 
 .Galarrows div:hover{
     opacity:1;
    
-}
+}*/
 
 
- #carousel-custom {
+ /*#carousel-custom {
             margin: 20px auto;
             width: 400px;
         }
@@ -610,8 +610,8 @@ div.GalleryYearNavBar {
             text-align: left;
             white-space: nowrap;
             width: 100%;
-        }
-        #carousel-custom .carousel-indicators li {
+        }*/
+        /*#carousel-custom .carousel-indicators li {
             background-color: transparent;
             -webkit-border-radius: 0;
             border-radius: 0;
@@ -625,7 +625,7 @@ div.GalleryYearNavBar {
         }
         #carousel-custom .carousel-outer {
             position: relative;
-        }
+        }*/
 
        
 
@@ -645,14 +645,21 @@ div.GalleryYearNavBar {
 }
 
 /*/////////////////////////////History Gallery Pages//////////////////////*/
+.HistoryGalleryBody{
+    position:fixed;
+    height:100%;
+    width:100%;
+
+}
+
 .Lightboxfullpic{
-    min-width:900px;
+  max-width:50%;
     height:auto;
+    margin: auto;
 }
 
 
 .lightboxpicrow{
-    height:200px;
-    
-
+    height:200px;    
+    margin-left:100px;    
 }
