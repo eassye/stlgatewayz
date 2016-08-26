@@ -12,12 +12,16 @@ namespace GatewayZ.Models
 
         //public int EventID { get; set;}
 
+        [Display(Name = "Title:")]
         public string Title { get; set; }
 
+        [Display(Name = "Start Date:")]
         public string StartDate { get; set; }
 
+        [Display(Name = "End Date:")]
         public string EndDate { get; set; }
 
+        [Display(Name = "All Day:")]
         public bool AllDay { get; set; }
 
         //public string Location { get; set; }
