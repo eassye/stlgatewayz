@@ -15,8 +15,8 @@ namespace GatewayZ.GatewayZDAO
 
         public ClubDAO()
         {
-            _client = new MongoClient();
-            _database = _client.GetDatabase(("GatewayZ"));
+            _client = new MongoClient("mongodb://gatewayz:370zNismo@ds044229.mlab.com:44229/gatewayz");
+            _database = _client.GetDatabase(("gatewayz"));
             _Club = new Club();
         }
 

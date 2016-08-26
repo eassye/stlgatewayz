@@ -2,6 +2,8 @@
     ViewBag.Title = "Events Page";
 }
 
+@model GatewayZ.Models.Event
+
 @section scripts{
     <script type="text/javascript">
         //$('#btnInit').click(function(){
@@ -44,9 +46,7 @@
 
 			    select: function (start, end, allDay) {
 			    
-			        //var title = prompt('Event Title:');
 			        var title = eventModal.modal('show');
-			        //var title = $('#EventModal').modal('show');
 
 			        if (title) {
 			            calendar.fullCalendar('renderEvent',
@@ -85,10 +85,47 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Modal Header</h4>
+                <h4 class="modal-title">Add Event</h4>
             </div>
             <div class="modal-body">
-                <p>Some text in the modal.</p>
+                <div class="centerForm">
+                    @Html.ValidationSummary()
+                    <form class="form-horizontal" role="form" method="post">
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Title, new { @class = "control-label col-xs-2" })
+                            <div class="col-xs-10">
+                                @Html.EditorFor(model => model.Title, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.Title)
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.StartDate, new { @class = "control-label col-xs-2" })
+                            <div class="col-xs-10">
+                                @Html.EditorFor(model => model.StartDate, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.EndDate, new { @class = "control-label col-xs-2" })
+                            <div class="col-xs-10">
+                                @Html.EditorFor(model => model.EndDate, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.AllDay, new { @class = "control-label col-xs-2" })
+                            <div class="col-xs-2">
+                                @Html.CheckBoxFor(model => model.AllDay, new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" value="Submit" class="btn btn-default" />
+                        </div>
+                        <br />
+                    </form>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
