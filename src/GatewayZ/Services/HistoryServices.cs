@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -38,6 +39,22 @@ namespace GatewayZ.Services
             catch (Exception e)
             {
 
+                throw e;
+            }
+        }
+
+        public string[] FileName(string filePath)
+        {
+            try
+            {
+                DirectoryInfo dir = new DirectoryInfo(filePath);
+
+                string[] fileArray = Directory.GetFiles(filePath);
+
+                return fileArray;
+            }
+            catch (Exception e)
+            {
                 throw e;
             }
         }

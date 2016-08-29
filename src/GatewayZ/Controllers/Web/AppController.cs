@@ -224,5 +224,19 @@ namespace GatewayZ.Controllers.Web
 
             return View();
         }
+
+        public IActionResult Gallery2003CarShow()
+        {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
+
+            HistoryServices file = new HistoryServices();
+
+            string filePath = @"Images\Gallery\2003";
+
+            ViewBag.fileName = file.FileName(filePath); 
+            
+            return View();
+        }
     }
 }
