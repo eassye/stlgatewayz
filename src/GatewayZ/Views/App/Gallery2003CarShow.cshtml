@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Gallery 2003 Car Show";
+}
+
+<div class="container-fluid" style="overflow-y: scroll; height:700px;">
+    @{
+        foreach(var name in @ViewBag.fileName)
+            {
+                <a href="~/@name" data-lightbox="roadtrip"><img src="~/@name" style="height:150px; width:250px" /></a>
+            }
+      }
+</div>
+
