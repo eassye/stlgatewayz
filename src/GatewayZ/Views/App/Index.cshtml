@@ -93,6 +93,13 @@
         }
     </div>
 
+    @if (@ViewBag.Email != null && @ViewBag.Password != null)
+    {
+        <div class="Joinclubbox">
+            <a href="~/pdf/gatewayzSignupform.pdf" download><img src="~/Images/JoinClubDownload.jpg" class="img-rounded" style="height:150px; width:250px" /></a>
+        </div>
+    }
+
     <div id="footer">
         &copy; @DateTime.Now.Year Gateway Z Club
         <p style="float:right">Like us on Facebook! <a href="https://www.facebook.com/gatewayzclub/"><img src="~/Images/facebooklogo.jpg" alt="facebook logo" class="img-rounded" width="25" height="25" /></a></p>

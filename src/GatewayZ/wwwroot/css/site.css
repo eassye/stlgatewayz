@@ -22,6 +22,12 @@ div.loginBackGround{
     z-index:1;
 }
 
+div.Joinclubbox{
+    position:absolute;
+    top: 10%;
+	right: 1%;
+}
+
 div.login{
     position: relative;
     color:black;
