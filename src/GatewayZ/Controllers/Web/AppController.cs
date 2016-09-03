@@ -204,7 +204,20 @@ namespace GatewayZ.Controllers.Web
             {
                 UserDAO userUpdate = new UserDAO();
 
-                userUpdate.SaveUser(_data.User);
+                //userUpdate.SaveUser(_data.User);
+
+                if(_data.User.club != null)
+                {
+                    userUpdate.SaveMemberClub(_data.User);
+                }
+                if(_data.User.userType != null)
+                {
+                    userUpdate.SaveUserType(_data.User);
+                }
+                if(_data.User.isMember != null)
+                {
+                    userUpdate.SaveMemberStatus(_data.User);
+                }
             }
             
             if(_data.Club != null)

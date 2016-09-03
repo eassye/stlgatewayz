@@ -73,6 +73,45 @@ namespace GatewayZ.GatewayZDAO
             result.Wait();
         }
 
+        public void SaveMemberStatus(User _user)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.displayName, _user.displayName);
+
+            var update = Builders<User>.Update.Set(s => s.isMember, _user.isMember);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
+
+        public void SaveMemberClub(User _user)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.displayName, _user.displayName);
+
+            var update = Builders<User>.Update.Set(s => s.club, _user.club);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
+
+        public void SaveUserType(User _user)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.displayName, _user.displayName);
+
+            var update = Builders<User>.Update.Set(s => s.userType, _user.userType);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
+
         public string RetrieveUserType(string userEmail)
         {
             User _user = new User();
