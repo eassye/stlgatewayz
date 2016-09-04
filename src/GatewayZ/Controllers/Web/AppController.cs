@@ -30,15 +30,8 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
             EventDAO events = new EventDAO();
-            var eventList = events.GetTopFiveEvents();
 
-            var topFiveEvents = (from e in eventList
-                                 select new
-                                 {
-                                     e.Title
-                                });
-
-            ViewBag.Events = topFiveEvents.ToList();
+            ViewBag.Events = events.GetTopFiveEvents().ToList();
 
             return PartialView();
         }
@@ -252,6 +245,20 @@ namespace GatewayZ.Controllers.Web
             _service.ProcessUpdate(_user, ViewBag.Email);
 
             return RedirectToAction("EditUser");
+        }
+
+        public IActionResult RecoverPassword()
+        {
+
+            return View();
+        }
+
+        public IActionResult UnauthorizedUser()
+        {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
+            
+            return View();
         }
     }
 }

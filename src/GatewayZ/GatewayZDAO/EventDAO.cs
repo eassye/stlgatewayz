@@ -35,13 +35,25 @@ namespace GatewayZ.GatewayZDAO
             return listEvents;
         }
 
-        public List<Event> GetTopFiveEvents()
+        public List<string> GetTopFiveEvents()
         {
             var collection = _database.GetCollection<Event>("Events");
-            var sort = Builders<Event>.Sort.Ascending("StartDate");
-            var topFiveEvents = collection.Find(Builders<Event>.Filter.Empty).Sort(sort).Limit(5).ToList();
 
-            return topFiveEvents;
+            var eventList = new List<string>();
+
+            Event _event = new Event();
+
+            var query =
+                        (from e in collection.AsQueryable<Event>()
+                        orderby e.Title descending
+                        select e.Title).Take(5);
+
+            foreach (var title in query)
+            {
+                eventList.Add(title);
+            }
+
+            return eventList;
         }
     }
 }
