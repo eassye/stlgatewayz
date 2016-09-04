@@ -29,6 +29,10 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
+            EventDAO events = new EventDAO();
+
+            ViewBag.Events = events.GetTopFiveEvents().ToList();
+
             return PartialView();
         }
 
@@ -95,12 +99,6 @@ namespace GatewayZ.Controllers.Web
                             };
 
             return Json(eventList);
-        }
-
-        private static DateTime ConvertFromUnixTimestamp(double timestamp)
-        {
-            var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
-            return origin.AddSeconds(timestamp);
         }
 
         [HttpPost]
@@ -200,32 +198,9 @@ namespace GatewayZ.Controllers.Web
         [HttpPost]
         public IActionResult Admin(AdminPageModel _data)
         {
-            if(_data.User != null)
-            {
-                UserDAO userUpdate = new UserDAO();
+            AdminServices _adminService = new AdminServices();
 
-                //userUpdate.SaveUser(_data.User);
-
-                if(_data.User.club != null)
-                {
-                    userUpdate.SaveMemberClub(_data.User);
-                }
-                if(_data.User.userType != null)
-                {
-                    userUpdate.SaveUserType(_data.User);
-                }
-                if(_data.User.isMember != null)
-                {
-                    userUpdate.SaveMemberStatus(_data.User);
-                }
-            }
-            
-            if(_data.Club != null)
-            {
-                ClubDAO clubUpdate = new ClubDAO();
-
-                clubUpdate.SaveClub(_data.Club);
-            }
+            _adminService.ProcessUpdate(_data);
             
             return RedirectToAction("Admin");
         }
@@ -248,6 +223,40 @@ namespace GatewayZ.Controllers.Web
             string filePath = @"Images\Gallery\2003";
 
             ViewBag.fileName = file.FileName(filePath); 
+            
+            return View();
+        }
+
+        public IActionResult EditUser()
+        {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult EditUser(User _user)
+        {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
+
+            EditUserServices _service = new EditUserServices();
+            _service.ProcessUpdate(_user, ViewBag.Email);
+
+            return RedirectToAction("EditUser");
+        }
+
+        public IActionResult RecoverPassword()
+        {
+
+            return View();
+        }
+
+        public IActionResult UnauthorizedUser()
+        {
+            ViewBag.Email = HttpContext.Session.GetString("Email");
+            ViewBag.Password = HttpContext.Session.GetString("Password");
             
             return View();
         }
