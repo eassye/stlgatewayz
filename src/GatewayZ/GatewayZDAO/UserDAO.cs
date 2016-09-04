@@ -127,5 +127,70 @@ namespace GatewayZ.GatewayZDAO
 
             return userRole;
         }
+
+        public void EditFirstName(User _user, string email)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.email, email);
+
+            var update = Builders<User>.Update.Set(s => s.firstName, _user.firstName);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
+
+        public void EditLastName(User _user, string email)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.email, email);
+
+            var update = Builders<User>.Update.Set(s => s.lastName, _user.lastName);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
+
+        public void EditEmail(User _user, string email)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.email, email);
+
+            var update = Builders<User>.Update.Set(s => s.email, _user.email);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
+
+        public void EditPhoneNumber(User _user, string email)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.email, email);
+
+            var update = Builders<User>.Update.Set(s => s.phoneNumber, _user.phoneNumber);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
+
+        public void EditPassword(User _user, string email)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.email, email);
+
+            var update = Builders<User>.Update.Set(s => s.password, _user.password);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
     }
 }
