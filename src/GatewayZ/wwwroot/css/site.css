@@ -13,13 +13,13 @@ div.loginBackGround{
     height: 6.5%;
     margin-left:auto;
     margin-right:auto;
-    padding: 10px; 
-    background-color: #808080;
+    padding: 10px;     
     border: 2px solid black;
     opacity: 10;
 	top: 0;
 	right: 0%;
     z-index:1;
+    background-image: url('../images/escheresque.png');
 }
 
 div.Joinclubbox{
@@ -61,10 +61,11 @@ div.Navbox {
 }
 
 .Navbox li{
-    background-color: #808080;
+    /*background-color: #808080;*/
     border: .5px solid black; 
     opacity: 0.8;
     z-index: 3;
+    background-image: url('../images/escheresque.png');
 }
 
 .Navbox li a{
@@ -72,14 +73,14 @@ div.Navbox {
     text-align:center;
     display: block;
     color: black;
-    padding: 8px 0 8px 0;
-    /*padding: 8px 0 8px 16px;*/
+    padding: 8px 0 8px 0;    
     text-decoration: none;
 }
 
 .Navbox li:hover{
     opacity: 1.0;
     z-index: 4;
+    background-image: url('../images/escheresque_ste.png');
 }
 
 /* Change the link color on hover */
@@ -89,6 +90,7 @@ div.Navbox {
     opacity: 1.0;
     filter: alpha(opacity=100);
     z-index: 4;
+    background-image: url('../images/escheresque_ste.png');
 }
 
 .topNav  {
@@ -166,24 +168,22 @@ footer {
 }
 
 /*////////////////////////////////         ABOUT PAGE CSS          ////////////////////////////*/
-.aboutpage {
-    background-image: url('../images/aboutpagebg.jpg');
-    min-width: 100%;
-    min-height: 100%;
-}
+
 
 .contacts {
     position: absolute;   
     z-index: 6;
     left:0px;
+    float:left;
+
 }
 
 .contacts ul {
     list-style-type: none;
     margin: 0;
     padding: 0;  
-    width: 250px;
-    height: 393px;
+    width: 100%;
+    height: 100%;
     stroke-width: 2px;
     stroke:rgb(0,0,0);
     z-index: 6;
@@ -192,41 +192,40 @@ footer {
 
 .contacts li a {
     display: block;
-    color: white;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    background-color: #333;
     opacity: 0.8;
+    background-image: url('../images/escheresque.png');
     
 }
 
 /* Change the link color to #111 (black) on hover */
 .contacts li a:hover {
-    background-color: #111;
+    color: white;
     opacity: 1.0;
+    background-image: url('../images/escheresque_ste.png');
 }
 
 .clubinfo {
-    position: absolute;   
-    top: 50%;
-    left: 60%;
-    margin-top: -350px;
-    margin-left: -500px;
-    width: 900px;
-    height: 700px;
+    position: fixed;      
+    width: 80%;
+    height: 80%;
     border: 5px outset red;
     background-color:gainsboro;
     z-index: 1;
 }
 
 .Contactinfobox{
-    position: absolute;
-    width: 900px;
-    height: 700px;
-    border: 5px outset red;
-    background-color:gainsboro;
-    z-index: 1;
+    position: fixed;
+    width: 50%;
+    height:70%;
+    border: 5px outset red;    
+    background-image: url('../images/escheresque.png');
+    z-index: 3;
+    float:right;
+    
 }
 
 
@@ -240,55 +239,41 @@ footer {
 .infopic2{
     position:absolute;
     top: 0px;
-    right: 100px;
+    right: 0px;
    
    }
 
 
 .infopics{  
     max-width: 100px;
-    max-height: 100px;
+    max-height: 80px;
 
 }
 .popboarder{
     width: 100%;
-    height: 100px;
+    height: 80px;
     color: white;
     background-color: black;
     text-align:center;
     text-decoration: underline;
-    font-size: 70px;
+    font-size: 300%;
 }
 
-div#background
-{
-   top: 0px;
-   left: 0px;
-   z-index:0;
- }
 
- div#background img
- {
-   position:fixed;
-   width: 100%;
-   height: 100%;
-   z-index:0;
-  }
 
 
 
  .contentPic{
-    max-width: 250px;
-    max-height: 300px;
+    max-width: 40%;
+    max-height: 200px;
     float:left;
  }
 
  .contentText{
     position:relative;
-    top:85%;
-    left:30%;
-    width: 500px;
-    height: 600px;
+    top:85%;    
+    width: 100%;
+    height: 100%;
     color:black;
  }
 
@@ -524,116 +509,7 @@ div#background
             display:block;
 }
 
-/*//////////////////////   Gallery Page     //////////////////////////////*/
 
-/*div.GalleryYearNavBar {
-    position: absolute;
-    top: 150px;   
-    z-index: 1;
-}*/
-
-/*.GalleryYearNavBar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    width: 250px;
-    height: 600px;
-    stroke-width: 2px;
-    stroke:rgb(0,0,0);
-    z-index: 2;
-}
-
-.GalleryYearNavBar li{
-    background-color: #808080;
-    border: .5px solid black; 
-    opacity: 0.8;
-    z-index: 3;
-}*/
-
-/*.GalleryYearNavBar li a{
-    font-weight: bold;
-    text-align:center;
-    display: block;
-    color: black;
-    padding: 8px 0 8px 0;
-    /*padding: 8px 0 8px 16px;*/
-    text-decoration: none;
-}*/
-
-/*.GalleryYearNavBar li:hover{
-    opacity: 1.0;
-    z-index: 4;
-}
-
-/* Change the link color on hover */
-/*.GalleryYearNavBar li a:hover {
-    background-color: black;
-    color: white;
-    opacity: 1.0;
-    filter: alpha(opacity=100);
-    z-index: 4;
-}*/
-
-
-/*.GalleryThumbShowArea {
-    position: absolute;
-    top: 50%;
-    left: 60%;
-    margin-top: -350px;
-    margin-left: -500px;
-    width: 900px;
-    height: 700px;
-    border: 5px outset red;
-    background-color: gainsboro;
-    z-index: 2;
-}
-
-.thumbnail {
-    width: 150px;
-    height: 150px;
-    padding:10px;
-    background-color: gainsboro;
-}*/
-
-/*.Galarrows div{
-    opacity:0;
-}
-
-.Galarrows div:hover{
-    opacity:1;
-   
-}*/
-
-
- /*#carousel-custom {
-            margin: 20px auto;
-            width: 400px;
-        }
-        #carousel-custom .carousel-indicators {
-            margin: 10px 0 0;
-            overflow: auto;
-            position: static;
-            text-align: left;
-            white-space: nowrap;
-            width: 100%;
-        }*/
-        /*#carousel-custom .carousel-indicators li {
-            background-color: transparent;
-            -webkit-border-radius: 0;
-            border-radius: 0;
-            display: inline-block;
-            height: auto;
-            margin: 0 !important;
-            width: auto;
-        }
-        #carousel-custom .carousel-indicators li img {
-            display: block;
-        }
-        #carousel-custom .carousel-outer {
-            position: relative;
-        }*/
-
-       
 
 /*//////////////////////      MEMBERS PAGE        ///////////////*/
 
@@ -668,4 +544,12 @@ div#background
 .lightboxpicrow{
     height:200px;    
     margin-left:100px;    
+}
+
+
+
+body{
+
+  background-image: url('../images/escheresque_ste.png');
+ 
 }
