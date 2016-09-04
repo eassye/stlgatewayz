@@ -1,23 +1,26 @@
 ﻿
 /*////////////////////////////////////       HOME PAGE CSS      //////////////////////////////*/
 
-div.Logo{
-    position: absolute; 
+.Logo{
+    position: fixed; 
     top:0; 
     left:auto;
+    max-width:40%;  
+    height:auto;
+    width:200px;
 }
 
 div.loginBackGround{
     position: absolute;
     width:auto;
-    height: 6.5%;
+    height: auto;
     margin-left:auto;
-    margin-right:auto;
+    margin-right:0px;
     padding: 10px;     
     border: 2px solid black;
     opacity: 10;
-	top: 0;
-	right: 0%;
+	top: 0px;
+	right: 0px;
     z-index:1;
     background-image: url('../images/escheresque.png');
 }
@@ -47,14 +50,15 @@ div.Navbox {
     position: absolute;
     top: 150px;   
     z-index: 1;
+     max-width:40%;  
+    height:auto;
+    width:200px;
 }
 
 .Navbox ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
-    width: 250px;
-    height: 600px;
+    padding: 0;  
     stroke-width: 2px;
     stroke:rgb(0,0,0);
     z-index: 2;
@@ -134,21 +138,26 @@ div.Navbox {
 }
 
 html,
-body {
-    /*height: 100%;*/
-    font-family:sans-serif;
-    /*font-size: 12px;*/
+body { 
+    font-family:sans-serif;  
 }
 
-.carousel,
-.item,
-.active {
-    height: 100%; 
+.Hero{
+    min-width:100%;
+    min-height:100%;
+   padding:0 -20px 0 -15px;
+
 }
 
-.carousel-inner {
-    height: 100%;
+.Heroinner {
+    margin: 0 -20px 0 -15px;
 }
+
+.item{
+    object-fit:fill;
+}
+
+
 
 /* Background images are set within the HTML using inline CSS, not here */
 
@@ -156,11 +165,7 @@ body {
     width: 100%;
     height: 100%;
     background-position: center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-    position:relative;
+   position:relative;
 }
 
 footer {
@@ -232,31 +237,32 @@ footer {
 .infopic{
     position:absolute;
     top: 0px;
-    left: 0px;
-  
+    left: 0px;  
+    height: 12%;
 }
 
 .infopic2{
     position:absolute;
     top: 0px;
-    right: 0px;
-   
+    right: 0px; 
+     height: 12%;
    }
 
 
 .infopics{  
-    max-width: 100px;
-    max-height: 80px;
+   
+   max-height: 100%;
 
 }
 .popboarder{
     width: 100%;
-    height: 80px;
+    height: 12%;   
     color: white;
     background-color: black;
     text-align:center;
     text-decoration: underline;
-    font-size: 300%;
+    font-size: 5vw;
+    font-size: 5vh;
 }
 
 
