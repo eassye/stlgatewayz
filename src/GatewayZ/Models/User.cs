@@ -8,7 +8,6 @@ using System.ComponentModel;
 using MongoDB.Bson.Serialization.Attributes;
 using MongoDB.Driver;
 
-
 namespace GatewayZ.Models
 {
     public class User

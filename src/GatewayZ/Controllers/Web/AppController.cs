@@ -302,11 +302,11 @@ namespace GatewayZ.Controllers.Web
         [HttpPost]
         public IActionResult RecoverPassword(User _user)
         {
-            var _service = new EditUserServices(_userDAO);
+           var _service = new EditUserServices(_userDAO);
 
-            _service.UpdateUserPassword(_user);
+           _service.UpdateUserPassword(_user);
 
-            return RedirectToAction("RecoverPassword");
+           return RedirectToAction("RecoverPassword");
         }
 
         public IActionResult UnauthorizedUser()
