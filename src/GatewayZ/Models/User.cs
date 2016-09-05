@@ -17,24 +17,24 @@ namespace GatewayZ.Models
         public ObjectId Id { get; set; }
 
         [Display(Name = "First Name:")]
-        [Required(ErrorMessage = "Please Provide your First Name...")]
+        [Required(ErrorMessage = "Please Provide your First Name")]
         public string firstName { get; set; }
         
         [Display(Name = "Last Name:")]
-        [Required(ErrorMessage = "Please Provide your Last Name...")]
+        [Required(ErrorMessage = "Please Provide your Last Name")]
         public string lastName { get; set; }
         
         [Display(Name = "Email:")]
-        [Required(ErrorMessage = "Email Address is Required...")]
-        [EmailAddress(ErrorMessage = "Invalid Email Address...")]
+        [Required(ErrorMessage = "Email Address is Required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string email { get; set; }
         
         [Display(Name = "Phone Number")]
-        [Required(ErrorMessage = "Phone Number is Required...")]
+        [Required(ErrorMessage = "Phone Number is Required")]
         public string phoneNumber { get; set; }
         
         [Display(Name = "Display Name:")]
-        [Required(ErrorMessage = "Please Provide a Display Name...")]
+        [Required(ErrorMessage = "Please Provide a Display Name")]
         public string displayName { get; set; }
         
         [Display(Name = "Club:")]
@@ -50,23 +50,23 @@ namespace GatewayZ.Models
         public string userType { get; set; }
        
         [Display(Name = "Password:")]
-        [Required(ErrorMessage = "Please Provide a Password...")]
+        [Required(ErrorMessage = "Please Provide a Password")]
         public string password { get; set; }
         
         [Display(Name = "Security Question 1:")]
-        [Required(ErrorMessage = "Please Select a Security Question...")]
+        [Required(ErrorMessage = "Please Select a Security Question")]
         public List<string> securityQuestionOne { get; set; }
        
         [Display(Name = "Security Question 2:")]
-        [Required(ErrorMessage = "Please Select a Security Question...")]
+        [Required(ErrorMessage = "Please Select a Security Question")]
         public List<string> securityQuestionTwo { get; set; }
        
         [Display(Name = "Security Answer 1:")]
-        [Required(ErrorMessage = "Please Enter a Security Question Answer...")]
+        [Required(ErrorMessage = "Please Enter a Security Question Answer")]
         public string answerOne { get; set; }
         
         [Display(Name = "Security Answer 2:")]
-        [Required(ErrorMessage = "Please Enter a Security Question Answer...")]
+        [Required(ErrorMessage = "Please Enter a Security Question Answer")]
         public string answerTwo { get; set; }
     }
 }

@@ -19,8 +19,7 @@
     <div class="topNav">
         <ul>
             <li><a href="~/App/Admin">Admin</a></li>
-            <li><a href="~/App/Gallery">Gallery</a></li>
-            <li><a href="~/App/Members">Members</a></li>
+            @*<li><a href="~/App/Members">Members</a></li>*@
             <li><a href="~/App/Events">Events</a></li>
             <li><a href="~/App/History">History</a></li>
             <li><a href="~/App/About">About</a></li>
@@ -28,7 +27,7 @@
 
             @if (@ViewBag.Email != null && @ViewBag.Password != null)
             {
-                <li style="float:left"><a href="~/App/EditUser">Welcome @ViewBag.Email</a></li>
+                <li style="float:left"><a href="~/App/EditUser">Welcome @ViewBag.DisplayName</a></li>
                 <li style="float:left">
                     <a class="glyphicon glyphicon-log-out"@Html.ActionLink("Logout", "Logout")></a>                     
                 </li>
