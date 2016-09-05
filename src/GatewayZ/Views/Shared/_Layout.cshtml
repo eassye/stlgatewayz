@@ -28,7 +28,7 @@
 
             @if (@ViewBag.Email != null && @ViewBag.Password != null)
             {
-                <li style="float:left"><a href="~/App/EditUser">Welcome @ViewBag.Email</a></li>
+                <li style="float:left"><a href="~/App/EditUser">Welcome @ViewBag.DisplayName</a></li>
                 <li style="float:left">
                     <a class="glyphicon glyphicon-log-out"@Html.ActionLink("Logout", "Logout")></a>                     
                 </li>
