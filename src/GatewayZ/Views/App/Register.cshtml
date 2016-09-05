@@ -55,9 +55,12 @@
                 @Html.LabelFor(model => model.password, new { @class = "control-label col-xs-2" })
                 <div class="col-xs-3">
                     @Html.PasswordFor(model => model.password, new { @class = "form-control" })
-                    
+
                 </div>
-                <div><span class="help-inline pull-left" style="color:red">@Html.ValidationMessageFor(model => model.password)</span></div>
+
+                <div>
+                    <span class="help-inline pull-left" style="color:red">@Html.ValidationMessageFor(model => model.password)</span>
+                </div>
             </div>
 
             <div class="form-group">

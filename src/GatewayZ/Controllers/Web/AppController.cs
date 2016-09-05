@@ -10,6 +10,7 @@ using MongoDB.Bson;
 using System.Security.Claims;
 using Microsoft.AspNet.Http;
 using GatewayZ.GatewayZDAO;
+using GatewayZ.Security;
 
 namespace GatewayZ.Controllers.Web
 {
@@ -33,11 +34,15 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
-            ViewBag.Events = _eventDAO.GetTopFiveEvents().ToList();
-
             if (ViewBag.Email != null)
             {
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
+
+                //string password = "Pa$$w0rd";
+                //Crypto _crypto = new Crypto();
+                //string encrpyTxt = _crypto.EncryptString(ViewBag.Password, password);
+                //string decryptTxt = _crypto.DecryptString(encrpyTxt, password);
+                ViewBag.Events = _eventDAO.GetTopFiveEvents().ToList();
             }
 
             return PartialView();
@@ -302,11 +307,11 @@ namespace GatewayZ.Controllers.Web
         [HttpPost]
         public IActionResult RecoverPassword(User _user)
         {
-            var _service = new EditUserServices(_userDAO);
+           var _service = new EditUserServices(_userDAO);
 
-            _service.UpdateUserPassword(_user);
+           _service.UpdateUserPassword(_user);
 
-            return RedirectToAction("RecoverPassword");
+           return RedirectToAction("RecoverPassword");
         }
 
         public IActionResult UnauthorizedUser()
