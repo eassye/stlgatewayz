@@ -7,13 +7,27 @@
     left:auto;
     max-width:40%;  
     height:auto;
-    width:200px;
+    width:180px;   
 }
 
-div.loginBackGround{
+
+.RegisterLink {
+    float:right;
+    font-size:13px;
+    text-decoration:underline;
+}
+
+.RecoverPasswordLink {
+    float:right;
+    font-size:13px;
+    text-decoration:underline;
+}
+
+.loginBackGround{
     position: absolute;
     width:auto;
     height: auto;
+    max-width:55%;
     margin-left:auto;
     margin-right:0px;
     padding: 10px;     
@@ -26,11 +40,20 @@ div.loginBackGround{
 }
 
 div.Joinclubbox{
-    position:absolute;
-    top: 10%;
-	right: 1%;
+    position:fixed;
+    top: 150px;
+	right: 0px;
+    max-width:55%;
+    width:275px;
+    height:auto;
 }
 
+.JoinclubPic{
+    max-width:100%;
+    height:auto;
+    top: 10%;
+	right: 0px;
+}
 div.login{
     position: relative;
     color:black;
@@ -48,11 +71,11 @@ div.login{
 
 div.Navbox {
     position: absolute;
-    top: 150px;   
+    top: 170px;   
     z-index: 1;
      max-width:40%;  
     height:auto;
-    width:200px;
+    width:180px;
 }
 
 .Navbox ul {
@@ -64,8 +87,7 @@ div.Navbox {
     z-index: 2;
 }
 
-.Navbox li{
-    /*background-color: #808080;*/
+.Navbox li{   
     border: .5px solid black; 
     opacity: 0.8;
     z-index: 3;
@@ -87,6 +109,44 @@ div.Navbox {
     background-image: url('../images/escheresque_ste.png');
 }
 
+.UpcommingEvents{
+    position:fixed;
+    top:325px;
+    right:0px;
+    display: block;
+
+    opacity: 0.9;
+    background-image: url('../images/escheresque.png');
+    max-width:55%;
+    width:275px;
+    height:auto;   
+    border: 5px outset red;
+}
+
+.UpcommingEventsHeader{
+    background-image: url('../images/escheresque_ste.png');
+    width: 100%;
+    height:auto;
+    color: white;
+    text-align: center;
+    border-bottom: 5px outset red;
+    font-size: 20px;
+    text-decoration: underline;
+}
+
+/*.UpcomingEventsListItemsUL{  
+    position:absolute;     
+    left:0px;
+     width:100%;
+}
+
+.UpcomingEventsListItemsLI{
+    position:absolute;
+    border: .5px solid black;
+    left: 0px;
+    width: 100%;
+    height: 15px;
+}*/
 /* Change the link color on hover */
 .Navbox li a:hover {
     background-color: black;
