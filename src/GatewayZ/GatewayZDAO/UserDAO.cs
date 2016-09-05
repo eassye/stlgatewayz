@@ -205,5 +205,21 @@ namespace GatewayZ.GatewayZDAO
 
             result.Wait();
         }
+
+        public string RetrieveUserDisplay(string userEmail)
+        {
+            User _user = new User();
+
+            var collection = _database.GetCollection<User>("User");
+
+            var query =
+                        from e in collection.AsQueryable<User>()
+                        where e.email == userEmail
+                        select e.displayName;
+
+            string displayName = query.FirstOrDefault();
+
+            return displayName;
+        }
     }
 }
