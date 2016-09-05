@@ -131,13 +131,18 @@ namespace GatewayZ.Controllers.Web
         }
 
         [HttpPost]
-        public IActionResult Register(User user)
+        public IActionResult Register([Bind]User user)
         {
-            var collection = _database.GetCollection<User>("User");
+            if(ModelState.IsValid)
+            {
+                var collection = _database.GetCollection<User>("User");
 
-            collection.InsertOneAsync(user);
+                collection.InsertOneAsync(user);
 
-            return RedirectToAction("Index");
+                return RedirectToAction("Index");
+            }
+
+            return View();
         }
 
         public IActionResult Gallery()
