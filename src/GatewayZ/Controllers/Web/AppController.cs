@@ -191,7 +191,7 @@ namespace GatewayZ.Controllers.Web
             }
             else
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("UnauthorizedUser");
             }
         }
 
@@ -241,7 +241,9 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
-            EditUserServices _service = new EditUserServices();
+            UserDAO _userDAO = new UserDAO();
+            EditUserServices _service = new EditUserServices(_userDAO);
+
             _service.ProcessUpdate(_user, ViewBag.Email);
 
             return RedirectToAction("EditUser");
@@ -249,8 +251,18 @@ namespace GatewayZ.Controllers.Web
 
         public IActionResult RecoverPassword()
         {
-
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult RecoverPassword(User _user)
+        {
+            UserDAO _userDAO = new UserDAO();
+            EditUserServices _service = new EditUserServices(_userDAO);
+
+            _service.UpdateUserPassword(_user);
+
+            return RedirectToAction("RecoverPassword");
         }
 
         public IActionResult UnauthorizedUser()

@@ -192,5 +192,18 @@ namespace GatewayZ.GatewayZDAO
 
             result.Wait();
         }
+
+        public void ChangePassword(User _user)
+        {
+            var collection = _database.GetCollection<User>("User");
+
+            var filter = Builders<User>.Filter.Eq(s => s.email, _user.email) & Builders<User>.Filter.Eq(s => s.answerOne, _user.answerOne) & Builders<User>.Filter.Eq(s => s.answerTwo, _user.answerTwo);
+
+            var update = Builders<User>.Update.Set(s => s.password, _user.password);
+
+            var result = collection.UpdateOneAsync(filter, update);
+
+            result.Wait();
+        }
     }
 }

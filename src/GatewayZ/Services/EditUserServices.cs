@@ -9,32 +9,44 @@ namespace GatewayZ.Services
 {
     public class EditUserServices
     {
+        private UserDAO _userDao;
+
+        public EditUserServices(UserDAO userDao)
+        {
+            _userDao = userDao;
+        }
         public void ProcessUpdate(User _user, string email)
         {
             if (_user != null)
             {
-                UserDAO userUpdate = new UserDAO();
-
                 if (_user.firstName != null)
                 {
-                    userUpdate.EditFirstName(_user, email);
+                    _userDao.EditFirstName(_user, email);
                 }
                 if (_user.lastName != null)
                 {
-                    userUpdate.EditLastName(_user, email);
+                    _userDao.EditLastName(_user, email);
                 }
                 if (_user.email != null)
                 {
-                    userUpdate.EditEmail(_user, email);
+                    _userDao.EditEmail(_user, email);
                 }
                 if(_user.phoneNumber != null)
                 {
-                    userUpdate.EditPhoneNumber(_user, email);
+                    _userDao.EditPhoneNumber(_user, email);
                 }
                 if (_user.password != null)
                 {
-                    userUpdate.EditPassword(_user, email);
+                    _userDao.EditPassword(_user, email);
                 }
+            }
+        }
+
+        public void UpdateUserPassword(User _user)
+        {
+            if(_user.email != null && _user.answerOne != null && _user.answerTwo != null && _user.password != null)
+            {
+                _userDao.ChangePassword(_user);
             }
         }
     }
