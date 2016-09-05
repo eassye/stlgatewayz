@@ -637,7 +637,7 @@ body{
     background-image: url('../images/escheresque.png');
     z-index: 2;
     text-align:center;
-   
+    
 }
 
 
@@ -647,7 +647,7 @@ body{
 }
 
 .UnAuthorizedBackgroundText{    
-    color:black;
+    
 }
 
 /*/////////////////////////////UnAuthorized Page//////////////////////*/
