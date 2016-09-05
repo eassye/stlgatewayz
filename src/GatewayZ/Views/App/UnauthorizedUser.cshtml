@@ -2,6 +2,16 @@
     ViewBag.Title = "Unauthorized User";
 }
 
-<div class="UnAuthorizedBackground">
-    <p><img src="~/Images/WarningSign.png" style="float:left"/><strong>Sorry! You are not authorized to view this page!<a href="~/App/Index">Click Here to Return to Home Page</a></strong></p>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-2 col-sm-4">
+            >
+        </div>
+        <div class="UnAuthorizedBackground col-xs-8 col-sm-4 ">
+            <div class="UnAuthorizedBackgroundPic">
+                <img src="~/Images/WarningSign.png" />
+                <p class="UnAuthorizedBackgroundText"><strong>Sorry! You are not authorized to view this page! <br /> <a href="~/App/Index">Click Here to Return to Home Page</a></strong></p>
+            </div>
+        </div>
+    </div>
 </div>
