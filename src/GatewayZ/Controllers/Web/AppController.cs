@@ -93,7 +93,7 @@ namespace GatewayZ.Controllers.Web
             return View();
         }
 
-        public IActionResult Events(Event events)
+        public IActionResult Events()
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
@@ -122,10 +122,21 @@ namespace GatewayZ.Controllers.Web
             return Json(eventList);
         }
 
-        [HttpPost]
-        public IActionResult SaveEvents(Event events)
+        private static DateTime ConvertFromUnixTimestamp(double timestamp)
         {
-            _eventDAO.SaveEvent(events);
+            var origin = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            return origin.AddSeconds(timestamp);
+        }
+
+        [HttpPost]
+        public IActionResult Events([Bind]Event events)
+        {
+            if (ModelState.IsValid)
+            {
+                events.StartDate.ToString();
+                _eventDAO.SaveEvent(events);
+                return RedirectToAction("Events");
+            }
 
             return View();
         }

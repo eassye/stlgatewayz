@@ -10,15 +10,20 @@ namespace GatewayZ.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id { get; set; }
 
-        //public int EventID { get; set;}
-
         [Display(Name = "Title:")]
+        [Required(ErrorMessage = "Please Provide a Title")]
         public string Title { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "Start Date:")]
-        public string StartDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy HH:mm}")]
+        [Required(ErrorMessage = "Please Provide a Start Date (MM/dd/yyyy)")]
+        public DateTime StartDate { get; set; }
 
+        [DataType(DataType.Date)]
         [Display(Name = "End Date:")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy HH:mm}")]
+        [Required(ErrorMessage = "Please Provide a End Date")]
         public string EndDate { get; set; }
 
         [Display(Name = "All Day:")]

@@ -17,6 +17,14 @@ namespace GatewayZ.GatewayZDAO
             _client = new MongoClient("mongodb://gatewayz:370zNismo@ds044229.mlab.com:44229/gatewayz");
             _database = _client.GetDatabase(("gatewayz"));
         }
+
+        public void Login(User user, string email, string password)
+        {
+            var collection = _database.GetCollection<User>("User");
+            var filter = Builders<User>.Filter.Eq("email", user.email);
+            var document = collection.Find(filter).First();
+        }
+
         public List<string> UsersList(string club)
         {
             var userList = new List<string>();
