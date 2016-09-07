@@ -18,9 +18,16 @@
 <body>
     <div class="topNav">
         <ul>
-            <li><a href="~/App/Admin">Admin</a></li>
-            @*<li><a href="~/App/Members">Members</a></li>*@
-            <li><a href="~/App/Events">Events</a></li>
+            @{
+                if (ViewBag.AuthUser == "Admin")
+                {
+                    <li><a href="~/App/Admin">Admin</a></li>
+                }
+                if (ViewBag.AuthUser == "RegisteredUser" || ViewBag.AuthUser == "Admin")
+                {
+                    <li><a href="~/App/Events">Events</a></li>
+                }   
+            }
             <li><a href="~/App/History">History</a></li>
             <li><a href="~/App/About">About</a></li>
             <li><a href="~/App/Index">Home</a></li>
@@ -29,16 +36,15 @@
             {
                 <li style="float:left"><a href="~/App/EditUser">Welcome @ViewBag.DisplayName</a></li>
                 <li style="float:left">
-                    <a class="glyphicon glyphicon-log-out"@Html.ActionLink("Logout", "Logout")></a>                     
+                    <a class="glyphicon glyphicon-log-out" @Html.ActionLink("Logout", "Logout")></a>
                 </li>
             }
             else
             {
                 <li style="float:left"><a href="~/App/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
                 <li style="float:left"><a href="~/App/Index"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            }   
+            }
         </ul>
-        
     </div>
 
     <div>
