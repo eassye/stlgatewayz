@@ -61,14 +61,7 @@ div.login{
     z-index:2;
 }
 
-#footer{
-    background-color: #222;
-    color: #eee;
-    padding: 8px 5px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
+
 
 div.Navbox {
     position: absolute;
@@ -158,33 +151,7 @@ div.Navbox {
     background-image: url('../images/escheresque_ste.png');
 }
 
-.topNav  {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-    z-index:1;
-    position:relative;
-    max-height:50px;
-}
 
-.topNav li {
-    float: right;
-}
-
-.topNav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-/* Change the link color to #111 (black) on hover */
-.topNav li a:hover {
-    background-color: #111;
-}
 
 .centerCalender {
     margin: auto;
@@ -231,9 +198,6 @@ body {
    position:relative;
 }
 
-footer {
-    margin: 50px 0;
-}
 
 /*////////////////////////////////         ABOUT PAGE CSS          ////////////////////////////*/
 
@@ -274,14 +238,7 @@ footer {
     background-image: url('../images/escheresque_ste.png');
 }
 
-.clubinfo {
-    position: fixed;      
-    width: 80%;
-    height: 80%;
-    border: 5px outset red;
-    background-color:gainsboro;
-    z-index: 1;
-}
+
 
 .Contactinfobox{
     position: fixed;
@@ -722,21 +679,81 @@ footer {
 
 
 
+/*////////////////////  EVENT PAGE     //////////////////////*/
 
 
 
 
+#EventCalendarArea{
+ position: relative center;   
+    width: 70%;
+    height:70%;   
+    min-width:395px;
+    max-height:700px;
+    border: 5px outset red;
+    margin:0px;
+    padding:0px;
+    background-image: url('../images/escheresque.png');
+    z-index: 2; 
+    overflow:scroll;  
+}
+
+.fc-toolbar{
+
+    background-color: #333;
+    color:white;
+}
+
+.fc-ltr .fc-basic-view .fc-day-number{
+    color:black;
+    background-color:gainsboro;
+    border:solid 1px  black;
+}
 
 
 
+/*///////////////////////////// SHARED SITE LAYOUT  ///////////////////////////*/
 
 
+.topNav  {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    z-index:1;
+    position:relative;
+    max-height:50px;
+}
 
+.topNav li {
+    float: right;
+}
 
+.topNav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
 
-
-
+/* Change the link color to #111 (black) on hover */
+.topNav li a:hover {
+    background-color: #111;
+}
 
 body{
   background-image: url('../images/escheresque_ste.png'); 
+}
+
+#footer{
+    background-color: #222;
+    color: #eee;
+    padding: 8px 5px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index:5;
+    margin-top:50px;
 }
