@@ -1,16 +1,11 @@
-﻿using Microsoft.AspNet.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using MongoDB.Driver;
-using GatewayZ.Services;
+﻿using GatewayZ.GatewayZDAO;
 using GatewayZ.Models;
-using MongoDB.Bson;
-using System.Security.Claims;
+using GatewayZ.Services;
 using Microsoft.AspNet.Http;
-using GatewayZ.GatewayZDAO;
-using GatewayZ.Security;
+using Microsoft.AspNet.Mvc;
+using MongoDB.Driver;
+using System;
+using System.Linq;
 
 namespace GatewayZ.Controllers.Web
 {
@@ -33,6 +28,8 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -73,7 +70,7 @@ namespace GatewayZ.Controllers.Web
                 return PartialView();
             }
         }
-        
+
         public IActionResult Logout()
         {
             HttpContext.Session.Clear();
@@ -84,6 +81,7 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -97,16 +95,25 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
             }
 
-            return View();
+            string authUser = _userDAO.RetrieveUserType(ViewBag.Email);
+
+            if (authUser == "Admin" || authUser == "RegisteredUser")
+            {
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("UnauthorizedUser");
+            }
         }
 
-        
         public IActionResult GetEvents()
         {
             var listEvents = _eventDAO.GetEvents();
@@ -143,13 +150,14 @@ namespace GatewayZ.Controllers.Web
 
         public IActionResult Register()
         {
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
             return View();
         }
 
         [HttpPost]
         public IActionResult Register([Bind]User user)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 var collection = _database.GetCollection<User>("User");
 
@@ -165,6 +173,7 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -178,12 +187,13 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
-            if(ViewBag.Email != null)
+            if (ViewBag.Email != null)
             {
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
             }
-           
+
             return View();
         }
 
@@ -191,6 +201,7 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -224,6 +235,7 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -248,7 +260,7 @@ namespace GatewayZ.Controllers.Web
             var _adminService = new AdminServices();
 
             _adminService.ProcessUpdate(_data);
-            
+
             return RedirectToAction("Admin");
         }
 
@@ -256,6 +268,7 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -269,6 +282,7 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -279,8 +293,8 @@ namespace GatewayZ.Controllers.Web
 
             string filePath = @"Images\Gallery\2003";
 
-            ViewBag.fileName = file.FileName(filePath); 
-            
+            ViewBag.fileName = file.FileName(filePath);
+
             return View();
         }
 
@@ -288,6 +302,7 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
@@ -312,23 +327,26 @@ namespace GatewayZ.Controllers.Web
 
         public IActionResult RecoverPassword()
         {
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
+
             return View();
         }
 
         [HttpPost]
-        public IActionResult RecoverPassword(User _user)
+        public IActionResult RecoverPassword([Bind]User _user)
         {
-           var _service = new EditUserServices(_userDAO);
+            var _service = new EditUserServices(_userDAO);
 
-           _service.UpdateUserPassword(_user);
+            _service.UpdateUserPassword(_user);
 
-           return RedirectToAction("RecoverPassword");
+            return RedirectToAction("RecoverPassword");
         }
 
         public IActionResult UnauthorizedUser()
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
+            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
             if (ViewBag.Email != null)
             {
