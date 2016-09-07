@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-    <script src="~/bootstrap/js/bootstrap.js"></script>  
+    <script src="~/bootstrap/js/bootstrap.js"></script>
 </head>
 
 <body style="overflow-y: hidden">
@@ -52,98 +52,91 @@
             </div>
         </div>
     </div>
-                
-                
-  
-        <div>
-            <a href="~/App/Index"><img src="~/Images/logoPS.png" class="Logo"></a>
-        </div>
-        <div class="Navbox">
-            <ul>
-                <li><a href="~/App/Index">Home</a></li>
-                <li><a href="~/App/About">About</a></li>
-                <li><a href="~/App/History">History</a></li>
-                <li><a href="~/App/Events">Events</a></li>                                
-                <li><a href="~/App/Admin">Admin</a></li>
-                @*<li><a href="~/App/Members">Members</a></li>*@
-            </ul>
-        </div>
-    
-@if (@ViewBag.Email != null && @ViewBag.Password != null)
-{
-    <div class="UpcommingEvents">
-        <div class="UpcommingEventsHeader">
-            <p>UPCOMING EVENTS</p>
-        </div>
-        <div>
-        <ul class="UpcomingEventsListItemsUL" style="list-style:none">
-            @{
-                foreach (var text in @ViewBag.Events)
-                {
-                    <li class="UpcomingEventsListItemsLI">@text</li>
-                }
-            }
-        </ul>
-            </div>
-        
+
+    <div>
+        <a href="~/App/Index"><img src="~/Images/logoPS.png" class="Logo"></a>
     </div>
-                }
+    <div class="Navbox">
+        <ul>
+            <li><a href="~/App/Index">Home</a></li>
+            <li><a href="~/App/About">About</a></li>
+            <li><a href="~/App/History">History</a></li>
+            <li><a href="~/App/Events">Events</a></li>
+            <li><a href="~/App/Admin">Admin</a></li>
+            @*<li><a href="~/App/Members">Members</a></li>*@
+        </ul>
+    </div>
 
-
-                        <div class="loginBackGround">
-                            @if (@ViewBag.Email != null && @ViewBag.Password != null)
-            {
-                                <p><strong>Welcome @ViewBag.DisplayName</strong> | @Html.ActionLink("Logout", "Logout")</p>
-                            }
-                            else
-                            {
-                                <div class="login">
-                                    <form class="form-inline" role="form" method="post">
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.email)
-                                            @Html.TextBoxFor(model => model.email, new { @class = "form-control", @id = "inputEmail", placeholder = "Email" })
-                                        </div>
-
-                                        <div class="form-group">
-                                            @Html.LabelFor(model => model.password)
-                                            @Html.PasswordFor(model => model.password, new { @class = "form-control", @id = "inputPassword", placeholder = "Password" })
-                                        </div>
-
-                                        <button type="submit" class="btn btn-default btn-sm">
-                                            <span class="glyphicon glyphicon-log-in"></span> Log in
-                                        </button>
-                                        <div>
-                                            <div class="RecoverPasswordLink">
-                                                <a href="~/App/RecoverPassword"><strong>/Recover Password</strong></a>
-                                            </div>
-                                            <div class="RegisterLink">
-                                                <a href="~/App/Register"><strong>Register</strong></a>
-                                            </div>                                           
-                                       </div>                                      
-                                    </form>
-                                </div>
-                            }
-                        </div>
-
-                        @if (@ViewBag.Email != null && @ViewBag.Password != null)
+    @if (@ViewBag.Email != null && @ViewBag.Password != null)
+    {
+        <div class="UpcommingEvents">
+            <div class="UpcommingEventsHeader">
+                <p>UPCOMING EVENTS</p>
+            </div>
+            <div>
+                <ul class="UpcomingEventsListItemsUL" style="list-style:none">
+                    @{
+                        foreach (var text in @ViewBag.Events)
                         {
-                            <div class="Joinclubbox">
-                                <a href="~/pdf/gatewayzSignupform.pdf" download><img src="~/Images/JoinClubDownload.jpg" class="img-rounded JoinclubPic"></a>
-                            </div>
+                            <li class="UpcomingEventsListItemsLI">@text</li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
                         }
 
-                        <div id="footer">
-                            &copy; @DateTime.Now.Year Gateway Z Club
-                            <p style="float:right">Like us on Facebook! <a href="https://www.facebook.com/gatewayzclub/"><img src="~/Images/facebooklogo.jpg" alt="facebook logo" class="img-rounded" width="25" height="25" /></a></p>
+    <div class="loginBackGround">
+        @if (@ViewBag.Email != null && @ViewBag.Password != null)
+            {
+            <p><strong>Welcome @ViewBag.DisplayName</strong> | @Html.ActionLink("Logout", "Logout")</p>
+        }
+        else
+        {
+            <div class="login">
+                <form class="form-inline" role="form" method="post">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.email)
+                        @Html.TextBoxFor(model => model.email, new { @class = "form-control", @id = "inputEmail", placeholder = "Email" })
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.password)
+                        @Html.PasswordFor(model => model.password, new { @class = "form-control", @id = "inputPassword", placeholder = "Password" })
+                    </div>
+
+                    <button type="submit" class="btn btn-default btn-sm">
+                        <span class="glyphicon glyphicon-log-in"></span> Log in
+                    </button>
+                    <div>
+                        <div class="RecoverPasswordLink">
+                            <a href="~/App/RecoverPassword"><strong>/Recover Password</strong></a>
                         </div>
+                        <div class="RegisterLink">
+                            <a href="~/App/Register"><strong>Register</strong></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        }
+    </div>
 
-                        <script>
-                            $('.carousel').carousel({
-                                interval: 3000 //changes the speed
-                            })
-                        </script>
-                    
-  
+    @if (@ViewBag.Email != null && @ViewBag.Password != null)
+    {
+        <div class="Joinclubbox">
+            <a href="~/pdf/gatewayzSignupform.pdf" download><img src="~/Images/JoinClubDownload.jpg" class="img-rounded JoinclubPic"></a>
+        </div>
+    }
 
+    <div id="footer">
+        &copy; @DateTime.Now.Year Gateway Z Club
+        <p style="float:right">Like us on Facebook! <a href="https://www.facebook.com/gatewayzclub/"><img src="~/Images/facebooklogo.jpg" alt="facebook logo" class="img-rounded" width="25" height="25" /></a></p>
+    </div>
+
+    <script>
+        $('.carousel').carousel({
+            interval: 3000 //changes the speed
+        })
+    </script>
 </body>
 </html>
