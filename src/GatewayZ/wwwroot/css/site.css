@@ -792,3 +792,18 @@ body{
     z-index:5;
     margin-top:50px;
 }
+
+/* History CSS */
+.inMemoryBox {    
+    align-content: center;
+    color:black;
+    position: relative; 
+    /*top:50px;*/  
+    right: -5%;
+    width: 90%;
+    height: -80%;
+    border: 2px outset;
+    border-color: orange;
+    background-color:gainsboro;
+    z-index: 2;
+ }
