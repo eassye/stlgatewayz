@@ -145,7 +145,7 @@ namespace GatewayZ.Controllers.Web
                 return RedirectToAction("Events");
             }
 
-            return View();
+            return RedirectToAction("Events");
         }
 
         public IActionResult Register()
@@ -274,6 +274,12 @@ namespace GatewayZ.Controllers.Web
             {
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
             }
+
+            var file = new HistoryServices();
+
+            string filePath = @"Images\Gallery\2002";
+
+            ViewBag.fileName = file.FileName(filePath);
 
             return View();
         }
