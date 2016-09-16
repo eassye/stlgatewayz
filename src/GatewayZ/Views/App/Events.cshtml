@@ -6,22 +6,6 @@
 
 @section scripts{
     <script type="text/javascript">
-        //$('#btnInit').click(function(){
-        //    $.ajax({
-        //        type: 'POST',
-        //        url: "~/App/PopulateCalendar",
-        //        success: function (response){
-        //            if (response == 'True'){
-        //                $('calendar').fullCalendar('refetchEvents');
-        //                alert('Database populated!');
-        //            }
-        //            else{
-        //                alert('Error, could not populate database!');
-        //            }
-        //        }
-        //    });
-        //});
-
         $(document).ready(function () {
 
             var date = new Date();
@@ -54,9 +38,10 @@
 							    title: title,
 							    start: start,
 							    end: end,
-							    allDay: allDay
+							    allDay: allDay,
+							    timeFormat: 'H(:mm)'
 							},
-							true // make the event "stick"
+							true // make the event "stick"              
 						);
 			        }
 			        calendar.fullCalendar('unselect');
