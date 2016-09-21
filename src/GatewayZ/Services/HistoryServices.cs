@@ -33,7 +33,7 @@ namespace GatewayZ.Services
             try
             {
                 System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(filePath);
-                string date = dir.LastWriteTime.ToShortDateString();
+                string date = dir.LastWriteTime.ToLocalTime().ToString();
                 return date;
             }
             catch (Exception e)

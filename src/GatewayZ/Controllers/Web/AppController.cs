@@ -1,20 +1,24 @@
 ﻿using GatewayZ.GatewayZDAO;
 using GatewayZ.Models;
 using GatewayZ.Services;
-using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Mvc;
-using MongoDB.Driver;
 using System;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using MongoDB.Driver;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Hosting.Internal;
+using System.IO;
 
 namespace GatewayZ.Controllers.Web
 {
     public class AppController : Controller
     {
-        protected static IMongoClient _client;
+        protected static MongoClient _client;
         protected static IMongoDatabase _database;
         private UserDAO _userDAO;
         private EventDAO _eventDAO;
+        private readonly IHostingEnvironment _hostingEnvironment;
 
         public AppController()
         {
@@ -22,6 +26,7 @@ namespace GatewayZ.Controllers.Web
             _database = _client.GetDatabase(("gatewayz"));
             _userDAO = new UserDAO();
             _eventDAO = new EventDAO();
+            _hostingEnvironment = new HostingEnvironment();
         }
 
         public IActionResult Index()
@@ -203,6 +208,13 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Password = HttpContext.Session.GetString("Password");
             ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
 
+            if (string.IsNullOrWhiteSpace(_hostingEnvironment.WebRootPath))
+            {
+                _hostingEnvironment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            }
+            string webRoot = _hostingEnvironment.WebRootPath;
+            
+
             if (ViewBag.Email != null)
             {
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
@@ -210,23 +222,23 @@ namespace GatewayZ.Controllers.Web
 
             var _service = new HistoryServices();
 
-            ViewBag.fileCount2002Folder = _service.CountFiles(@"Images\Gallery\2002");
-            ViewBag.file2002ModifiedDate = _service.LastDateModified(@"Images\Gallery\2002");
+            ViewBag.fileCount2002Folder = _service.CountFiles(webRoot + @"\Images\Gallery\2002");
+            ViewBag.file2002ModifiedDate = _service.LastDateModified(webRoot + @"\Images\Gallery\2002");
 
-            ViewBag.fileCount2003Folder = _service.CountFiles(@"Images\Gallery\2003");
-            ViewBag.file2003ModifiedDate = _service.LastDateModified(@"Images\Gallery\2003");
+            ViewBag.fileCount2003Folder = _service.CountFiles(webRoot + @"\Images\Gallery\2003");
+            ViewBag.file2003ModifiedDate = _service.LastDateModified(webRoot + @"\Images\Gallery\2003");
 
-            ViewBag.fileCount2004Folder = _service.CountFiles(@"Images\Gallery\2004");
-            ViewBag.file2004ModifiedDate = _service.LastDateModified(@"Images\Gallery\2004");
+            ViewBag.fileCount2004Folder = _service.CountFiles(webRoot + @"\Images\Gallery\2004");
+            ViewBag.file2004ModifiedDate = _service.LastDateModified(webRoot + @"\Images\Gallery\2004");
 
-            ViewBag.fileCount2005Folder = _service.CountFiles(@"Images\Gallery\2005");
-            ViewBag.file2005ModifiedDate = _service.LastDateModified(@"Images\Gallery\2005");
+            ViewBag.fileCount2005Folder = _service.CountFiles(webRoot + @"\Images\Gallery\2005");
+            ViewBag.file2005ModifiedDate = _service.LastDateModified(webRoot + @"\Images\Gallery\2005");
 
-            ViewBag.fileCount2006Folder = _service.CountFiles(@"Images\Gallery\2006");
-            ViewBag.file2006ModifiedDate = _service.LastDateModified(@"Images\Gallery\2006");
+            ViewBag.fileCount2006Folder = _service.CountFiles(webRoot + @"\Images\Gallery\2006");
+            ViewBag.file2006ModifiedDate = _service.LastDateModified(webRoot + @"\Images\Gallery\2006");
 
-            ViewBag.fileCount2007Folder = _service.CountFiles(@"Images\Gallery\2007");
-            ViewBag.file2007ModifiedDate = _service.LastDateModified(@"Images\Gallery\2007");
+            //ViewBag.fileCount2007Folder = _service.CountFiles(@"Images\Gallery\2007");
+            //ViewBag.file2007ModifiedDate = _service.LastDateModified(@"Images\Gallery\2007");
 
             return View();
         }
@@ -275,9 +287,15 @@ namespace GatewayZ.Controllers.Web
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
             }
 
+            if (string.IsNullOrWhiteSpace(_hostingEnvironment.WebRootPath))
+            {
+                _hostingEnvironment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            }
+            string webRoot = _hostingEnvironment.WebRootPath;
+
             var file = new HistoryServices();
 
-            string filePath = @"Images\Gallery\2002";
+            string filePath = webRoot + @"\Images\Gallery\2002";
 
             ViewBag.fileName = file.FileName(filePath);
 
@@ -295,9 +313,16 @@ namespace GatewayZ.Controllers.Web
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
             }
 
+            if (string.IsNullOrWhiteSpace(_hostingEnvironment.WebRootPath))
+            {
+                _hostingEnvironment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
+            }
+
+            string webRoot = _hostingEnvironment.WebRootPath;
+
             var file = new HistoryServices();
 
-            string filePath = @"Images\Gallery\2003";
+            string filePath = webRoot + @"\Images\Gallery\2003";
 
             ViewBag.fileName = file.FileName(filePath);
 
