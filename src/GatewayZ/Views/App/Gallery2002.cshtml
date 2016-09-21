@@ -6,7 +6,7 @@
     @{
         foreach (var name in @ViewBag.fileName)
         {
-            <a href="~/@name" data-lightbox="roadtrip"><img src="~/@name" style="height:150px; width:250px" /></a>
+            <a href="@name" data-lightbox="roadtrip"><img src="@name" style="height:150px; width:250px" /></a>
         }
     }
 </div>

@@ -25,6 +25,7 @@ C:\Users\Myles.LAPTOP-D95C13PC\Documents\GitHub\stlgatewayz\GatewayZTest\bin\Deb
 C:\Users\Myles.LAPTOP-D95C13PC\Documents\GitHub\stlgatewayz\GatewayZTest\obj\Debug\GatewayZTest.csprojResolveAssemblyReference.cache
 C:\Users\Myles.LAPTOP-D95C13PC\Documents\GitHub\stlgatewayz\GatewayZTest\obj\Debug\GatewayZTest.dll
 C:\Users\Myles.LAPTOP-D95C13PC\Documents\GitHub\stlgatewayz\GatewayZTest\obj\Debug\GatewayZTest.pdb
+C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZTest.dll.config
 C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZTest.dll
 C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZTest.pdb
 C:\github\GatewayZ\GatewayZTest\bin\Debug\GatewayZ.dll
