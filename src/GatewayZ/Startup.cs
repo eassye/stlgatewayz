@@ -20,6 +20,7 @@ namespace GatewayZ
             {
             app.UseSession();
             app.UseStaticFiles();
+            app.UseDeveloperExceptionPage();
 
             app.UseMvc(config =>
             {
