@@ -1,14 +1,15 @@
-﻿-d:DEBUG
+﻿-d:RELEASE
 -d:TRACE
 -d:NETCOREAPP1_0
 -nowarn:CS1701
 -nowarn:CS1702
 -nowarn:CS1705
+-optimize
 -debug:full
 -nostdlib
 -nologo
-"C:\github\GatewayZ\src\GatewayZ\obj\Debug\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
--out:"C:\github\GatewayZ\src\GatewayZ\bin\Debug\netcoreapp1.0\GatewayZ.dll"
+"C:\github\GatewayZ\src\GatewayZ\obj\Release\netcoreapp1.0\dotnet-compile.assemblyinfo.cs"
+-out:"C:\github\GatewayZ\src\GatewayZ\bin\Release\netcoreapp1.0\GatewayZ.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.0.1\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.AspNetCore.Authorization\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Authorization.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.AspNetCore.Cors\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Cors.dll"
@@ -58,8 +59,6 @@
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.Configuration\1.0.0\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.Configuration.EnvironmentVariables\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.EnvironmentVariables.dll"
--r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.Configuration.FileExtensions\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.FileExtensions.dll"
--r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.Configuration.Json\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.Json.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.DependencyInjection\1.0.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.DependencyInjection.Abstractions\1.0.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll"
 -r:"C:\Users\eassy\.nuget\packages\Microsoft.Extensions.DependencyModel\1.0.0\lib\netstandard1.6\Microsoft.Extensions.DependencyModel.dll"
@@ -180,7 +179,7 @@
 -r:"C:\Users\eassy\.nuget\packages\System.Threading.Timer\4.0.1\ref\netstandard1.2\System.Threading.Timer.dll"
 -r:"C:\Users\eassy\.nuget\packages\System.Xml.ReaderWriter\4.0.11\ref\netstandard1.3\System.Xml.ReaderWriter.dll"
 -r:"C:\Users\eassy\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll"
--resource:"C:\github\GatewayZ\src\GatewayZ\obj\Debug\netcoreapp1.0\GatewayZdotnet-compile.deps.json",GatewayZ.deps.json
+-resource:"C:\github\GatewayZ\src\GatewayZ\obj\Release\netcoreapp1.0\GatewayZdotnet-compile.deps.json",GatewayZ.deps.json
 "C:\github\GatewayZ\src\GatewayZ\Program.cs"
 "C:\github\GatewayZ\src\GatewayZ\Startup.cs"
 "C:\github\GatewayZ\src\GatewayZ\Controllers\Web\AppController.cs"
