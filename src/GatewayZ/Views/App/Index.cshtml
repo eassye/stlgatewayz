@@ -59,16 +59,16 @@
     <div class="Navbox">
         <ul>
             <li><a href="~/App/Index">Home</a></li>
-            <li><a href="~/App/About">About</a></li>
-            <li><a href="~/App/History">History</a></li>
+            <li><a href="~/About">About</a></li>
+            <li><a href="~/History">History</a></li>
             @{
                 if (ViewBag.AuthUser == "RegisteredUser" || ViewBag.AuthUser == "Admin")
                 {
-                    <li><a href="~/App/Events">Events</a></li>
+                    <li><a href="~/Events">Events</a></li>
                 }
                 if (ViewBag.AuthUser == "Admin")
                 {
-                    <li><a href="~/App/Admin">Admin</a></li>
+                    <li><a href="~/Admin">Admin</a></li>
                 }
             }
         </ul>
@@ -116,10 +116,10 @@
                     </button>
                     <div>
                         <div class="RecoverPasswordLink">
-                            <a href="~/App/RecoverPassword"><strong>|Recover Password</strong></a>
+                            <a href="~/RecoverPassword"><strong>|Recover Password</strong></a>
                         </div>
                         <div class="RegisterLink">
-                            <a href="~/App/Register"><strong>Register</strong></a>
+                            <a href="~/Register"><strong>Register</strong></a>
                         </div>
                     </div>
                 </form>

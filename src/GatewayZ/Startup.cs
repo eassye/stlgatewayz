@@ -1,10 +1,6 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Framework.Configuration;
-
 
 namespace GatewayZ
 {
@@ -13,18 +9,10 @@ namespace GatewayZ
         public void ConfigureServices(IServiceCollection services)
         {   
             services.AddMvc();
-            //services.AddCaching();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
                 options.CookieName = ".Gatewayz";
             });
-
-            //var builder = new Microsoft.Extensions.Configuration.ConfigurationBuilder()
-            //    .SetBasePath(env.ContentRootPath)
-            //    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            //    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
-            //    .AddEnvironmentVariables();
-            //Configuration = builder.Build();
         }
 
         public void Configure(IApplicationBuilder app)
@@ -33,18 +21,20 @@ namespace GatewayZ
             app.UseStaticFiles();
             app.UseDeveloperExceptionPage();
 
-            //app.UseMvc(config =>
-            //{
-            //    config.MapRoute(name: "Default",
-            //                    template: "{controller}/{action}/{id?}",
-            //                    defaults: new { controller = "App", Action = "Index" });
-            //});
-
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=App}/{action=Index}/{id?}");
+                routes.MapRoute(name: "default", template: "{controller=App}/{action=Index}/{id?}")
+                .MapRoute(name: "About", template: "{controller=About}/{action=Index}/{id?}")
+                .MapRoute(name: "Events", template: "{controller=Events}/{action=Index}/{id?}")
+                .MapRoute(name: "Register", template: "{controller=Register}/{action=Index}/{id?}")
+                .MapRoute(name: "History", template: "{controller=History}/{action=Index}/{id?}")
+                .MapRoute(name: "Admin", template: "{controller=Admin}/{action=Index}/{id?}")
+                .MapRoute(name: "Gallery2002", template: "{controller=Gallery2002}/{action=Index}/{id?}")
+                .MapRoute(name: "Gallery2003CarShow", template: "{controller=Gallery2003CarShow}/{action=Index}/{id?}")
+                .MapRoute(name: "EditUser", template: "{controller=EditUser}/{action=Index}/{id?}")
+                .MapRoute(name: "RecoverPassword", template: "{controller=RecoverPassword}/{action=Index}/{id?}")
+                .MapRoute(name: "Members", template: "{controller=Members}/{action=Index}/{id?}")
+                .MapRoute(name: "UnauthorizedUser", template: "{controller=UnauthorizedUser}/{action=Index}/{id?}");
             });
         }
     }
