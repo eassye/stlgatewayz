@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using MongoDB.Bson;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
 using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Driver;
 
 namespace GatewayZ.Models
 {
@@ -28,7 +23,7 @@ namespace GatewayZ.Models
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
         public string email { get; set; }
         
-        [Display(Name = "Phone Number")]
+        [Display(Name = "Phone Number:")]
         [Required(ErrorMessage = "Phone Number is Required")]
         public string phoneNumber { get; set; }
         

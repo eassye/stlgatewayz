@@ -187,7 +187,10 @@
 --resource:"C:\github\GatewayZ\src\GatewayZ\obj\Release\netcoreapp1.0\GatewayZdotnet-compile.deps.json",GatewayZ.deps.json
 C:\github\GatewayZ\src\GatewayZ\Program.cs
 C:\github\GatewayZ\src\GatewayZ\Startup.cs
+C:\github\GatewayZ\src\GatewayZ\Controllers\Web\AboutController.cs
 C:\github\GatewayZ\src\GatewayZ\Controllers\Web\AppController.cs
+C:\github\GatewayZ\src\GatewayZ\Controllers\Web\EventsController.cs
+C:\github\GatewayZ\src\GatewayZ\Controllers\Web\RegisterController.cs
 C:\github\GatewayZ\src\GatewayZ\Extensions\HTMLHelperExtensions.cs
 C:\github\GatewayZ\src\GatewayZ\GatewayZDAO\ClubDAO.cs
 C:\github\GatewayZ\src\GatewayZ\GatewayZDAO\EventDAO.cs
