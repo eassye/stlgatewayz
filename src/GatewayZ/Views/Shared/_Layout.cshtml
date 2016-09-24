@@ -4,48 +4,95 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-
     <link rel="stylesheet" href="~/css/lightbox.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="~/bootstrap/css/bootstrap.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
     <script src="~/js/jquery-2.2.1.js"></script>
     <script src="~/js/moment.js"></script>
     <script src="~/js/fullcalendar.js"></script>
     <link rel="stylesheet" href="~/css/fullcalendar.css" />
 </head>
 <body>
-    <div class="topNav">
-        <ul>
-            @{
-                if (ViewBag.AuthUser == "Admin")
-                {
-                    <li><a href="~/Admin">Admin</a></li>
-                }
-                if (ViewBag.AuthUser == "RegisteredUser" || ViewBag.AuthUser == "Admin")
-                {
-                    <li><a href="~/Events">Events</a></li>
-                }   
-            }
-            <li><a href="~/History">History</a></li>
-            <li><a href="~/About">About</a></li>
-            <li><a href="~/App/Index">Home</a></li>
 
-            @if (@ViewBag.Email != null && @ViewBag.Password != null)
+    <div class="topNav">
+        <div class="container" id="TopNavContainer">
+            <ul class="hidden-xs">
+                @{
+                    if (ViewBag.AuthUser == "Admin")
+                    {
+                        <li><a href="~/App/Admin">Admin</a></li>
+                    }
+                    if (ViewBag.AuthUser == "RegisteredUser" || ViewBag.AuthUser == "Admin")
+                    {
+                        <li><a href="~/App/Events">Events</a></li>
+                    }
+                }
+                <li><a href="~/App/History">History</a></li>
+                <li><a href="~/App/About">About</a></li>
+                <li><a href="~/App/Index">Home</a></li>
+            </ul>
+
+            <ul class="NavBarLeftItems">
+                @if (@ViewBag.Email != null && @ViewBag.Password != null)
             {
-                <li style="float:left"><a href="~/EditUser">Welcome @ViewBag.DisplayName</a></li>
-                <li style="float:left">
-                    <a class="glyphicon glyphicon-log-out" @Html.ActionLink("Logout", "Logout")></a>
-                </li>
-            }
-            else
+                    <li style="float:left"><a href="~/App/EditUser">Welcome @ViewBag.DisplayName</a></li>
+                    <li style="float:left">
+                        <a class="glyphicon glyphicon-log-out" @Html.ActionLink("Logout", "Logout")></a>
+                    </li>
+                }
+                else
+                {
+                    <li style="float:left"><a href="~/App/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                    <li style="float:left"><a href="~/App/Index"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                }
+            </ul>
+
+            <div class="dropdown visible-xs ">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" id="MenuButton">
+                    MENU
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id="NavBarDropdown">
+
+                    @{
+                        if (ViewBag.AuthUser == "Admin")
+                        {
+                            <li><a href="~/App/Admin">Admin</a></li>
+                        }
+                        if (ViewBag.AuthUser == "RegisteredUser" || ViewBag.AuthUser == "Admin")
+                        {
+                            <li><a href="~/App/Events">Events</a></li>
+                        }
+                    }
+                    <li><a href="~/App/History">History</a></li>
+                    <li><a href="~/App/About">About</a></li>
+                    <li><a href="~/App/Index">Home</a></li>
+                </ul>
+
+                <ul class="NavBarLeftItems">
+
+                    @if (@ViewBag.Email != null && @ViewBag.Password != null)
             {
-                <li style="float:left"><a href="~/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
-                <li style="float:left"><a href="~/App/Index"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-            }
-        </ul>
+                        <li style="float:left"><a href="~/App/EditUser">Welcome @ViewBag.DisplayName</a></li>
+                        <li style="float:left">
+                            <a class="glyphicon glyphicon-log-out" @Html.ActionLink("Logout", "Logout")></a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li style="float:left"><a href="~/App/Register"><span class="glyphicon glyphicon-user"></span> Register</a></li>
+                        <li style="float:left"><a href="~/App/Index"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    }
+
+                </ul>
+
+            </div>
+        </div>
     </div>
+
 
     <div>
         @RenderBody()
