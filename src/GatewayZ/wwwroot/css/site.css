@@ -309,13 +309,14 @@ body {
 
 
   .HistoryContent {    
-     margin-top:100px;
+     margin-top:10px;
+     overflow-y:scroll;
      text-align:center;
      color:black;
-      position: absolute; 
-      top:50px;  
+      position: relative; 
+      top:5px;  
     width: 70%;
-    height: -80%;
+    height: 40%;
     border: 5px outset red;
     background-color:gainsboro;
     z-index: 1;
@@ -334,8 +335,8 @@ body {
 
 
 #Historytimeline{
-    position:absolute;
-    top:50px;
+    position:relative;
+    top:5px;
     height: 7px;
     width:80%;
     background: red; 

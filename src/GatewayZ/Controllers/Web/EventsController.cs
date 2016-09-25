@@ -55,7 +55,7 @@ namespace GatewayZ.Controllers.Web
                             {
                                 title = e.Title,
                                 start = e.StartDate.ToString(),
-                                end = e.EndDate.ToString(),
+                                end = e.EndDate.ToString()
                             };
 
             return Json(eventList);
