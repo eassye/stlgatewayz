@@ -27,10 +27,11 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
-            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
+            
 
             if (ViewBag.Email != null)
             {
+                ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
                 ViewBag.Events = _eventDAO.GetTopFiveEvents().ToList();
             }
