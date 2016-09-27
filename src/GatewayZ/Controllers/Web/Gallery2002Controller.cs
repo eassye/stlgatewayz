@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Hosting.Internal;
 using System.IO;
 using GatewayZ.Services;
 using Microsoft.AspNetCore.Http;
+using System;
 
 namespace GatewayZ.Controllers.Web
 {
@@ -23,26 +24,21 @@ namespace GatewayZ.Controllers.Web
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
-            ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
+            
 
             if (ViewBag.Email != null)
             {
                 ViewBag.DisplayName = _userDAO.RetrieveUserDisplay(ViewBag.Email);
+                ViewBag.AuthUser = _userDAO.RetrieveUserType(ViewBag.Email);
             }
-
-            if (string.IsNullOrWhiteSpace(_hostingEnvironment.WebRootPath))
-            {
-                _hostingEnvironment.WebRootPath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot");
-            }
-            string webRoot = _hostingEnvironment.WebRootPath;
-
-            var file = new HistoryServices();
-
-            string filePath = webRoot + @"\Images\Gallery\2002";
-
-            ViewBag.fileName = file.FileName(filePath);
-
+            
             return View("Gallery2002");
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Logout", "App", new { area = "" });
         }
     }
 }

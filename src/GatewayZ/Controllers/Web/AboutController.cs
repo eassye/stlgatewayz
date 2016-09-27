@@ -13,7 +13,6 @@ namespace GatewayZ.Controllers.Web
             _userDAO = new UserDAO();
         }
 
-        // GET: /<controller>/
         public IActionResult Index()
         {
             ViewBag.Email = HttpContext.Session.GetString("Email");

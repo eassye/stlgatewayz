@@ -54,7 +54,8 @@
     "include": [
       "wwwroot",
       "web.config",
-      "Views"
+      "Views",
+      "Images"
     ]
   },
 
