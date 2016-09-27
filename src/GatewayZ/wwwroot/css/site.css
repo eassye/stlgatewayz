@@ -285,10 +285,6 @@ body {
     font-size: 5vh;
 }
 
-
-
-
-
  .contentPic{
     max-width: 40%;
     max-height: 200px;
@@ -303,28 +299,23 @@ body {
     color:black;
  }
 
-
-
 /*/////////////////////////////////////////       HISTORY PAGE           /////////////////////////////////////*/
 
-
   .HistoryContent {    
-     margin-top:10px;
-     overflow-y:scroll;
-     text-align:center;
-     color:black;
-      position: relative; 
-      top:5px;  
+    margin-top:10px;
+    text-align:center;
+    color:black;
+    position: relative; 
+    top:5px;  
     width: 70%;
     height: 40%;
     border: 5px outset red;
     background-color:gainsboro;
+    background-image: url('../images/escheresque.png');  
     z-index: 1;
  }
 
   .Timepicadd {
-      /*top:0px;
-      left:0px;*/
       position:center;
       margin-top:-50px;
       margin-left:-50px;
@@ -332,7 +323,6 @@ body {
     height: 200px;
     float:left;
   }
-
 
 #Historytimeline{
     position:relative;
@@ -386,17 +376,21 @@ body {
        z-index:6;
    }
 
-  
-
 #accordion {
     position:absolute;
+    top: 15px;
 	list-style: none;
 	padding: 0 0 0 0;
-	width: 300px;
+	width: 90%;
+    height: 450px;
+    border: 5px outset red;
+    background-color:gainsboro;
+    background-image: url('../images/escheresque.png');  
     z-index:1;
 }
 
 #accordion div {
+    position:relative;
 	display: block;
 	background-color: #333;
     color:white;
