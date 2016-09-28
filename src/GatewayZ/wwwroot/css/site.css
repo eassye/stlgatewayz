@@ -207,7 +207,8 @@ body {
 
 
 .contacts {
-    position: absolute;   
+    position: absolute;  
+    top:60px;
     z-index: 6;
     left:0px;
     float:left;
@@ -246,6 +247,7 @@ body {
 
 .Contactinfobox{
     position: fixed;
+     top:60px;
     width: 50%;
     height:70%;
     border: 5px outset red;    
@@ -306,71 +308,20 @@ body {
     text-align:center;
     color:black;
     position: relative; 
-    top:5px;  
+    top:50px;
+    left:25px;
     width: 70%;
+    min-width:255px;
     height: 40%;
     border: 5px outset red;
-    background-color:gainsboro;
+    margin-left:auto;
+    margin-right:auto;
     background-image: url('../images/escheresque.png');  
-    z-index: 1;
+    display:block;
+  
+    
  }
 
-  .Timepicadd {
-      position:center;
-      margin-top:-50px;
-      margin-left:-50px;
-      width: 200px;
-    height: 200px;
-    float:left;
-  }
-
-#Historytimeline{
-    position:relative;
-    top:5px;
-    height: 7px;
-    width:80%;
-    background: red; 
-    background: -webkit-linear-gradient(left, red , yellow,green); 
-    background: -o-linear-gradient(right, red, yellow,green); 
-    background: -moz-linear-gradient(right, red, yellow,green); 
-    background: linear-gradient(to right, red , yellow,green); 
- }
-
- .Tpic{
-    border:3px,groove,black;
-    width:75px;
-    height:75px;
- }
-
- #Time1 {
-     position:absolute;
-     left:0px;
-     top:-35px;   
- }
-
-  #Time2{
-     position:absolute;
-     top:-35px;
-     right:75%;  
- }
-
-   #Time3{
-     position:absolute;
-     top:-35px;
-     right:50%;   
- }
-
-   #Time4{
-     position:absolute;
-     top:-35px;
-     right:25%;   
- }
-
-   #Time5{
-     position:absolute;
-     top:-35px;
-     right:0px;   
- }
 
    .TLP li :hover{
        z-index:6;
@@ -378,13 +329,14 @@ body {
 
 #accordion {
     position:absolute;
-    top: 15px;
+    top: 60px;
 	list-style: none;
 	padding: 0 0 0 0;
 	width: 90%;
-    height: 450px;
+    min-width:200px;
+    height: auto;
     border: 5px outset red;
-    background-color:gainsboro;
+   
     background-image: url('../images/escheresque.png');  
     z-index:1;
 }
@@ -397,6 +349,7 @@ body {
 	font-weight: bold;
 	margin: 1px;
 	cursor: pointer;
+    text-align:center;
 	padding: 5 5 5 7px;
 	list-style: circle;
 	-moz-border-radius: 10px;
@@ -446,7 +399,8 @@ body {
 }
 
 #Admininterface {
-     position: relative;   
+     position: relative; 
+        top:60px;
     width: 410px;
     height:500px;   
     min-width:395px;
@@ -647,7 +601,8 @@ body {
 }
 
 .RegisterInfoBackground {
-    position: relative;   
+    position: relative;  
+    top:60px;
     width: 450px;
     height: Auto;   
     min-width:370px;
@@ -692,7 +647,7 @@ body {
     padding:0px;
     background-image: url('../images/escheresque.png');
     z-index: 2;   
-    top:10%;
+    top:60px;
 }
 
 #EditUserBoxHeader{
@@ -717,7 +672,8 @@ body {
 
 
 #EventCalendarArea{
- position: relative center;   
+ position: relative center; 
+    top:60px;
     width: 70%;
     height:70%;   
     min-width:395px;
@@ -747,21 +703,22 @@ body {
 /*///////////////////////////// SHARED SITE LAYOUT  ///////////////////////////*/
 
 #TopNavContainer{
+   position:fixed;
     margin: 0;
     padding: 0;
     width:100%;
+    background-color: #333;
     z-index:10;
+    height:50px;
 }
 
 .topNav  {
+    position:fixed;
     list-style-type: none;
     margin: 0;
-    padding: 0;    
-    background-color: #333;
-    z-index:1;
-    position:relative;
-    max-height:50px;
-    min-height:40px;
+    padding: 0;       
+  
+     z-index:10;
    
     
 }
@@ -784,7 +741,7 @@ body {
 }
 
 #MenuButton{
-    position:fixed;
+    position:relative;
     right:0px;
     background-color: #333;
     display:block;
