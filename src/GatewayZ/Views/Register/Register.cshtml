@@ -91,7 +91,7 @@
                                 });
                             }
 
-                            @Html.LabelFor(model => model.securityQuestionOne, new { @class = "control-label col-xs-6", @style = "text-align:left" })
+                            @Html.LabelFor(model => model.securityQuestionOne, new { @class = "control-label col-xs-5", @style = "text-align:left" })
                             <div class="col-xs-3" style = "text-align:left">
                                 @Html.DropDownListFor(model => model.securityQuestionOne, question1, "-- Select a Security Question --")
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.securityQuestionOne)</span>
@@ -99,7 +99,7 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.answerOne, new { @class = "control-label col-xs-6", @style = "text-align:left" })
+                            @Html.LabelFor(model => model.answerOne, new { @class = "control-label col-xs-5", @style = "text-align:left" })
                             <div class="col-xs-7">
                                 @Html.TextBoxFor(model => model.answerOne, new { @class = "form-control" })
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.answerOne)</span>
@@ -131,7 +131,7 @@
                                 });
                             }
 
-                            @Html.LabelFor(model => model.securityQuestionTwo, new { @class = "control-label col-xs-6", @style = "text-align:left" })
+                            @Html.LabelFor(model => model.securityQuestionTwo, new { @class = "control-label col-xs-5", @style = "text-align:left" })
                             <div class="col-xs-3" style = "text-align:left">
                                 @Html.DropDownListFor(model => model.securityQuestionTwo, question2, "-- Select a Security Question --")
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.securityQuestionTwo)</span>
@@ -139,7 +139,7 @@
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.answerTwo, new { @class = "control-label col-xs-6", @style = "text-align:left" })
+                            @Html.LabelFor(model => model.answerTwo, new { @class = "control-label col-xs-5", @style = "text-align:left" })
                             <div class="col-xs-7">
                                 @Html.TextBoxFor(model => model.answerTwo, new { @class = "form-control"})
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.answerTwo)</span>
