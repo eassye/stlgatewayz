@@ -211,7 +211,7 @@ body {
     top:60px;
     z-index: 6;
     left:0px;
-    float:left;
+    margin-bottom:100px;
 }
 
 .contacts ul {
@@ -220,9 +220,9 @@ body {
     padding: 0;  
     width: 100%;
     height: 100%;
-    stroke-width: 2px;
+    stroke-width: 3px;
     stroke:rgb(0,0,0);
-    z-index: 6;
+    z-index: 2;
     border: 5px outset red;
 }
 
@@ -245,46 +245,37 @@ body {
 
 
 
-.Contactinfobox{
-    position: fixed;
+#Contactinfobox{
+    position: absolute;
      top:60px;
     width: 50%;
+    min-width:255px;
     height:70%;
+    min-height:394px;
     border: 5px outset red;    
     background-image: url('../images/escheresque.png');
     z-index: 3;
-    float:right;   
+    margin-left:-20px;
+    margin-right:0px;
+   margin-bottom:100px;
 }
 
 
-.infopic{
-    position:absolute;
-    top: 0px;
-    left: 0px;  
-    height: 12%;
-}
-
-.infopic2{
-    position:absolute;
-    top: 0px;
-    right: 0px; 
-     height: 12%;
-   }
-
-
-.infopics{     
-   max-height: 100%;
-}
-
-.popboarder{
+#ContactinfoHeader{
     width: 100%;
-    height: 12%;   
-    color: white;
+    height: 12%;
+     color: white; 
     background-color: black;
     text-align:center;
     text-decoration: underline;
-    font-size: 5vw;
-    font-size: 5vh;
+    font-size: 35px;    
+}
+
+#ContactinfoboxInner{
+    /*margin-top:15px;*/
+    overflow-y:auto;
+    height:87%;
+
 }
 
  .contentPic{
@@ -792,6 +783,7 @@ padding-left:0px;
 
 body{
   background-image: url('../images/escheresque_ste.png'); 
+  /*overflow-y:auto;*/
 }
 
 #footer{
@@ -803,6 +795,7 @@ body{
     width: 100%;
     z-index:5;
     margin-top:50px;
+    display:block
 }
 
 /* History CSS */
