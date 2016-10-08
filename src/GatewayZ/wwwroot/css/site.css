@@ -243,8 +243,6 @@ body {
     background-image: url('../images/escheresque_ste.png');
 }
 
-
-
 #Contactinfobox{
     position: absolute;
      top:60px;
@@ -271,8 +269,7 @@ body {
     font-size: 35px;    
 }
 
-#ContactinfoboxInner{
-    /*margin-top:15px;*/
+#ContactinfoboxInner{   
     overflow-y:auto;
     height:87%;
 
