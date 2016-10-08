@@ -19,50 +19,49 @@
                     @using (Html.BeginForm("/Index", "/Register", FormMethod.Post, new { @class = "form-horizontal" }))
                     {
                         <div class="form-group">
-                            @Html.LabelFor(model => model.firstName, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
-                                @Html.EditorFor(model => model.firstName, new { @class = "form-control" })
+                            @Html.LabelFor(model => model.firstName, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                            <div class="col-xs-7">
+                                @Html.TextBoxFor(model => model.firstName, new { @class = "form-control" })
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.firstName)</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.lastName, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
-                                @Html.EditorFor(model => model.lastName, new { @class = "form-control" })
+                            @Html.LabelFor(model => model.lastName, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                            <div class="col-xs-7">
+                                @Html.TextBoxFor(model => model.lastName, new { @class = "form-control", @style = "text-align:left" })
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.lastName)</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.email, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
-                                @Html.EditorFor(model => model.email, new { @class = "form-control" })
+                            @Html.LabelFor(model => model.email, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                            <div class="col-xs-7">
+                                @Html.TextBoxFor(model => model.email, new { @class = "form-control", @style = "text-align:left" })
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.email)</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
-                                @Html.EditorFor(model => model.phoneNumber, new { @class = "form-control" })
+                            @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-xs-5", @style = "text-align:left" })
+                            <div class="col-xs-7">
+                                @Html.TextBoxFor(model => model.phoneNumber, new { @class = "form-control", @style = "text-align:left" })
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.phoneNumber)</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.displayName, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
-                                @Html.EditorFor(model => model.displayName, new { @class = "form-control" })
+                            @Html.LabelFor(model => model.displayName, new { @class = "control-label col-xs-5", @style = "text-align:left" })
+                            <div class="col-xs-7">
+                                @Html.TextBoxFor(model => model.displayName, new { @class = "form-control", @style = "text-align:left" })
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.displayName)</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.password, new { @class = "control-label col-xs-3" })
+                            @Html.LabelFor(model => model.password, new { @class = "control-label col-xs-3", @style = "text-align:left" })
                             <div class="col-xs-7">
-                                @Html.PasswordFor(model => model.password, new { @class = "form-control" })
-
+                                @Html.PasswordFor(model => model.password, new { @class = "form-control", @style = "text-align:left" })
                                 <span class="help-inline pull-left" style="color:red">@Html.ValidationMessageFor(model => model.password)</span>
                             </div>
                         </div>
@@ -92,17 +91,17 @@
                                 });
                             }
 
-                            @Html.LabelFor(model => model.securityQuestionOne, new { @class = "control-label col-xs-2" })
-                            <div class="col-xs-10">
+                            @Html.LabelFor(model => model.securityQuestionOne, new { @class = "control-label col-xs-5", @style = "text-align:left" })
+                            <div class="col-xs-3" style = "text-align:left">
                                 @Html.DropDownListFor(model => model.securityQuestionOne, question1, "-- Select a Security Question --")
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.securityQuestionOne)</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.answerOne, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
-                                @Html.EditorFor(model => model.answerOne, new { @class = "form-control" })
+                            @Html.LabelFor(model => model.answerOne, new { @class = "control-label col-xs-5", @style = "text-align:left" })
+                            <div class="col-xs-7">
+                                @Html.TextBoxFor(model => model.answerOne, new { @class = "form-control" })
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.answerOne)</span>
                             </div>
                         </div>
@@ -132,25 +131,25 @@
                                 });
                             }
 
-                            @Html.LabelFor(model => model.securityQuestionTwo, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
+                            @Html.LabelFor(model => model.securityQuestionTwo, new { @class = "control-label col-xs-5", @style = "text-align:left" })
+                            <div class="col-xs-3" style = "text-align:left">
                                 @Html.DropDownListFor(model => model.securityQuestionTwo, question2, "-- Select a Security Question --")
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.securityQuestionTwo)</span>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            @Html.LabelFor(model => model.answerTwo, new { @class = "control-label col-xs-3" })
-                            <div class="col-xs-9">
-                                @Html.EditorFor(model => model.answerTwo, new { @class = "form-control" })
+                            @Html.LabelFor(model => model.answerTwo, new { @class = "control-label col-xs-5", @style = "text-align:left" })
+                            <div class="col-xs-7">
+                                @Html.TextBoxFor(model => model.answerTwo, new { @class = "form-control"})
                                 <span style="color:red">@Html.ValidationMessageFor(model => model.answerTwo)</span>
                             </div>
                         </div>
 
-                        <div>
+                        <div style="text-align:center">
                             <input type="submit" value="Submit" class="btn btn-default" />
                         </div>
-                                }
+                        }
                 </div>
             </div>
         </div>

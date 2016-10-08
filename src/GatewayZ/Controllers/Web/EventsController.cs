@@ -72,7 +72,6 @@ namespace GatewayZ.Controllers.Web
         {
             if (ModelState.IsValid)
             {
-                events.StartDate.ToString();
                 _eventDAO.SaveEvent(events);
                 return RedirectToAction("Index");
             }
