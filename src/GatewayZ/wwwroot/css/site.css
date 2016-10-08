@@ -564,14 +564,13 @@ body {
     min-height:650px;
 }
 
-
-
 #RecoverPasswordBackground {
     
     margin:0 auto;
     position: absolute center;   
     width: auto;
     height: auto;
+    top: 80px;
     border: 5px outset red;
     background-image: url('../images/escheresque.png');
     z-index: 2;
