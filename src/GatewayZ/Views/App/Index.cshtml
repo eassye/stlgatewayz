@@ -95,7 +95,7 @@
     <div class="loginBackGround">
         @if (@ViewBag.Email != null && @ViewBag.Password != null)
             {
-            <p><strong>Welcome @ViewBag.DisplayName</strong> | @Html.ActionLink("Logout", "Logout")</p>
+            <p><strong>Welcome<a href="~/EditUser">@ViewBag.DisplayName</a></strong> | @Html.ActionLink("Logout", "Logout")</p>
         }
         else
         {
