@@ -603,7 +603,7 @@ body {
 .RegisterInfoBackground {
     position: relative;  
     top:60px;
-    width: 450px;
+    width: 550px;
     height: Auto;   
     min-width:370px;
     border: 5px outset red;
