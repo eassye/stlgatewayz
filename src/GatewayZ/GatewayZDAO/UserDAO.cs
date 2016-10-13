@@ -227,5 +227,21 @@ namespace GatewayZ.GatewayZDAO
 
             return displayName;
         }
+
+        public bool IsEmailRegistered(string email)
+        {
+            try
+            {
+                var collection = _database.GetCollection<User>("User");
+                var filter = Builders<User>.Filter.Eq("email", email);
+                var document = collection.Find(filter).First();
+
+                return true;
+            }
+            catch (System.Exception)
+            {
+                return false;
+            }
+        }
     }
 }
