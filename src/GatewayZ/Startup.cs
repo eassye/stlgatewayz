@@ -1,6 +1,9 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
+using Microsoft.AspNetCore.Http;
 
 namespace GatewayZ
 {
@@ -9,6 +12,7 @@ namespace GatewayZ
         public void ConfigureServices(IServiceCollection services)
         {   
             services.AddMvc();
+            services.AddDirectoryBrowser();
             services.AddSession(options => {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
                 options.CookieName = ".Gatewayz";
@@ -35,6 +39,20 @@ namespace GatewayZ
                 .MapRoute(name: "RecoverPassword", template: "{controller=RecoverPassword}/{action=Index}/{id?}")
                 .MapRoute(name: "Members", template: "{controller=Members}/{action=Index}/{id?}")
                 .MapRoute(name: "UnauthorizedUser", template: "{controller=UnauthorizedUser}/{action=Index}/{id?}");
+            });
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+           Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\Images")),
+                RequestPath = new PathString("/Gallery")
+            });
+
+            app.UseDirectoryBrowser(new DirectoryBrowserOptions()
+            {
+                FileProvider = new PhysicalFileProvider(
+                    Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot\images")),
+                RequestPath = new PathString("/Gallery")
             });
         }
     }
