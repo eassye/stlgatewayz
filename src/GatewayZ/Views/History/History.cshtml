@@ -56,69 +56,75 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-xs-3  col-md-4 affix ">
-            <ul id="accordion">
-                <h2>Gallery</h2>
-                <li>
-                    <div>2002</div>
-                    <ul>
-                        <li><a href="~/Gallery2002">The Best of 2002 | Files:(@ViewBag.fileCount2002Folder) Last Modified:(@ViewBag.file2002ModifiedDate)</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div>2003</div>
-                    <ul>
-                        <li><a href="~/Gallery2003CarShow">Car Show | Files:(@ViewBag.fileCount2003Folder) Last Modified:(@ViewBag.file2003ModifiedDate)</a></li>
-                        <li><a href="#">Branson Z Fest</a></li>
-                        <li><a href="#">Club Christmas Party</a></li>
-                        <li><a href="#">Lone Elk Park Picnic</a></li>
-                        <li><a href="#">St. Gen Trip</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div>2004</div>
-                    <ul>
-                        <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2004Folder) Last Modified:(@ViewBag.file2004ModifiedDate)</a></li>
-                        <li><a href="#">Christmas Party</a></li>
-                        <li><a href="#">Drag Racing</a></li>
-                        <li><a href="#">Hermannhof Winery Tour</a></li>
-                        <li><a href="#">Kansas City Z Fest</a></li>
-                        <li><a href="#">Lone Elk Park Picnic</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div>2005</div>
-                    <ul>
-                        <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2005Folder) Last Modified:(@ViewBag.file2005ModifiedDate)</a></li>
-                        <li><a href="#">Lone Elk Park Picnic</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div>2006</div>
-                    <ul>
-                        <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2006Folder) Last Modified:(@ViewBag.file2006ModifiedDate)</a></li>
-                        <li><a href="#">Fast Eddies</a></li>
-                        <li><a href="#">Midwest Z Fest</a></li>
-                        <li><a href="#">Mules BBQ</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <div>2007</div>
-                    <ul>
-                        <li><a href="#">River Road Cruize/Fast Eddies | Files:(@ViewBag.fileCount2007Folder) Last Modified:(@ViewBag.file2007ModifiedDate)</a></li>
-                        <li><a href="#">Stop And Smell The Roses</a></li>
-                        <li><a href="#">Christmas Party</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-    
+            <div id="HistoryGallery">
+                <div id="HistoryGalleryHeader">
+                    <p>Gallery</p>
+                </div>
+                <ul id="accordion">
+                    <li>
+                        <div>2002</div>
+                        <ul>
+                            <li><a href="~/Gallery2002">The Best of 2002 | Files:(@ViewBag.fileCount2002Folder) Last Modified:(@ViewBag.file2002ModifiedDate)</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>2003</div>
+                        <ul>
+                            <li><a href="~/Gallery2003CarShow">Car Show | Files:(@ViewBag.fileCount2003Folder) Last Modified:(@ViewBag.file2003ModifiedDate)</a></li>
+                            <li><a href="#">Branson Z Fest</a></li>
+                            <li><a href="#">Club Christmas Party</a></li>
+                            <li><a href="#">Lone Elk Park Picnic</a></li>
+                            <li><a href="#">St. Gen Trip</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>2004</div>
+                        <ul>
+                            <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2004Folder) Last Modified:(@ViewBag.file2004ModifiedDate)</a></li>
+                            <li><a href="#">Christmas Party</a></li>
+                            <li><a href="#">Drag Racing</a></li>
+                            <li><a href="#">Hermannhof Winery Tour</a></li>
+                            <li><a href="#">Kansas City Z Fest</a></li>
+                            <li><a href="#">Lone Elk Park Picnic</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>2005</div>
+                        <ul>
+                            <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2005Folder) Last Modified:(@ViewBag.file2005ModifiedDate)</a></li>
+                            <li><a href="#">Lone Elk Park Picnic</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>2006</div>
+                        <ul>
+                            <li><a href="#">Branson Z Fest | Files:(@ViewBag.fileCount2006Folder) Last Modified:(@ViewBag.file2006ModifiedDate)</a></li>
+                            <li><a href="#">Fast Eddies</a></li>
+                            <li><a href="#">Midwest Z Fest</a></li>
+                            <li><a href="#">Mules BBQ</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>2007</div>
+                        <ul>
+                            <li><a href="#">River Road Cruize/Fast Eddies | Files:(@ViewBag.fileCount2007Folder) Last Modified:(@ViewBag.file2007ModifiedDate)</a></li>
+                            <li><a href="#">Stop And Smell The Roses</a></li>
+                            <li><a href="#">Christmas Party</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div> 
 
 
 
         <div class="col-xs-offset-1 col-xs-8 col-md-8 pull-right">
             <div class="HistoryContent">
+                <div id="HistoryContentHeader">
+                    <p>STL Gateway Z History</p>
+                </div>
                 <div id="Clubhistorytext">
-                    <h2>STL Gateway Z History</h2>
+                    
                     <p>1976 was a very good year. 1976 saw America celebrate its’ 200th birthday. 1976 saw a 14 year old drummer in Ireland post a flyer looking for some musicians to make a band, and U2 was formed. Hollywood gave us Rocky AND the Rocky Horror Picture show. On April Fools’ day in 1976, two guys named Steve founded a company called Apple computer. Another company called Hair Club for Men was also founded. The car industry gave us the first Chevy Chevette (It’ll drive you happy), and the Laborghini Silhouette (no catchy marketing tune needed). And in 1976, Michael Breeding gave us the Gateway Z Club. Mike saw something in these cars that he knew would last for multiple generations of people, and multiple generations of cars. His vision led to the formation of the Gateway Z Club, the 6th oldest Z Club in the US. Mike died unexpectedly in 1995. Below is what appeared in the monthly newsletter of the Z Car Club of Colorado:</p>
 
                     <div class="inMemoryBox">
