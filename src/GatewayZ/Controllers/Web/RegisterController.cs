@@ -27,14 +27,23 @@ namespace GatewayZ.Controllers.Web
         [HttpPost]
         public IActionResult Index([Bind]User user)
         {
+            var isEmailRegistered = _userDAO.IsEmailRegistered(user.email);
+
             if (ModelState.IsValid)
             {
-                user.userType = "Registered";
+                if (isEmailRegistered == true)
+                {
+                    TempData["EmailExist"] = "Email already exist. Please choose another email.";
+                    //return RedirectToAction("Index");
+                    return View("Register");
+                }
+
+                user.userType = "RegisteredUser";
 
                 var collection = _database.GetCollection<User>("User");
                 
                 collection.InsertOneAsync(user);
-
+                TempData["Success"] = "User Account: " + user.displayName + " has been created!";
                 return RedirectToAction("Index");
             }
 

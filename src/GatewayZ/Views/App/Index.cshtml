@@ -25,15 +25,15 @@
                     <div class="carousel-inner  hidden-xs">
                         <div class="item active">
                             <!-- Set the first background image using inline CSS below. -->
-                            <div class="fill"><img src="~/Images/Zcar1.jpg.jpg"  class="img-responsive" /></div>
+                            <div class="fill"><img src="~/Images/Zcar1.jpg.jpg" class="img-responsive" /></div>
                         </div>
                         <div class="item">
                             <!-- Set the second background image using inline CSS below. -->
-                            <div class="fill"><img src="~/Images/Zcar2.jpg.jpg"  class="img-responsive" /></div>
+                            <div class="fill"><img src="~/Images/Zcar2.jpg.jpg" class="img-responsive" /></div>
                         </div>
                         <div class="item">
                             <!-- Set the third background image using inline CSS below. -->
-                            <div class="fill"><img src="~/Images/Zcar3.jpg.jpg"  class="img-responsive" /></div>
+                            <div class="fill"><img src="~/Images/Zcar3.jpg.jpg" class="img-responsive" /></div>
                         </div>
                         <div class="item">
                             <!-- Set the forth background image using inline CSS below. -->
@@ -41,7 +41,7 @@
                         </div>
                         <div class="item">
                             <!-- Set the fifth background image using inline CSS below. -->
-                            <div class="fill"><img src="~/Images/Zcar5.jpg.jpg"  class="img-responsive" /></div>
+                            <div class="fill"><img src="~/Images/Zcar5.jpg.jpg" class="img-responsive" /></div>
                         </div>
                         <div class="item">
                             <!-- Set the sixth background image using inline CSS below. -->
@@ -91,11 +91,11 @@
                 </ul>
             </div>
         </div>
-      }
+                        }
     <div class="loginBackGround">
         @if (@ViewBag.Email != null && @ViewBag.Password != null)
             {
-            <p><strong>Welcome @ViewBag.DisplayName</strong> | @Html.ActionLink("Logout", "Logout")</p>
+            <p><strong>Welcome<a href="~/EditUser">@ViewBag.DisplayName</a></strong> | @Html.ActionLink("Logout", "Logout")</p>
         }
         else
         {
@@ -127,12 +127,9 @@
         }
     </div>
 
-    @if (@ViewBag.Email != null && @ViewBag.Password != null)
-    {
-        <div class="Joinclubbox">
-            <a href="~/pdf/gatewayzSignupform.pdf" download><img src="~/Images/JoinClubDownload.jpg" class="img-rounded JoinclubPic"></a>
-        </div>
-    }
+    <div class="Joinclubbox">
+        <a href="~/pdf/gatewayzSignupform.pdf" download><img src="~/Images/JoinClubDownload.jpg" class="img-rounded JoinclubPic"></a>
+    </div>
 
     <div id="footer">
         &copy; @DateTime.Now.Year Gateway Z Club

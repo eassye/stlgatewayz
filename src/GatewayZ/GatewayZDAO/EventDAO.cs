@@ -35,19 +35,18 @@ namespace GatewayZ.GatewayZDAO
         public List<string> GetTopFiveEvents()
         {
             var collection = _database.GetCollection<Event>("Events");
-
+            
             var eventList = new List<string>();
-
-            Event _event = new Event();
 
             var query =
                         (from e in collection.AsQueryable<Event>()
-                        orderby e.Title descending
-                        select e.Title).Take(5);
+                         orderby e.Title descending
+                        select new { e.Title, e.StartDate }).Take(5);
 
             foreach (var title in query)
             {
-                eventList.Add(title);
+                eventList.Add(title.Title);
+                eventList.Add(title.StartDate);
             }
 
             return eventList;

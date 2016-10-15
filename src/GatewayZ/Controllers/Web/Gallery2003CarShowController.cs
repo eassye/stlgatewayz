@@ -41,6 +41,10 @@ namespace GatewayZ.Controllers.Web
 
             string filePath = webRoot + @"\Images\Gallery\2003";
 
+            var _service = new HistoryServices();
+
+            ViewBag.fileCount2003Folder = _service.CountFiles(webRoot + @"\Images\Gallery\2003");
+
             ViewBag.fileName = file.FileName(filePath);
 
             return View("Gallery2003CarShow");
