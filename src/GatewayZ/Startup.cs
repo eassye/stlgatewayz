@@ -38,7 +38,8 @@ namespace GatewayZ
                 .MapRoute(name: "EditUser", template: "{controller=EditUser}/{action=Index}/{id?}")
                 .MapRoute(name: "RecoverPassword", template: "{controller=RecoverPassword}/{action=Index}/{id?}")
                 .MapRoute(name: "Members", template: "{controller=Members}/{action=Index}/{id?}")
-                .MapRoute(name: "UnauthorizedUser", template: "{controller=UnauthorizedUser}/{action=Index}/{id?}");
+                .MapRoute(name: "UnauthorizedUser", template: "{controller=UnauthorizedUser}/{action=Index}/{id?}")
+                .MapRoute(name: "SignUp", template: "{controller=SignUp}/{action=Index}/{id?}");
             });
 
             app.UseStaticFiles(new StaticFileOptions()
