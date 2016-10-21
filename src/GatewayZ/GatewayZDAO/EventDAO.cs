@@ -1,7 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using GatewayZ.Models;
 using MongoDB.Driver;
-using GatewayZ.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace GatewayZ.GatewayZDAO
 {
@@ -35,21 +36,28 @@ namespace GatewayZ.GatewayZDAO
         public List<string> GetTopFiveEvents()
         {
             var collection = _database.GetCollection<Event>("Events");
-            
+
             var eventList = new List<string>();
 
             var query =
                         (from e in collection.AsQueryable<Event>()
-                         orderby e.Title descending
-                        select new { e.Title, e.StartDate }).Take(5);
+                         orderby e.StartDate ascending
+                         select new { e.Title, e.StartDate });
 
             foreach (var title in query)
             {
-                eventList.Add(title.Title);
-                eventList.Add(title.StartDate);
+                var test = DateTime.Parse(title.StartDate);
+
+                if (test >= DateTime.Now)
+                {
+                    eventList.Add(title.Title);
+                    eventList.Add(test.ToString());
+                }
             }
 
-            return eventList;
+            var fiveEvents = eventList.Take(10);
+
+            return fiveEvents.ToList();
         }
     }
 }

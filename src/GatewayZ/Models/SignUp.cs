@@ -1,4 +1,6 @@
-﻿namespace GatewayZ.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace GatewayZ.Models
 {
     public class SignUp
     {
@@ -22,8 +24,13 @@
 
     public class EnrollmentType
     {
+        [Display(Name = "Renewal:")]
         public bool Renewal { get; set; }
+
+        [Display(Name = "New Membership:")]
         public bool NewMembership { get; set; }
+
+        [Display(Name = "*If New, Reffered By:")]
         public string ReferredBy { get; set; }
     }
 
