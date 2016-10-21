@@ -289,6 +289,7 @@ body {
     color:black;
  }
 
+
 /*/////////////////////////////////////////       HISTORY PAGE           /////////////////////////////////////*/
 
   .HistoryContent {    
@@ -304,27 +305,59 @@ body {
     border: 5px outset red;
     margin-left:auto;
     margin-right:auto;
-    background-image: url('../images/escheresque.png');  
-    display:block; 
+    margin-bottom:100px;
+    background-image: url('../images/escheresque.png');      
  }
+
+  #HistoryContentHeader{
+      top:0px;
+      width:100%;
+      text-align:center;
+      background-color:black;
+      color:white;
+      font-size:30px;
+      text-decoration:underline;
+  }
+
+  #HistoryContentText{
+      overflow-y:auto;
+  }
 
 
    .TLP li :hover{
        z-index:6;
    }
 
-#accordion {
-    position:absolute;
-    top: 60px;
-	list-style: none;
-	padding: 0 0 0 0;
+   #HistoryGallery{
+       height: auto;
+    border: 5px outset red;
+    	padding: 0;
 	width: 90%;
     min-width:200px;
-    height: auto;
-    border: 5px outset red;
-   
+    position:relative;
+    top: 60px;
+    background-color:gainsboro;
+   }
+
+#HistoryGalleryHeader {
+    top:0px;
+      width:100%;
+      text-align:center;
+      background-color:black;
+      color:white;
+      font-size:30px;
+      text-decoration:underline;
+}
+
+#accordion {
+    
+     
+    height:auto;
+	list-style: none;   
     background-image: url('../images/escheresque.png');  
     z-index:1;
+    padding:0px;
+    margin:0px;
 }
 
 #accordion div {
@@ -341,19 +374,20 @@ body {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border: 2px outset red;    
+     top:-5px; 
 }
 
 #accordion ul {
     display: none;
 	list-style: none;
-	padding: 0 0 0 0;
+	padding: 0;
 }
 
 #accordion ul li {
 	font-weight: normal;
 	cursor: auto;
 	background-color:gainsboro;
-	padding: 0 0 0 7px;
+	padding:7px;
     color:black;
 }
 
@@ -377,7 +411,6 @@ body {
     float: right;
     text-align: right;
 }
-
  /*//////////////////////////////////////////       ADMIN PAGE            ///////////////////////////////////////*/
 
 .AdminPageContainer{
