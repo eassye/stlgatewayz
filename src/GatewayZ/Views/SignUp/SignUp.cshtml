@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "SignUp Page";
+}
+
+@model GatewayZ.Models.SignUp
+
+<div class="container-fluid">
+    <div class= "SignUpBox">
+        <div id = "HeaderTextBox">
+            <p>OUR MISSION: The Gateway Z Club is a not-for-profit organization comprised of owners of 240Z, 260Z, 280Z, 280ZX, 300ZX, 350Z, 370Z, 240SX, GT-R, Infiniti G35, G37 sports cars and classic Datsun automobiles. Our members are of different occupations, yet share a common "driving interest" in the care, maintenance, and preservation of their "Z" cars. <strong>Meetings are held on the third Wednesday of each month at a location to be determined by the club. Please visit www.gatewayzclub.com for the most recent information regarding monthly meetings.</strong></p>
+        </div>
+        <form class = "form-horizontal" role="form" method="post">
+            <div id = "EnrollmentBox">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Enrollment.ReferredBy, new { @class = "col-sm-1 ccontrol-label" })
+                    <div class="col-sm-9">
+                        @Html.TextBoxFor(model => model.Enrollment.ReferredBy, new { @class = "form-control" })
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
