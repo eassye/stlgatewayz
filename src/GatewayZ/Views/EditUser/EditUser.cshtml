@@ -15,52 +15,52 @@
                 <h1>Edit User</h1>
             </div>
 
-            <div class="centerForm">
+            <div class="centerForm" id="EditUserCenterForm">
                 <form class="form-horizontal" role="form" method="post">
                     <div class="form-group">
-                        @Html.LabelFor(model => model.firstName, new { @class = "control-label col-xs-3" })
-                        <div class="col-xs-9">
+                        @Html.LabelFor(model => model.firstName, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                        <div class="col-xs-8">
                             @Html.TextBoxFor(model => model.firstName, new { @class = "form-control" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.lastName, new { @class = "control-label col-xs-3" })
-                        <div class="col-xs-9">
+                        @Html.LabelFor(model => model.lastName, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                        <div class="col-xs-8">
                             @Html.TextBoxFor(model => model.lastName, new { @class = "form-control" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.email, new { @class = "control-label col-xs-3" })
-                        <div class="col-xs-9">
+                        @Html.LabelFor(model => model.email, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                        <div class="col-xs-8">
                             @Html.TextBoxFor(model => model.email, new { @class = "form-control" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-xs-3" })
-                        <div class="col-xs-9">
+                        @Html.LabelFor(model => model.phoneNumber, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                        <div class="col-xs-8">
                             @Html.TextBoxFor(model => model.phoneNumber, new { @class = "form-control" })
                         </div>
                     </div>
 
                     <div class="form-group">
-                        @Html.LabelFor(model => model.displayName, new { @class = "control-label col-xs-3" })
-                        <div class="col-xs-9">
+                        @Html.LabelFor(model => model.displayName, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                        <div class="col-xs-8">
                             @Html.TextBoxFor(model => model.displayName, new { @class = "form-control" })
                         </div>
                     </div>
 
                     <div class="form-group" >
-                        @Html.LabelFor(model => model.password, new { @class = "control-label col-xs-3" })
-                        <div class="col-xs-7">
+                        @Html.LabelFor(model => model.password, new { @class = "control-label col-xs-4", @style = "text-align:left" })
+                        <div class="col-xs-8">
                             @Html.PasswordFor(model => model.password, new { @class = "form-control" })
                         </div>
                     </div>
 
-                    <div class="col-sm-offset-2 col-sm-10">
-                        <input type="submit" value="Submit" class="btn btn-default" />
+                    <div class="EditUserSubmitButton">
+                        <input type="submit" value="Submit" class="btn btn-default"/>
                     </div>
                 </form>
             </div>
