@@ -594,7 +594,7 @@ body {
     background-image: url('../images/escheresque.png');
     z-index: 2;
     padding: 0px;
-    min-width:480px;
+    min-width:520px;
 }
 
 #RecoverPasswordHeader
@@ -604,10 +604,21 @@ body {
     top:-20px;
     width:100%;
     color:white;
-    background-image: url('../images/escheresque_ste.png');
+    background-color:black;
     border-bottom:5px outset red;
     text-align:center;
     margin:0px;
+}
+
+#RecoverPasswordCenterForm{
+         position:relative;
+         margin:10px;
+         padding:0px;
+         width:97%;
+     }
+
+.RecoverPasswordSubmitButton{
+    text-align:center;
 }
 
 
@@ -632,7 +643,7 @@ body {
 
 .RegisterInfoBackgroundHeader {
     position: relative;
-    background-image: url('../images/escheresque_ste.png');
+    background-color:black;
     top:-20px;
     width: 100%;
     height:auto;
@@ -648,7 +659,9 @@ body {
     margin:0px;
 }
 
-
+.RegSubmitButton{
+    margin-right:-100px;
+}
 /*//////////////////////////   EDIT USER PAGE      //////////////////////////*/
 
 .EditUserContainer {
@@ -657,7 +670,7 @@ body {
 
      #EditUserBox {
      position: relative;   
-    width: 400px;
+    width: 450px;
     height:500px;   
     min-width:380px;
     border: 5px outset red;
@@ -668,6 +681,13 @@ body {
     top:60px;
 }
 
+     #EditUserCenterForm{
+         position:relative;
+         margin:15px;
+         padding:0px;
+         width:95%;
+     }
+
 #EditUserBoxHeader{
    position: relative; 
     top:0px;
@@ -675,13 +695,18 @@ body {
     text-align:center;
     text-decoration:underline;
     border-bottom:5px outset red;
-     background-image: url('../images/escheresque_ste.png');
+     background-color:black;
      width:100%;
      height:auto; 
      margin-top:-20px;    
 }
 
-
+.EditUserSubmitButton{
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
 
 
 /*////////////////////  EVENT PAGE     //////////////////////*/
