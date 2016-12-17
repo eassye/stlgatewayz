@@ -30,8 +30,8 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
-            var email = new SignUpService(_signup);
-            email.SendEmail();
+            //var email = new SignUpService(_signup);
+            //email.SendEmail();
 
             if (ViewBag.Email != null)
             {
