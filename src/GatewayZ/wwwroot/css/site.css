@@ -888,6 +888,21 @@ body{
      border: 2px solid black;
  }
 
+ #VehicalsOwned{
+     position: relative;
+     border: 2px solid black;
+ }
+
+ #PersonalInformation{
+     position: relative;
+     border: 2px solid black;
+ }
+
+  #Interest{
+     position: relative;
+     border: 2px solid black;
+ }
+
  #HeaderTextBox{
      position: relative;
      border: 2px solid black;

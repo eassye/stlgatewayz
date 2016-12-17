@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using MongoDB.Driver;
+using GatewayZ.Services;
 
 namespace GatewayZ.Controllers.Web
 {
@@ -13,6 +14,7 @@ namespace GatewayZ.Controllers.Web
         protected static IMongoDatabase _database;
         private UserDAO _userDAO;
         private EventDAO _eventDAO;
+        private readonly SignUp _signup;
 
         public AppController()
         {
@@ -20,6 +22,7 @@ namespace GatewayZ.Controllers.Web
             _database = _client.GetDatabase(("gatewayz"));
             _userDAO = new UserDAO();
             _eventDAO = new EventDAO();
+            _signup = new SignUp();
         }
 
         public IActionResult Index()
@@ -27,7 +30,8 @@ namespace GatewayZ.Controllers.Web
             ViewBag.Email = HttpContext.Session.GetString("Email");
             ViewBag.Password = HttpContext.Session.GetString("Password");
 
-            
+            var email = new SignUpService(_signup);
+            email.SendEmail();
 
             if (ViewBag.Email != null)
             {

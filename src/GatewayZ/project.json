@@ -17,7 +17,8 @@
     "MongoDB.Driver": "2.3.0-rc1",
     "MongoDB.Bson": "2.3.0-rc1",
     "Microsoft.Extensions.Configuration.FileExtensions": "1.0.0",
-    "Microsoft.Extensions.Configuration.Json": "1.0.0"
+    "Microsoft.Extensions.Configuration.Json": "1.0.0",
+    "MailKit": "1.10.0"
   },
 
   "commands": {

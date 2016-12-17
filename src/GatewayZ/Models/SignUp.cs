@@ -66,6 +66,7 @@ namespace GatewayZ.Models
 
     public class ZInterests
     {
+        public string ZInterestTitle { get; set; }
         public bool Autocross { get; set; }
         public bool Restoration { get; set; }
         public bool SocialEvent { get; set; }
