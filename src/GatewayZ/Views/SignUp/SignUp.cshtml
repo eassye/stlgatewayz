@@ -5,19 +5,187 @@
 @model GatewayZ.Models.SignUp
 
 <div class="container-fluid">
-    <div class= "SignUpBox">
-        <div id = "HeaderTextBox">
+    <div class="SignUpBox" style="overflow-y:auto">
+        <div id="HeaderTextBox">
             <p>OUR MISSION: The Gateway Z Club is a not-for-profit organization comprised of owners of 240Z, 260Z, 280Z, 280ZX, 300ZX, 350Z, 370Z, 240SX, GT-R, Infiniti G35, G37 sports cars and classic Datsun automobiles. Our members are of different occupations, yet share a common "driving interest" in the care, maintenance, and preservation of their "Z" cars. <strong>Meetings are held on the third Wednesday of each month at a location to be determined by the club. Please visit www.gatewayzclub.com for the most recent information regarding monthly meetings.</strong></p>
         </div>
-        <form class = "form-horizontal" role="form" method="post">
-            <div id = "EnrollmentBox">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Enrollment.ReferredBy, new { @class = "col-sm-1 ccontrol-label" })
-                    <div class="col-sm-9">
-                        @Html.TextBoxFor(model => model.Enrollment.ReferredBy, new { @class = "form-control" })
+        <form class="form-horizontal" role="form" method="post">
+            <fieldset>
+                <div class="col-lg-12">
+                    <div class="col-lg-5">
+                        <div class="form-group">
+                            <h2 style="background-color: black; color: white; width:auto">ENROLLMENT TYPE</h2>
+                            <div class="row">
+                                @Html.LabelFor(model => model.Enrollment.Renewal, new { @class = "checkbox-inline" })
+                                @Html.CheckBoxFor(model => model.Enrollment.Renewal)
+
+                                @Html.LabelFor(model => model.Enrollment.NewMembership, new { @class = "checkbox-inline" })
+                                @Html.CheckBoxFor(model => model.Enrollment.NewMembership)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            @Html.LabelFor(model => model.Enrollment.ReferredBy, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Enrollment.ReferredBy, new { @class = "form-control" })
+                        </div>
+
+                        <div class="col-lg-12" id="PersonalInformation">
+                            <h2 style="background-color: black; color: white; width:auto">PERSONAL INFORMATION</h2>
+                            @Html.LabelFor(model => model.Personal.Name, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.Name, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Personal.BirthDay, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.BirthDay, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Personal.SignificantOthersName, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.SignificantOthersName, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Personal.StreetAddress, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.StreetAddress, new { @class = "form-control" })
+                            <div class="row">
+                                @Html.LabelFor(model => model.Personal.City, new { @style = "text-align:left" })
+                                @Html.TextBoxFor(model => model.Personal.City, new { @class = "form-control" })
+
+                                @Html.LabelFor(model => model.Personal.State, new { @style = "text-align:left" })
+                                @Html.TextBoxFor(model => model.Personal.State, new { @class = "form-control" })
+
+                                @Html.LabelFor(model => model.Personal.ZipCode, new { @style = "text-align:left" })
+                                @Html.TextBoxFor(model => model.Personal.ZipCode, new { @class = "form-control" })
+                            </div>
+                            @Html.LabelFor(model => model.Personal.PrimaryPhone, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.PrimaryPhone, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Personal.Email, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.Email, new { @class = "form-control" })
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-7" id="VehicalsOwned">
+                        <h2 style="background-color: black; color: white; width:auto">VEHICALS OWNED</h2>
+                        <div class="col-sm-4">
+                            @Html.LabelFor(model => model.Vehicals.Make, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.Make, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Vehicals.Model, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.Model, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Vehicals.BodyStyle, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.BodyStyle, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Vehicals.MakeTwo, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.MakeTwo, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Vehicals.ModelTwo, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.ModelTwo, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Vehicals.BodyStyleTwo, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.BodyStyleTwo, new { @class = "form-control" })
+                        </div>
+
+                        <div class="col-sm-4">
+                            @Html.LabelFor(model => model.Vehicals.Year, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.Year, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Vehicals.Color, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.Color, new { @class = "form-control" })
+
+                            <div class="row">
+                                @Html.LabelFor(model => model.Vehicals.Modified, new { @style = "text-align:left" })
+                                @Html.CheckBoxFor(model => model.Vehicals.Modified)
+                                @Html.CheckBoxFor(model => model.Vehicals.Modified)
+                            </div>
+
+                            @Html.LabelFor(model => model.Vehicals.YearTwo, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.YearTwo, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Vehicals.ColorTwo, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Vehicals.ColorTwo, new { @class = "form-control" })
+
+                            <div class="row">
+                                @Html.LabelFor(model => model.Vehicals.ModifiedTwo, new { @style = "text-align:left" })
+                                @Html.CheckBoxFor(model => model.Vehicals.ModifiedTwo)
+                                @Html.CheckBoxFor(model => model.Vehicals.ModifiedTwo)
+                            </div>
+                        </div>
+                    </div>
+                    @*<div class="col-lg-6" id="PersonalInformation">
+                        <h2 style="background-color: black; color: white; width:auto">PERSONAL INFORMATION</h2>
+                        @Html.LabelFor(model => model.Personal.Name, new { @style = "text-align:left" })
+                        @Html.TextBoxFor(model => model.Personal.Name, new { @class = "form-control" })
+
+                        @Html.LabelFor(model => model.Personal.BirthDay, new { @style = "text-align:left" })
+                        @Html.TextBoxFor(model => model.Personal.BirthDay, new { @class = "form-control" })
+
+                        @Html.LabelFor(model => model.Personal.SignificantOthersName, new { @style = "text-align:left" })
+                        @Html.TextBoxFor(model => model.Personal.SignificantOthersName, new { @class = "form-control" })
+
+                        @Html.LabelFor(model => model.Personal.StreetAddress, new { @style = "text-align:left" })
+                        @Html.TextBoxFor(model => model.Personal.StreetAddress, new { @class = "form-control" })
+                        <div class="row">
+                            @Html.LabelFor(model => model.Personal.City, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.City, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Personal.State, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.State, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Personal.ZipCode, new { @style = "text-align:left" })
+                            @Html.TextBoxFor(model => model.Personal.ZipCode, new { @class = "form-control" })
+                        </div>
+                        @Html.LabelFor(model => model.Personal.PrimaryPhone, new { @style = "text-align:left" })
+                        @Html.TextBoxFor(model => model.Personal.PrimaryPhone, new { @class = "form-control" })
+
+                        @Html.LabelFor(model => model.Personal.Email, new { @style = "text-align:left" })
+                        @Html.TextBoxFor(model => model.Personal.Email, new { @class = "form-control" })
+                    </div>*@
+
+                    <div class="col-lg-7">
+                        @Html.LabelFor(model => model.ZInterests.ZInterestTitle)
+
+                        <div class="row">
+                            @Html.LabelFor(model => model.ZInterests.Autocross)
+                            @Html.CheckBoxFor(model => model.ZInterests.Autocross)
+
+                            @Html.LabelFor(model => model.ZInterests.Restoration)
+                            @Html.CheckBoxFor(model => model.ZInterests.Restoration)
+
+                            @Html.LabelFor(model => model.ZInterests.SocialEvent)
+                            @Html.CheckBoxFor(model => model.ZInterests.SocialEvent)
+                        </div>
+
+                        <div class="row">
+                            @Html.LabelFor(model => model.ZInterests.Rallies)
+                            @Html.CheckBoxFor(model => model.ZInterests.Rallies)
+
+                            @Html.LabelFor(model => model.ZInterests.DragRacing)
+                            @Html.CheckBoxFor(model => model.ZInterests.DragRacing)
+
+                            @Html.LabelFor(model => model.ZInterests.CarShows)
+                            @Html.CheckBoxFor(model => model.ZInterests.CarShows)
+                        </div>
+
+                        <div class="row">
+                            @Html.LabelFor(model => model.ZInterests.SportsCarRacing)
+                            @Html.CheckBoxFor(model => model.ZInterests.SportsCarRacing)
+
+                            @Html.LabelFor(model => model.ZInterests.Customizing)
+                            @Html.CheckBoxFor(model => model.ZInterests.Customizing)
+
+                            @Html.LabelFor(model => model.ZInterests.SCCARegion)
+                            @Html.TextBoxFor(model => model.ZInterests.SCCARegion, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <h2 style="background-color: black; color: white; width:auto">SIGNATURE</h2>
+                        <div class="row">
+                            @Html.LabelFor(model => model.Signature.Name)
+                            @Html.TextBoxFor(model => model.Signature.Name, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Signature.Date)
+                            @Html.TextBoxFor(model => model.Signature.Date, new { @class = "form-control" })
+                        </div>
                     </div>
                 </div>
-            </div>
+            </fieldset>
         </form>
     </div>
 </div>
