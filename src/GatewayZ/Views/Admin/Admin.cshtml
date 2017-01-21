@@ -135,10 +135,36 @@
                             </div>
                         </form>
                     </div>
-
                     <div id="events" class="tab-pane fade">
                         <h3>Events</h3>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                        @Html.ValidationSummary()
+                        <form class="form-horizontal" role="form" method="post">
+                            <div class="form-group">
+                                @{
+                                    var eventDao = new EventDAO();
+
+                                    var eventList = eventDao.ListOfEvents();
+
+                                    List<SelectListItem> eventDD = new List<SelectListItem>();
+                                    @foreach (var events in eventList)
+                                    {
+                                        eventDD.Add(new SelectListItem
+                                        {
+                                            Text = events,
+                                            Value = events
+                                        });
+                                    }
+                                }
+                                <div class="col-xs-3">
+                                    @Html.LabelFor(model => model.Event.Title, new { @class = "control-label col-xs-3" })
+                                    @Html.DropDownListFor(model => model.Event.Title, eventDD, "-- Select an Event --")
+                                </div>
+                            </div>
+
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <input type="submit" value="Delete" class="btn btn-default" />
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>

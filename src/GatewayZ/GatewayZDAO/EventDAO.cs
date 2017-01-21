@@ -33,6 +33,24 @@ namespace GatewayZ.GatewayZDAO
             return listEvents;
         }
 
+        public List<string> ListOfEvents()
+        {
+            var eventList = new List<string>();
+
+            var collection = _database.GetCollection<Event>("Events");
+
+            var query =
+                        from e in collection.AsQueryable<Event>()
+                        select e.Title;
+
+            foreach (var eventName in query)
+            {
+                eventList.Add(eventName);
+            }
+
+            return eventList;
+        }
+
         public List<string> GetTopFiveEvents()
         {
             var collection = _database.GetCollection<Event>("Events");
@@ -58,6 +76,13 @@ namespace GatewayZ.GatewayZDAO
             var fiveEvents = eventList.Take(10);
 
             return fiveEvents.ToList();
+        }
+
+        public void DeleteEvent(Event events)
+        {
+            var collection = _database.GetCollection<Event>("Events");
+            var filter = Builders<Event>.Filter.Eq("Title", events.Title);
+            collection.DeleteOneAsync(filter);
         }
     }
 }
