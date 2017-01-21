@@ -45,5 +45,11 @@ namespace GatewayZ.Controllers.Web
                 return RedirectToAction("Index");
             }
         }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Logout", "App", new { area = "" });
+        }
     }
 }
