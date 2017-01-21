@@ -16,15 +16,37 @@ namespace GatewayZ.Services
             _signUp = signUp;
         }
 
-        public void SendEmail()
+        public void SendRegistrationEmail()
         {
             var message = new MimeMessage();
             message.From.Add(new MailboxAddress("Erick", "eassye1@yahoo.com"));
-            message.To.Add(new MailboxAddress("Erick", "eassye1@yahoo.com"));
+            message.To.Add(new MailboxAddress("Cathy", "Gatewayzclub@yahoo.com"));
             message.Subject = "STLGatewayZ Signup Form From: " + _signUp.Personal.Name;
             message.Body = new TextPart("plain")
             {
                 Text = CreateEmail()
+            };
+            
+            using (var client = new SmtpClient())
+            {
+                client.Connect("smtp.mail.yahoo.com", 587, SecureSocketOptions.StartTls);
+                client.AuthenticationMechanisms.Remove("XOAUTH2");
+                // Note: since we don't have an OAuth2 token, disable 	// the XOAUTH2 authentication mechanism.     client.Authenticate("anuraj.p@example.com", "password");
+                client.Authenticate("eassye1@yahoo.com", "370ZNismo");
+                client.Send(message);
+                client.Disconnect(true);
+            }
+        }
+
+        public void SendCreateAccountReminderEmail()
+        {
+            var message = new MimeMessage();
+            message.From.Add(new MailboxAddress("Erick", "eassye1@yahoo.com"));
+            message.To.Add(new MailboxAddress(_signUp.Personal.Name, _signUp.Personal.Email));
+            message.Subject = "STLGatewayZ Signup Form From: " + _signUp.Personal.Name;
+            message.Body = new TextPart("plain")
+            {
+                Text = CreateAccountReminderEmail()
             };
 
             using (var client = new SmtpClient())
@@ -32,10 +54,24 @@ namespace GatewayZ.Services
                 client.Connect("smtp.mail.yahoo.com", 587, SecureSocketOptions.StartTls);
                 client.AuthenticationMechanisms.Remove("XOAUTH2");
                 // Note: since we don't have an OAuth2 token, disable 	// the XOAUTH2 authentication mechanism.     client.Authenticate("anuraj.p@example.com", "password");
-                client.Authenticate("eassye1@yahoo.com", "Nadezhda36");
+                client.Authenticate("eassye1@yahoo.com", "370ZNismo");
                 client.Send(message);
                 client.Disconnect(true);
             }
+        }
+
+        private string CreateAccountReminderEmail()
+        {
+            var email = new StringBuilder();
+            email.Append(_signUp.Personal.Name + " ,");
+            email.Append(Environment.NewLine);
+            email.Append(Environment.NewLine);
+            email.Append("Thank you for applying to join STL Gateway Z Club!");
+            email.Append(Environment.NewLine);
+            email.Append("Your application has been sent for review.");
+            email.Append(Environment.NewLine);
+            email.Append("If you have not already created an account, please do so at: http://www.gatewayzclub.com/Register");
+            return email.ToString();
         }
 
         private string CreateEmail()
@@ -108,7 +144,51 @@ namespace GatewayZ.Services
             email.Append("Modified: " + _signUp.Vehicals.ModifiedTwo);
             email.Append(Environment.NewLine);
             email.Append(Environment.NewLine);
-            email.Append("Z INTERESTS: ");
+            email.Append("Z INTERESTS");
+            email.Append(Environment.NewLine);
+            email.Append("ZInterest: " + _signUp.ZInterests.ZInterestTitle);
+            email.Append(Environment.NewLine);
+            email.Append("Autocross: " + _signUp.ZInterests.Autocross);
+            email.Append(Environment.NewLine);
+            email.Append("Restoration: " + _signUp.ZInterests.Restoration);
+            email.Append(Environment.NewLine);
+            email.Append("SocialEvent: " + _signUp.ZInterests.SocialEvent);
+            email.Append(Environment.NewLine);
+            email.Append("Rallies: " + _signUp.ZInterests.Rallies);
+            email.Append(Environment.NewLine);
+            email.Append("DragRacing: " + _signUp.ZInterests.DragRacing);
+            email.Append(Environment.NewLine);
+            email.Append("CarShows: " + _signUp.ZInterests.CarShows);
+            email.Append(Environment.NewLine);
+            email.Append("SportsCarRacing: " + _signUp.ZInterests.SportsCarRacing);
+            email.Append(Environment.NewLine);
+            email.Append("Customizing: " + _signUp.ZInterests.Customizing);
+            email.Append(Environment.NewLine);
+            email.Append("SCCARegion: " + _signUp.ZInterests.SCCARegion);
+            email.Append(Environment.NewLine);
+            email.Append(Environment.NewLine);
+            email.Append("SIGNATURE");
+            email.Append(Environment.NewLine);
+            email.Append("Name: " + _signUp.Signature.Name);
+            email.Append(Environment.NewLine);
+            email.Append("Date: " + _signUp.Signature.Date);
+            email.Append(Environment.NewLine);
+            email.Append(Environment.NewLine);
+            email.Append("WAIVER");
+            email.Append(Environment.NewLine);
+            email.Append("DateReceived: " + _signUp.Waiver.DateReceived);
+            email.Append(Environment.NewLine);
+            email.Append("PaymentMethod: " + _signUp.Waiver.PaymentMethod);
+            email.Append(Environment.NewLine);
+            email.Append("CheckNumber: " + _signUp.Waiver.CheckNumber);
+            email.Append(Environment.NewLine);
+            email.Append("AmountRecieved: " + _signUp.Waiver.AmountRecieved);
+            email.Append(Environment.NewLine);
+            email.Append("DateEntered: " + _signUp.Waiver.DateEntered);
+            email.Append(Environment.NewLine);
+            email.Append("PackageSent: " + _signUp.Waiver.PackageSent);
+            email.Append(Environment.NewLine);
+            email.Append("MembershipNumber: " + _signUp.Waiver.MembershipNumber);
 
             return email.ToString();
         }

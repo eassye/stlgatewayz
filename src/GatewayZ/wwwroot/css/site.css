@@ -881,6 +881,7 @@ body{
     margin-right:auto;
     background-image: url('../images/escheresque.png');  
     display:block; 
+    overflow-y:auto;
  }
 
  #EnrollmentBox{
@@ -907,3 +908,18 @@ body{
      position: relative;
      border: 2px solid black;
  }
+
+ /*SNOW FLAKES*/
+ * {margin: 0; padding: 0;}
+
+ #container {
+  position: relative;
+}
+#container canvas, #overlay {
+  position: absolute;
+}
+canvas {
+
+	display: block;
+
+}

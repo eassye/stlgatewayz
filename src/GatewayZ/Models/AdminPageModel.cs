@@ -4,5 +4,6 @@
     {
         public Club Club { get; set; }
         public User User { get; set; }
+        public Event Event { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using GatewayZ.Models;
+using GatewayZ.Services;
 
 namespace GatewayZ.Controllers.Web
 {
@@ -16,7 +17,17 @@ namespace GatewayZ.Controllers.Web
         [HttpPost]
         public IActionResult Index(SignUp signUp)
         {
-            return RedirectToAction("Index");
+            try
+            {
+                var email = new SignUpService(signUp);
+                email.SendCreateAccountReminderEmail();
+                email.SendRegistrationEmail();
+                return RedirectToAction("Index");
+            }
+            catch (Exception e)
+            {
+                return RedirectToAction("Index");
+            }
         }
     }
 }

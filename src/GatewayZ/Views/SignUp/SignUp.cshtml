@@ -5,7 +5,7 @@
 @model GatewayZ.Models.SignUp
 
 <div class="container-fluid">
-    <div class="SignUpBox" style="overflow-y:auto">
+    <div class="SignUpBox">
         <div id="HeaderTextBox">
             <p>OUR MISSION: The Gateway Z Club is a not-for-profit organization comprised of owners of 240Z, 260Z, 280Z, 280ZX, 300ZX, 350Z, 370Z, 240SX, GT-R, Infiniti G35, G37 sports cars and classic Datsun automobiles. Our members are of different occupations, yet share a common "driving interest" in the care, maintenance, and preservation of their "Z" cars. <strong>Meetings are held on the third Wednesday of each month at a location to be determined by the club. Please visit www.gatewayzclub.com for the most recent information regarding monthly meetings.</strong></p>
         </div>
@@ -108,36 +108,6 @@
                             </div>
                         </div>
                     </div>
-                    @*<div class="col-lg-6" id="PersonalInformation">
-                        <h2 style="background-color: black; color: white; width:auto">PERSONAL INFORMATION</h2>
-                        @Html.LabelFor(model => model.Personal.Name, new { @style = "text-align:left" })
-                        @Html.TextBoxFor(model => model.Personal.Name, new { @class = "form-control" })
-
-                        @Html.LabelFor(model => model.Personal.BirthDay, new { @style = "text-align:left" })
-                        @Html.TextBoxFor(model => model.Personal.BirthDay, new { @class = "form-control" })
-
-                        @Html.LabelFor(model => model.Personal.SignificantOthersName, new { @style = "text-align:left" })
-                        @Html.TextBoxFor(model => model.Personal.SignificantOthersName, new { @class = "form-control" })
-
-                        @Html.LabelFor(model => model.Personal.StreetAddress, new { @style = "text-align:left" })
-                        @Html.TextBoxFor(model => model.Personal.StreetAddress, new { @class = "form-control" })
-                        <div class="row">
-                            @Html.LabelFor(model => model.Personal.City, new { @style = "text-align:left" })
-                            @Html.TextBoxFor(model => model.Personal.City, new { @class = "form-control" })
-
-                            @Html.LabelFor(model => model.Personal.State, new { @style = "text-align:left" })
-                            @Html.TextBoxFor(model => model.Personal.State, new { @class = "form-control" })
-
-                            @Html.LabelFor(model => model.Personal.ZipCode, new { @style = "text-align:left" })
-                            @Html.TextBoxFor(model => model.Personal.ZipCode, new { @class = "form-control" })
-                        </div>
-                        @Html.LabelFor(model => model.Personal.PrimaryPhone, new { @style = "text-align:left" })
-                        @Html.TextBoxFor(model => model.Personal.PrimaryPhone, new { @class = "form-control" })
-
-                        @Html.LabelFor(model => model.Personal.Email, new { @style = "text-align:left" })
-                        @Html.TextBoxFor(model => model.Personal.Email, new { @class = "form-control" })
-                    </div>*@
-
                     <div class="col-lg-7">
                         @Html.LabelFor(model => model.ZInterests.ZInterestTitle)
 
@@ -182,6 +152,57 @@
 
                             @Html.LabelFor(model => model.Signature.Date)
                             @Html.TextBoxFor(model => model.Signature.Date, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <h2 style="background-color: black; color: white; width:auto">SIGNATURE</h2>
+                        <div class="row">
+                            @Html.LabelFor(model => model.Signature.Name)
+                            @Html.TextBoxFor(model => model.Signature.Name, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Signature.Date)
+                            @Html.TextBoxFor(model => model.Signature.Date, new { @class = "form-control" })
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <h2 style="background-color: black; color: white; width:auto">GENERAL WAIVER FOR ALL GATEWAY Z CLUB EVENTS</h2>
+                        <p>In participating in any Gateway Z Club event, I hereby release and agree to indemnify and hold harmless the Gateway Z Club and all officers, 
+                        members, diretors, agents, affiliates, successors and assignees of the Gateway Z Club to the fullest extent 
+                        allowed by law, from and against any and all claims, injuries, damages and/or losses I may incur or suffer as a result of 
+                        my participation in any Gateway Z Club activity, including, without limiting the foregoing, those occasioned by reason of a 
+                        defect in any transportation vehical, or negligence of any person engaged in or carrying out the arrangement of the Gateway Z Club 
+                        tours, trips or other events. The organizers of the Gateway Z club do not organize, sanction or schedule any events which require 
+                        the improper or illegal use of motor vehicles or the taking of passengers on such events, and expressly disclaim any liability for 
+                        the results of such actions. By affixing my signature above, I hereby state that I agree with the terms and conditons see forth by 
+                        the Gateway Z club and its affiliates for the participation of club events.</p>
+                        <div class="col-lg-6">
+                            @Html.LabelFor(model => model.Waiver.DateReceived)
+                            @Html.TextBoxFor(model => model.Waiver.DateReceived, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Waiver.PaymentMethod)
+                            @Html.TextBoxFor(model => model.Waiver.PaymentMethod, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Waiver.CheckNumber)
+                            @Html.TextBoxFor(model => model.Waiver.CheckNumber, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Waiver.AmountRecieved)
+                            @Html.TextBoxFor(model => model.Waiver.AmountRecieved, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Waiver.DateEntered)
+                            @Html.TextBoxFor(model => model.Waiver.DateEntered, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Waiver.PackageSent)
+                            @Html.TextBoxFor(model => model.Waiver.PackageSent, new { @class = "form-control" })
+
+                            @Html.LabelFor(model => model.Waiver.MembershipNumber)
+                            @Html.TextBoxFor(model => model.Waiver.MembershipNumber, new { @class = "form-control" })
+                            <br />
+                            <input type="submit" value="Submit" class="btn btn-default" />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
+                            <br />
                         </div>
                     </div>
                 </div>
